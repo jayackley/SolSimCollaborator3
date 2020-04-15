@@ -8,6 +8,8 @@ public class ScabController : MonoBehaviour {
     public float offset;
     public float bulletSpeed;
     public float aimCone;
+    public AudioClip bounce;
+    public GameObject solidarityManager;
 
 
     private void Start()
@@ -20,10 +22,22 @@ public class ScabController : MonoBehaviour {
     void Update () 
     {
         transform.localScale = new Vector3((transform.position.y+offset)*multiplier, (transform.position.y+offset) * multiplier, 1);
-	}
-    private void OnCollisionEnter2D()
+        if (transform.position.y >= 6)
+        {
+            Destroy(gameObject);
+        }
+        if (transform.position.y <= -6)
+        {
+            Destroy(gameObject);
+            GameObject.Find("SolidarityCanvas").GetComponent<SolidarityTextManager>().solidarity -= 10;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        GetComponent<Rigidbody2D>().AddForce(Vector2.up);
+        Debug.Log("bounce");
+        GetComponent<Rigidbody2D>().velocity = new Vector2(0,bulletSpeed);
+        GetComponent<AudioSource>().PlayOneShot(bounce);
     }
 
 }

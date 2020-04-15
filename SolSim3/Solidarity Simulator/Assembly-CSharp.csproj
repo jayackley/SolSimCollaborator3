@@ -61,7 +61,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\ScabSpawnManager.cs" />
     <Compile Include="Assets\Scripts\BlackOutManager.cs" />
     <Compile Include="Assets\Scripts\BoardManager.cs" />
     <Compile Include="Assets\Scripts\CameraManager.cs" />
@@ -83,9 +82,11 @@
     <Compile Include="Assets\Scripts\PromptManager.cs" />
     <Compile Include="Assets\Scripts\ResponseManager.cs" />
     <Compile Include="Assets\Scripts\ScabController.cs" />
+    <Compile Include="Assets\Scripts\ScabSpawnManager.cs" />
     <Compile Include="Assets\Scripts\SceneManager.cs" />
     <Compile Include="Assets\Scripts\SignTextManger.cs" />
     <Compile Include="Assets\Scripts\SolidarityManager.cs" />
+    <Compile Include="Assets\Scripts\SolidarityTextManager.cs" />
     <Compile Include="Assets\Scripts\StrikeMovementController.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
