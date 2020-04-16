@@ -398,7 +398,7 @@ public class BoardManager : MonoBehaviour {
 
         else if (index == 33 && Event.current.Equals(Event.KeyboardEvent("return")) && isTyping == false)
         {
-            Application.OpenURL("https://docs.google.com/spreadsheets/d/19w993sb_pvel6WU0rHzmxSKUgchLJhiMj5sBxWF-1qs/edit?usp=sharing");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("StrikePong");
         }
 
 //random insult generator

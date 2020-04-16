@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 50050729849343900}
   - component: {fileID: 114970565552338408}
   - component: {fileID: 82401866750057010}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ScabBot_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,7 +209,6 @@ MonoBehaviour:
   bulletSpeed: 4
   aimCone: 3
   bounce: {fileID: 8300000, guid: f5937e61a0dde428f9ca60ad70a8fed3, type: 3}
-  solidarityManager: {fileID: 0}
 --- !u!212 &212045943573417642
 SpriteRenderer:
   m_ObjectHideFlags: 1

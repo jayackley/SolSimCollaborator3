@@ -9,7 +9,6 @@ public class ScabController : MonoBehaviour {
     public float bulletSpeed;
     public float aimCone;
     public AudioClip bounce;
-    public GameObject solidarityManager;
 
 
     private void Start()
@@ -35,9 +34,12 @@ public class ScabController : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("bounce");
-        GetComponent<Rigidbody2D>().velocity = new Vector2(0,bulletSpeed);
-        GetComponent<AudioSource>().PlayOneShot(bounce);
+        if (collision.gameObject.tag == "Player")
+        {
+            Debug.Log("bounce");
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, bulletSpeed);
+            GetComponent<AudioSource>().PlayOneShot(bounce);
+        }
     }
 
 }
