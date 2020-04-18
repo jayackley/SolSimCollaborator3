@@ -22,47 +22,45 @@ public class StrikeMovementController : MonoBehaviour
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             rigidbody2d.velocity = new Vector2(+moveSpeed, rigidbody2d.velocity.y);
-            //footSteps = true;
         }
         else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             rigidbody2d.velocity = new Vector2(-moveSpeed, rigidbody2d.velocity.y);
-            //footSteps = true;
         }
         else
         {
             rigidbody2d.velocity = new Vector2(0, rigidbody2d.velocity.y);
         }
 
-        if (solidarityManager.GetComponent<SolidarityTextManager>().solidarity >= 110)
+        if (solidarityManager.GetComponent<SolidarityManager>().solidarity >= 110)
         {
             GetComponent<Animator>().Play("StrikeAttrition", 0, 0f);
         }
-        else if (solidarityManager.GetComponent<SolidarityTextManager>().solidarity >= 90 && solidarityManager.GetComponent<SolidarityTextManager>().solidarity < 110)
+        else if (solidarityManager.GetComponent<SolidarityManager>().solidarity >= 90 && solidarityManager.GetComponent<SolidarityManager>().solidarity < 110)
         {
             GetComponent<Animator>().Play("StrikeAttrition", 0, 0.1429f);
         }
-        else if (solidarityManager.GetComponent<SolidarityTextManager>().solidarity >= 70 && solidarityManager.GetComponent<SolidarityTextManager>().solidarity < 90)
+        else if (solidarityManager.GetComponent<SolidarityManager>().solidarity >= 70 && solidarityManager.GetComponent<SolidarityManager>().solidarity < 90)
         {
             GetComponent<Animator>().Play("StrikeAttrition", 0, 0.2858f);
         }
-        else if (solidarityManager.GetComponent<SolidarityTextManager>().solidarity >= 50 && solidarityManager.GetComponent<SolidarityTextManager>().solidarity < 70)
+        else if (solidarityManager.GetComponent<SolidarityManager>().solidarity >= 50 && solidarityManager.GetComponent<SolidarityManager>().solidarity < 70)
         {
             GetComponent<Animator>().Play("StrikeAttrition", 0, 0.4287f);
         }
-        else if (solidarityManager.GetComponent<SolidarityTextManager>().solidarity >= 30 && solidarityManager.GetComponent<SolidarityTextManager>().solidarity < 50)
+        else if (solidarityManager.GetComponent<SolidarityManager>().solidarity >= 30 && solidarityManager.GetComponent<SolidarityManager>().solidarity < 50)
         {
             GetComponent<Animator>().Play("StrikeAttrition", 0, 0.5715f);
         }
-        else if (solidarityManager.GetComponent<SolidarityTextManager>().solidarity >= 20 && solidarityManager.GetComponent<SolidarityTextManager>().solidarity < 30)
+        else if (solidarityManager.GetComponent<SolidarityManager>().solidarity >= 20 && solidarityManager.GetComponent<SolidarityManager>().solidarity < 30)
         {
             GetComponent<Animator>().Play("StrikeAttrition", 0, 0.7143f);
         }
-        else if (solidarityManager.GetComponent<SolidarityTextManager>().solidarity >= 10 && solidarityManager.GetComponent<SolidarityTextManager>().solidarity < 20)
+        else if (solidarityManager.GetComponent<SolidarityManager>().solidarity >= 10 && solidarityManager.GetComponent<SolidarityManager>().solidarity < 20)
         {
             GetComponent<Animator>().Play("StrikeAttrition", 0, 0.8572f);
         }
-        else if (solidarityManager.GetComponent<SolidarityTextManager>().solidarity >= 0 && solidarityManager.GetComponent<SolidarityTextManager>().solidarity < 10)
+        else if (solidarityManager.GetComponent<SolidarityManager>().solidarity >= 0 && solidarityManager.GetComponent<SolidarityManager>().solidarity < 10)
         {
             GetComponent<Animator>().Play("StrikeAttrition", 0, .99f);
         }

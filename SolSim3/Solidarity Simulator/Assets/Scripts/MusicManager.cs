@@ -18,9 +18,12 @@ public class MusicManager : MonoBehaviour {
     public GameObject boardMusic2;
     public GameObject boardMusic3;
     public GameObject boardMusic4;
+    public GameObject strikePongTune;
+    public GameObject bargainingTune;
     public GameObject sceneManager;
     public GameObject solidarityManager;
     public GameObject boardManager;
+
     public float maxVolume;
     public float fadeInSpeed;
     public float startingVolume;
@@ -43,9 +46,9 @@ public class MusicManager : MonoBehaviour {
         boardMusic4.GetComponent<AudioSource>().volume = startingVolume;
 
     }
-	
-	// Update is called once per frame
-	void Update () 
+
+    // Update is called once per frame
+    void Update()
     {
         if (sceneManager.GetComponent<SceneManager>().convoCounter >= 0)
         {
@@ -104,7 +107,7 @@ public class MusicManager : MonoBehaviour {
                 undertone.GetComponent<AudioSource>().volume += fadeInSpeed * Time.deltaTime;
             }
         }
-        
+
         if (sceneManager.GetComponent<SceneManager>().convoCounter >= 4 && solidarityManager.GetComponent<SolidarityManager>().solidarity >= 0)
         {
             if (majorArp.GetComponent<AudioSource>().volume < maxVolume)
@@ -162,21 +165,21 @@ public class MusicManager : MonoBehaviour {
 
         if (sceneManager.GetComponent<SceneManager>().convoCounter == 9 || sceneManager.GetComponent<SceneManager>().convoCounter == 10 || sceneManager.GetComponent<SceneManager>().convoCounter == 11)
         {
-            fluteLead.GetComponent<AudioSource>().volume =0;
-            thumps.GetComponent<AudioSource>().volume =0;
-            bass.GetComponent<AudioSource>().volume =0;
-            bleepMajor.GetComponent<AudioSource>().volume =0;
-            bleepMinor.GetComponent<AudioSource>().volume =0;
-            majorArp.GetComponent<AudioSource>().volume =0;
-            minorArp.GetComponent<AudioSource>().volume =0;
-            chaos.GetComponent<AudioSource>().volume =0;
-            undertone.GetComponent<AudioSource>().volume =0;
+            fluteLead.GetComponent<AudioSource>().volume = 0;
+            thumps.GetComponent<AudioSource>().volume = 0;
+            bass.GetComponent<AudioSource>().volume = 0;
+            bleepMajor.GetComponent<AudioSource>().volume = 0;
+            bleepMinor.GetComponent<AudioSource>().volume = 0;
+            majorArp.GetComponent<AudioSource>().volume = 0;
+            minorArp.GetComponent<AudioSource>().volume = 0;
+            chaos.GetComponent<AudioSource>().volume = 0;
+            undertone.GetComponent<AudioSource>().volume = 0;
             spaceSound.GetComponent<AudioSource>().volume = 0;
             if (boardMusic1.GetComponent<AudioSource>().volume < maxVolume)
             {
                 boardMusic1.GetComponent<AudioSource>().volume += fadeInSpeed * Time.deltaTime;
             }
-        
+
         }
         if (sceneManager.GetComponent<SceneManager>().convoCounter == 11 && (boardManager.GetComponent<BoardManager>().index >= 8 && boardManager.GetComponent<BoardManager>().index <= 12))
         {
@@ -220,7 +223,7 @@ public class MusicManager : MonoBehaviour {
                 boardMusic3.GetComponent<AudioSource>().volume += fadeInSpeed * Time.deltaTime;
             }
         }
-        if (sceneManager.GetComponent<SceneManager>().convoCounter == 11 && boardManager.GetComponent<BoardManager>().index >= 18)
+        if (sceneManager.GetComponent<SceneManager>().convoCounter == 11 && boardManager.GetComponent<BoardManager>().index >= 18 && boardManager.GetComponent<BoardManager>().index < 100)
         {
             fluteLead.GetComponent<AudioSource>().volume = 0;
             thumps.GetComponent<AudioSource>().volume = 0;
@@ -241,7 +244,47 @@ public class MusicManager : MonoBehaviour {
                 boardMusic4.GetComponent<AudioSource>().volume += fadeInSpeed * Time.deltaTime;
             }
         }
+        if (boardManager.GetComponent<BoardManager>().index == 100)
+        {
+            fluteLead.GetComponent<AudioSource>().Stop();
+            thumps.GetComponent<AudioSource>().Stop();
+            bass.GetComponent<AudioSource>().Stop();
+            bleepMajor.GetComponent<AudioSource>().Stop();
+            bleepMinor.GetComponent<AudioSource>().Stop();
+            majorArp.GetComponent<AudioSource>().Stop();
+            minorArp.GetComponent<AudioSource>().Stop();
+            chaos.GetComponent<AudioSource>().Stop();
+            undertone.GetComponent<AudioSource>().Stop();
+            spaceSound.GetComponent<AudioSource>().Stop();
+            boardMusic1.GetComponent<AudioSource>().Stop();
+            boardMusic2.GetComponent<AudioSource>().Stop();
+            boardMusic3.GetComponent<AudioSource>().Stop();
+            boardMusic4.GetComponent<AudioSource>().Stop();
+            strikePongTune.GetComponent<AudioSource>().Play();
+            boardManager.GetComponent<BoardManager>().index = 101;
+        }
+        if (sceneManager.GetComponent<SceneManager>().convoCounter == 12)
+        {
+            fluteLead.GetComponent<AudioSource>().Stop();
+            thumps.GetComponent<AudioSource>().Stop();
+            bass.GetComponent<AudioSource>().Stop();
+            bleepMajor.GetComponent<AudioSource>().Stop();
+            bleepMinor.GetComponent<AudioSource>().Stop();
+            majorArp.GetComponent<AudioSource>().Stop();
+            minorArp.GetComponent<AudioSource>().Stop();
+            chaos.GetComponent<AudioSource>().Stop();
+            undertone.GetComponent<AudioSource>().Stop();
+            spaceSound.GetComponent<AudioSource>().Stop();
+            boardMusic1.GetComponent<AudioSource>().Stop();
+            boardMusic2.GetComponent<AudioSource>().Stop();
+            boardMusic3.GetComponent<AudioSource>().Stop();
+            boardMusic4.GetComponent<AudioSource>().Stop();
+            strikePongTune.GetComponent<AudioSource>().Stop();
+            bargainingTune.GetComponent<AudioSource>().Play();
+            sceneManager.GetComponent<SceneManager>().convoCounter = 13;
+        }
     }
+
 }
 
 

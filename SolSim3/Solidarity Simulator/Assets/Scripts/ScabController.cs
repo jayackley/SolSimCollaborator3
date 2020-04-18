@@ -16,6 +16,7 @@ public class ScabController : MonoBehaviour {
         float conePoint = Random.Range(-aimCone, aimCone);
         GetComponent<Rigidbody2D>().velocity = new Vector3(conePoint, - bulletSpeed, 0);
         transform.parent = null;
+        transform.localScale = new Vector3(0, 0, 1);
     }
 
     void Update () 
@@ -28,7 +29,7 @@ public class ScabController : MonoBehaviour {
         if (transform.position.y <= -6)
         {
             Destroy(gameObject);
-            GameObject.Find("SolidarityCanvas").GetComponent<SolidarityTextManager>().solidarity -= 10;
+            GameObject.Find("Solidarity").GetComponent<SolidarityManager>().solidarity -= 10;
         }
     }
 

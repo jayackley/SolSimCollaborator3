@@ -10,6 +10,7 @@ public class PressPanelManager : MonoBehaviour {
     public GameObject blackOutManager;
     public GameObject primedIndicator;
     public GameObject optionManager;
+    public GameObject strikeInstructionManager;
 
     private void Start()
     {
@@ -19,7 +20,7 @@ public class PressPanelManager : MonoBehaviour {
 
     void Update ()
     {
-        if (waterCooler.GetComponent<InteractableManager>().primed == true || button.GetComponent<InteractableManager>().primed == true || boardManager.GetComponent<BoardManager>().primed == true || blackOutManager.GetComponent<BlackOutManager>().primed == true || optionManager.GetComponent<OptionManager>().primed == true)
+        if (waterCooler.GetComponent<InteractableManager>().primed == true || button.GetComponent<InteractableManager>().primed == true || boardManager.GetComponent<BoardManager>().primed == true || blackOutManager.GetComponent<BlackOutManager>().primed == true || optionManager.GetComponent<OptionManager>().primed == true || strikeInstructionManager.GetComponent<StrikeInstructionManager>().primed == true)
         {
             GetComponent<Canvas>().enabled = true;
             primedIndicator.GetComponent<SpriteRenderer>().enabled = true;

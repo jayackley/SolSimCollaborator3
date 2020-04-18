@@ -87,6 +87,7 @@
     <Compile Include="Assets\Scripts\SignTextManger.cs" />
     <Compile Include="Assets\Scripts\SolidarityManager.cs" />
     <Compile Include="Assets\Scripts\SolidarityTextManager.cs" />
+    <Compile Include="Assets\Scripts\StrikeInstructionManager.cs" />
     <Compile Include="Assets\Scripts\StrikeMovementController.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />

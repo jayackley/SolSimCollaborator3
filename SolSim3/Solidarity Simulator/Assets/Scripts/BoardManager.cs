@@ -9,6 +9,7 @@ public class BoardManager : MonoBehaviour {
     public string whosTalking;
     public string[] sentences;
     public float typingSpeed;
+    public GameObject solidarityPanel;
     public GameObject solidarityObject;
     public bool isTyping;
     public GameObject wrench;
@@ -27,6 +28,8 @@ public class BoardManager : MonoBehaviour {
     public float voxFadeSpeed;
     public float volumeZero;
     public float volumeMax;
+    public GameObject strikePongContainer;
+    public GameObject strikeInstructionPanel;
 
     private void Awake()
     {
@@ -398,7 +401,24 @@ public class BoardManager : MonoBehaviour {
 
         else if (index == 33 && Event.current.Equals(Event.KeyboardEvent("return")) && isTyping == false)
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("StrikePong");
+            index = 100;
+            mainCamera.GetComponent<CameraManager>().whosFocus = "strikepong";
+            strikePongContainer.SetActive(true);
+            strikeInstructionPanel.SetActive(true);
+            primed = false;
+            gameObject.SetActive(false);
+            solidarityPanel.transform.localPosition = new Vector3(250, 245, 0);
+        }
+
+        else if (Event.current.Equals(Event.KeyboardEvent("s")))
+        {
+            index = 100;
+            mainCamera.GetComponent<CameraManager>().whosFocus = "strikepong";
+            strikePongContainer.SetActive(true);
+            strikeInstructionPanel.SetActive(true);
+            primed = false;
+            gameObject.SetActive(false);
+            solidarityPanel.transform.localPosition = new Vector3(250, 245, 0);
         }
 
 //random insult generator
@@ -433,7 +453,7 @@ public class BoardManager : MonoBehaviour {
             NextSentence();
         }
 
-        if (buttonInstruction.activeSelf == true && Event.current.Equals(Event.KeyboardEvent("return")))
+        else if (buttonInstruction.activeSelf == true && Event.current.Equals(Event.KeyboardEvent("return")))
         {
             buttonInstruction.SetActive(false);
         }

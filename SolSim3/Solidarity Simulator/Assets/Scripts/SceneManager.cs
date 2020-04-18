@@ -118,6 +118,9 @@ public class SceneManager : MonoBehaviour {
             playerObject.GetComponent<InteractionManager>().enabled = false;
             convoCounter = 11;
         }
-
+        if (convoCounter == 12)
+        {
+            //set up for board
+        }
     }
 }
