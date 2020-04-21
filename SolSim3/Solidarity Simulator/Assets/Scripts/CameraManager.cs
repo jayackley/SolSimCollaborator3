@@ -24,6 +24,8 @@ public class CameraManager : MonoBehaviour {
     public GameObject boardDataCam;
     public GameObject boardAccountingCam;
     public GameObject boardManagerCam;
+    public GameObject wrenchNegotiateCam;
+    public GameObject orbNegotiateCam;
     public GameObject boardScriptObject;
     public GameObject strikePongCamera;
 	
@@ -98,6 +100,8 @@ public class CameraManager : MonoBehaviour {
             boardAccountingCam.SetActive(false);
             boardManagerCam.SetActive(false);
             strikePongCamera.SetActive(false);
+            wrenchNegotiateCam.SetActive(false);
+            orbNegotiateCam.SetActive(false);
         }
         if (whosFocus == "wrench" & scene == "walkaround")
         {
@@ -119,6 +123,8 @@ public class CameraManager : MonoBehaviour {
             boardAccountingCam.SetActive(false);
             boardManagerCam.SetActive(false);
             strikePongCamera.SetActive(false);
+            wrenchNegotiateCam.SetActive(false);
+            orbNegotiateCam.SetActive(false);
         }
         if (whosFocus == "temp" & scene == "walkaround")
         {
@@ -140,6 +146,8 @@ public class CameraManager : MonoBehaviour {
             boardAccountingCam.SetActive(false);
             boardManagerCam.SetActive(false);
             strikePongCamera.SetActive(false);
+            wrenchNegotiateCam.SetActive(false);
+            orbNegotiateCam.SetActive(false);
         }
         if (whosFocus == "welder" & scene == "walkaround")
         {
@@ -161,6 +169,8 @@ public class CameraManager : MonoBehaviour {
             boardAccountingCam.SetActive(false);
             boardManagerCam.SetActive(false);
             strikePongCamera.SetActive(false);
+            wrenchNegotiateCam.SetActive(false);
+            orbNegotiateCam.SetActive(false);
         }
         if (whosFocus == "bigguy" & scene == "walkaround")
         {
@@ -182,6 +192,8 @@ public class CameraManager : MonoBehaviour {
             boardAccountingCam.SetActive(false);
             boardManagerCam.SetActive(false);
             strikePongCamera.SetActive(false);
+            wrenchNegotiateCam.SetActive(false);
+            orbNegotiateCam.SetActive(false);
         }
         if (whosFocus == "data" & scene == "walkaround")
         {
@@ -203,6 +215,8 @@ public class CameraManager : MonoBehaviour {
             boardAccountingCam.SetActive(false);
             boardManagerCam.SetActive(false);
             strikePongCamera.SetActive(false);
+            wrenchNegotiateCam.SetActive(false);
+            orbNegotiateCam.SetActive(false);
         }
         if (whosFocus == "accounting" & scene == "walkaround")
         {
@@ -224,6 +238,8 @@ public class CameraManager : MonoBehaviour {
             boardAccountingCam.SetActive(false);
             boardManagerCam.SetActive(false);
             strikePongCamera.SetActive(false);
+            wrenchNegotiateCam.SetActive(false);
+            orbNegotiateCam.SetActive(false);
         }
         if (whosFocus == "manager" & scene == "walkaround")
         {
@@ -245,6 +261,8 @@ public class CameraManager : MonoBehaviour {
             boardAccountingCam.SetActive(false);
             boardManagerCam.SetActive(false);
             strikePongCamera.SetActive(false);
+            wrenchNegotiateCam.SetActive(false);
+            orbNegotiateCam.SetActive(false);
         }
         if (whosFocus == "orb")
         {
@@ -266,6 +284,8 @@ public class CameraManager : MonoBehaviour {
             boardAccountingCam.SetActive(false);
             boardManagerCam.SetActive(false);
             strikePongCamera.SetActive(false);
+            wrenchNegotiateCam.SetActive(false);
+            orbNegotiateCam.SetActive(false);
         }
         if (whosFocus == "corporate")
         {
@@ -287,6 +307,8 @@ public class CameraManager : MonoBehaviour {
             boardAccountingCam.SetActive(false);
             boardManagerCam.SetActive(false);
             strikePongCamera.SetActive(false);
+            wrenchNegotiateCam.SetActive(false);
+            orbNegotiateCam.SetActive(false);
         }
 
 
@@ -310,6 +332,8 @@ public class CameraManager : MonoBehaviour {
             boardAccountingCam.SetActive(false);
             boardManagerCam.SetActive(false);
             strikePongCamera.SetActive(false);
+            wrenchNegotiateCam.SetActive(false);
+            orbNegotiateCam.SetActive(false);
         }
         if (whosFocus == "temp" & scene == "board")
         {
@@ -331,6 +355,8 @@ public class CameraManager : MonoBehaviour {
             boardAccountingCam.SetActive(false);
             boardManagerCam.SetActive(false);
             strikePongCamera.SetActive(false);
+            wrenchNegotiateCam.SetActive(false);
+            orbNegotiateCam.SetActive(false);
         }
         if (whosFocus == "welder" & scene == "board")
         {
@@ -352,6 +378,8 @@ public class CameraManager : MonoBehaviour {
             boardAccountingCam.SetActive(false);
             boardManagerCam.SetActive(false);
             strikePongCamera.SetActive(false);
+            wrenchNegotiateCam.SetActive(false);
+            orbNegotiateCam.SetActive(false);
         }
         if (whosFocus == "bigguy" & scene == "board")
         {
@@ -373,6 +401,8 @@ public class CameraManager : MonoBehaviour {
             boardAccountingCam.SetActive(false);
             boardManagerCam.SetActive(false);
             strikePongCamera.SetActive(false);
+            wrenchNegotiateCam.SetActive(false);
+            orbNegotiateCam.SetActive(false);
         }
         if (whosFocus == "data" & scene == "board")
         {
@@ -394,6 +424,8 @@ public class CameraManager : MonoBehaviour {
             boardAccountingCam.SetActive(false);
             boardManagerCam.SetActive(false);
             strikePongCamera.SetActive(false);
+            wrenchNegotiateCam.SetActive(false);
+            orbNegotiateCam.SetActive(false);
         }
         if (whosFocus == "accounting" & scene == "board")
         {
@@ -415,6 +447,8 @@ public class CameraManager : MonoBehaviour {
             boardAccountingCam.SetActive(true);
             boardManagerCam.SetActive(false);
             strikePongCamera.SetActive(false);
+            wrenchNegotiateCam.SetActive(false);
+            orbNegotiateCam.SetActive(false);
         }
         if (whosFocus == "manager" & scene == "board")
         {
@@ -436,6 +470,8 @@ public class CameraManager : MonoBehaviour {
             boardAccountingCam.SetActive(false);
             boardManagerCam.SetActive(true);
             strikePongCamera.SetActive(false);
+            wrenchNegotiateCam.SetActive(false);
+            orbNegotiateCam.SetActive(false);
         }
 
         if (whosFocus == "strikepong")
@@ -458,7 +494,57 @@ public class CameraManager : MonoBehaviour {
             boardDataCam.SetActive(false);
             boardAccountingCam.SetActive(false);
             boardManagerCam.SetActive(false);
+            wrenchNegotiateCam.SetActive(false);
+            orbNegotiateCam.SetActive(false);
 
+        }
+
+        if (whosFocus == "wrench" & scene == "negotiate")
+        {
+            pcCam.SetActive(false);
+            wrenchCam.SetActive(false);
+            tempCam.SetActive(false);
+            welderCam.SetActive(false);
+            bigguyCam.SetActive(false);
+            dataCam.SetActive(false);
+            accountingCam.SetActive(false);
+            managerCam.SetActive(false);
+            orbCam.SetActive(false);
+            corporateCam.SetActive(false);
+            boardWrenchCam.SetActive(false);
+            boardTempCam.SetActive(false);
+            boardWelderCam.SetActive(false);
+            boardbigguyCam.SetActive(false);
+            boardDataCam.SetActive(false);
+            boardAccountingCam.SetActive(false);
+            boardManagerCam.SetActive(false);
+            strikePongCamera.SetActive(false);
+            wrenchNegotiateCam.SetActive(true);
+            orbNegotiateCam.SetActive(false);
+        }
+
+        if (whosFocus == "orb" & scene == "negotiate")
+        {
+            pcCam.SetActive(false);
+            wrenchCam.SetActive(false);
+            tempCam.SetActive(false);
+            welderCam.SetActive(false);
+            bigguyCam.SetActive(false);
+            dataCam.SetActive(false);
+            accountingCam.SetActive(false);
+            managerCam.SetActive(false);
+            orbCam.SetActive(false);
+            corporateCam.SetActive(false);
+            boardWrenchCam.SetActive(false);
+            boardTempCam.SetActive(false);
+            boardWelderCam.SetActive(false);
+            boardbigguyCam.SetActive(false);
+            boardDataCam.SetActive(false);
+            boardAccountingCam.SetActive(false);
+            boardManagerCam.SetActive(false);
+            strikePongCamera.SetActive(false);
+            wrenchNegotiateCam.SetActive(false);
+            orbNegotiateCam.SetActive(true);
         }
 
         if (boardScriptObject.GetComponent<BoardManager>().index == 33)

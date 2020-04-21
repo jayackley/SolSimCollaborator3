@@ -63,6 +63,8 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BlackOutManager.cs" />
     <Compile Include="Assets\Scripts\BoardManager.cs" />
+    <Compile Include="Assets\Scripts\BoardOptionManager.cs" />
+    <Compile Include="Assets\Scripts\BoardResponseManager.cs" />
     <Compile Include="Assets\Scripts\CameraManager.cs" />
     <Compile Include="Assets\Scripts\DirectorySignManager.cs" />
     <Compile Include="Assets\Scripts\ElevatorManager.cs" />

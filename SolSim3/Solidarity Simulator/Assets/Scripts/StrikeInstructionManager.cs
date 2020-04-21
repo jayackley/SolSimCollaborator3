@@ -14,6 +14,7 @@ public class StrikeInstructionManager : MonoBehaviour
     public bool primed;
     public GameObject scabSpawnPoint;
     public GameObject mainCameraManager;
+    public GameObject sceneManager;
 
 
     private void Awake()
@@ -64,6 +65,7 @@ public class StrikeInstructionManager : MonoBehaviour
         {
             primed = false;
             mainCameraManager.GetComponent<CameraManager>().whosFocus = "orb";
+            sceneManager.GetComponent<SceneManager>().convoCounter = 12;
             gameObject.SetActive(false);
         }
     }

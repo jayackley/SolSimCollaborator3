@@ -41,9 +41,8 @@ public class ScabSpawnManager : MonoBehaviour {
             GameObject[] gameObjectArray = GameObject.FindGameObjectsWithTag("Scab");
             foreach (GameObject go in gameObjectArray)
             {
-                go.GetComponent<Rigidbody2D>().velocity = new Vector2(0, go.GetComponent<ScabController>().bulletSpeed); ;
+                go.GetComponent<Rigidbody2D>().velocity = new Vector2(0, go.GetComponent<ScabController>().bulletSpeed); 
             }
-            sceneManager.GetComponent<SceneManager>().convoCounter = 12;
         }
     }
 

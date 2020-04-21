@@ -1,0 +1,99 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class BoardOptionManager : MonoBehaviour
+{
+
+    public int currentSelect;
+    public GameObject optionOne;
+    public GameObject optionTwo;
+    public GameObject boardPanel;
+    public GameObject solidarityObject;
+    public GameObject playerObject;
+    public GameObject uiCanvas;
+    public int numberOfOptions;
+    public GameObject sceneManager;
+    public GameObject mainCamera;
+    public bool primed;
+    
+
+    void Start()
+    {
+        currentSelect = 1;
+        optionOne.SetActive(false);
+        optionTwo.SetActive(false);
+        numberOfOptions = 2;
+    }
+
+    private void Update()
+    {
+
+        if (boardPanel.GetComponent<BoardManager>().index == 51 || boardPanel.GetComponent<BoardManager>().index == 58 || boardPanel.GetComponent<BoardManager>().index == 64 || boardPanel.GetComponent<BoardManager>().index == 74 || boardPanel.GetComponent<BoardManager>().index == 83 || boardPanel.GetComponent<BoardManager>().index == 92 || boardPanel.GetComponent<BoardManager>().index == 97 || boardPanel.GetComponent<BoardManager>().index == 102)
+        {
+            numberOfOptions = 2;
+        }
+
+        else 
+        {
+            numberOfOptions = 0;
+        }
+
+        //if two options
+
+        if (numberOfOptions == 2 && currentSelect == 1 && boardPanel.GetComponent<BoardManager>().isTyping == false)
+        {
+            optionOne.SetActive(true);
+            optionTwo.SetActive(true);
+            optionOne.GetComponent<Image>().color = UnityEngine.Color.blue;
+            optionTwo.GetComponent<Image>().color = UnityEngine.Color.black;
+        }
+
+        else if (numberOfOptions == 2 && currentSelect == 2 && boardPanel.GetComponent<BoardManager>().isTyping == false)
+        {
+            optionOne.SetActive(true);
+            optionTwo.SetActive(true);
+            optionOne.GetComponent<Image>().color = UnityEngine.Color.black;
+            optionTwo.GetComponent<Image>().color = UnityEngine.Color.blue;
+        }
+
+        else
+        {
+            optionOne.SetActive(false);
+            optionTwo.SetActive(false);
+
+        }
+    }
+
+    private void OnGUI()
+    {
+        //Moving Between Options
+
+        //if 2 options
+        if (numberOfOptions == 2 && (Event.current.Equals(Event.KeyboardEvent("down")) || (Event.current.Equals(Event.KeyboardEvent("s")))) && currentSelect == 1)
+        {
+            currentSelect = 2;
+        }
+
+        else if (numberOfOptions == 2 && (Event.current.Equals(Event.KeyboardEvent("down")) || (Event.current.Equals(Event.KeyboardEvent("s")))) && currentSelect == 2)
+        {
+            currentSelect = 1;
+        }
+
+        else if (numberOfOptions == 2 && (Event.current.Equals(Event.KeyboardEvent("up")) || (Event.current.Equals(Event.KeyboardEvent("w")))) && currentSelect == 1)
+        {
+            currentSelect = 2;
+        }
+
+        else if (numberOfOptions == 2 && (Event.current.Equals(Event.KeyboardEvent("up")) || (Event.current.Equals(Event.KeyboardEvent("w")))) && currentSelect == 2)
+        {
+            currentSelect = 1;
+        }
+
+        else if (numberOfOptions == 0 && boardPanel.GetComponent<BoardManager>().isTyping == false)
+        {
+            primed = true;
+        }
+    }
+}

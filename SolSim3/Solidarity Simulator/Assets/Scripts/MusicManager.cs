@@ -223,7 +223,7 @@ public class MusicManager : MonoBehaviour {
                 boardMusic3.GetComponent<AudioSource>().volume += fadeInSpeed * Time.deltaTime;
             }
         }
-        if (sceneManager.GetComponent<SceneManager>().convoCounter == 11 && boardManager.GetComponent<BoardManager>().index >= 18 && boardManager.GetComponent<BoardManager>().index < 100)
+        if (sceneManager.GetComponent<SceneManager>().convoCounter == 11 && boardManager.GetComponent<BoardManager>().index >= 18 && boardManager.GetComponent<BoardManager>().index < 110)
         {
             fluteLead.GetComponent<AudioSource>().volume = 0;
             thumps.GetComponent<AudioSource>().volume = 0;
@@ -244,7 +244,7 @@ public class MusicManager : MonoBehaviour {
                 boardMusic4.GetComponent<AudioSource>().volume += fadeInSpeed * Time.deltaTime;
             }
         }
-        if (boardManager.GetComponent<BoardManager>().index == 100)
+        if (boardManager.GetComponent<BoardManager>().index == 110)
         {
             fluteLead.GetComponent<AudioSource>().Stop();
             thumps.GetComponent<AudioSource>().Stop();
@@ -261,7 +261,7 @@ public class MusicManager : MonoBehaviour {
             boardMusic3.GetComponent<AudioSource>().Stop();
             boardMusic4.GetComponent<AudioSource>().Stop();
             strikePongTune.GetComponent<AudioSource>().Play();
-            boardManager.GetComponent<BoardManager>().index = 101;
+            boardManager.GetComponent<BoardManager>().index = 111;
         }
         if (sceneManager.GetComponent<SceneManager>().convoCounter == 12)
         {

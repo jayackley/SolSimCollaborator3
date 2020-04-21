@@ -9,25 +9,35 @@ public class SceneManager : MonoBehaviour {
     public int convoCounter;
     public GameObject playerObject;
     public GameObject playerBoard;
+    public GameObject playerFactory;
     public GameObject wrench;
     public GameObject wrenchBoard;
+    public GameObject wrenchFactory;
     public GameObject temp;
     public GameObject tempBoard;
+    public GameObject tempFactory;
     public GameObject welder;
     public GameObject welderBoard;
     public GameObject bigGuy;
     public GameObject bigGuyBoard;
+    public GameObject bigGuyFactory;
     public GameObject data;
     public GameObject dataBoard;
     public GameObject accounting;
     public GameObject accountingBoard;
+    public GameObject accountingFactory;
     public GameObject manager;
     public GameObject managerBoard;
+    public GameObject managerFactory;
+    public GameObject corporate;
+    public GameObject corporateFactory;
     public GameObject mainCamera;
     public GameObject perspectiveCamera;
     public GameObject promptPanel;
     public GameObject boardPanel;
+    public GameObject boardOptionManager;
     public GameObject solidarityPanel;
+    public GameObject solidarityObject;
     public GameObject blackOutObject;
     public GameObject uiPressCircle;
 
@@ -57,7 +67,7 @@ public class SceneManager : MonoBehaviour {
         }
     }
 
-    void Update () 
+    void Update()
     {
         if (convoCounter == 8)
         {
@@ -120,7 +130,56 @@ public class SceneManager : MonoBehaviour {
         }
         if (convoCounter == 12)
         {
-            //set up for board
+            boardPanel.SetActive(true);
+            boardOptionManager.SetActive(true);
+            boardPanel.GetComponent<BoardManager>().index = 50;
+            boardPanel.GetComponent<BoardManager>().NextSentence();
+
+            temp.transform.position = tempFactory.transform.position;
+            temp.GetComponent<CapsuleCollider2D>().enabled = true;
+            temp.GetComponent<SpriteRenderer>().flipX = false;
+            temp.GetComponent<SpriteRenderer>().sortingOrder = 0;
+
+            welder.GetComponent<CapsuleCollider2D>().enabled = true;
+            welder.GetComponent<SpriteRenderer>().flipX = false;
+            welder.GetComponent<Animator>().SetTrigger("atfactory");
+
+            bigGuy.transform.position = bigGuyFactory.transform.position;
+            bigGuy.GetComponent<CapsuleCollider2D>().enabled = false;
+
+            data.GetComponent<CapsuleCollider2D>().enabled = true;
+            data.GetComponent<Animator>().enabled = true;
+
+            accounting.transform.position = accountingFactory.transform.position;
+            accounting.GetComponent<CapsuleCollider2D>().enabled = true;
+            accounting.GetComponent<SpriteRenderer>().flipX = false;
+
+            manager.transform.position = managerFactory.transform.position;
+            manager.GetComponent<CapsuleCollider2D>().enabled = true;
+            manager.GetComponent<ManagerOutfit>().wearing = "office";
+
+            corporate.transform.position = corporateFactory.transform.position;
+            solidarityPanel.transform.localPosition = new Vector3(250, -245, 0);
+            solidarityObject.GetComponent<SolidarityManager>().leverage = true;
+            mainCamera.GetComponent<CameraManager>().scene = "negotiate";
+        }
+
+        if (convoCounter == 14)
+        {
+            mainCamera.GetComponent<CameraManager>().whosFocus = "pc";
+            mainCamera.GetComponent<CameraManager>().scene = "walkaround";
+            playerObject.transform.position = playerFactory.transform.position;
+            wrench.transform.position = wrenchFactory.transform.position;
+            playerObject.GetComponent<SpriteRenderer>().flipX = false;
+            playerObject.GetComponent<MovementController>().canPoke = true;
+            wrench.GetComponent<CapsuleCollider2D>().enabled = true;
+            wrench.GetComponent<SpriteRenderer>().flipX = false;
+            wrench.GetComponent<SpriteRenderer>().sortingOrder = 0;
+            solidarityObject.SetActive(false);
+            promptPanel.SetActive(true);
+            uiCanvas.GetComponent<Canvas>().enabled = false;
+            convoCounter = 15;
+            //change something for the interaction manager so that prompt panels go to different index numbers
         }
     }
 }
