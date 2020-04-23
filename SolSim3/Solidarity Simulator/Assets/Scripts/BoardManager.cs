@@ -32,6 +32,8 @@ public class BoardManager : MonoBehaviour {
     public GameObject strikePongContainer;
     public GameObject strikeInstructionPanel;
     public GameObject sceneManager;
+    public AudioClip win;
+    public AudioClip lose;
 
     private void Awake()
     {
@@ -451,13 +453,13 @@ public class BoardManager : MonoBehaviour {
 //Negotiation scene
 
         //skip to end if out of leverage
-        if (index == 107 && Event.current.Equals(Event.KeyboardEvent("return")))
+        else if (index == 107 && Event.current.Equals(Event.KeyboardEvent("return")))
         {
            sceneManager.GetComponent<SceneManager>().convoCounter = 14;
            gameObject.SetActive(false);
        }
 
-        if (solidarityObject.GetComponent<SolidarityManager>().solidarity < 0 && Event.current.Equals(Event.KeyboardEvent("return")))
+        else if (solidarityObject.GetComponent<SolidarityManager>().solidarity < 0 && Event.current.Equals(Event.KeyboardEvent("return")))
         {
             index = 107;
             NextSentence();
@@ -468,6 +470,7 @@ public class BoardManager : MonoBehaviour {
             index = 59;
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 40;
             NextSentence();
+            GetComponent<AudioSource>().PlayOneShot(win);
         }
 
         else if (index == 58 && boardOptionManager.GetComponent<BoardOptionManager>().currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return")) && isTyping == false)
@@ -487,12 +490,14 @@ public class BoardManager : MonoBehaviour {
             index = 65;
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 10;
             NextSentence();
+            GetComponent<AudioSource>().PlayOneShot(win);
         }
 
         else if (index == 64 && boardOptionManager.GetComponent<BoardOptionManager>().currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return")) && isTyping == false)
         {
             index = 67;
             NextSentence();
+            GetComponent<AudioSource>().PlayOneShot(lose);
         }
 
         else if (index == 66 && Event.current.Equals(Event.KeyboardEvent("return")) && isTyping == false)
@@ -506,12 +511,14 @@ public class BoardManager : MonoBehaviour {
             index = 75;
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 30;
             NextSentence();
+            GetComponent<AudioSource>().PlayOneShot(win);
         }
 
         else if (index == 74 && boardOptionManager.GetComponent<BoardOptionManager>().currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return")) && isTyping == false)
         {
             index = 77;
             NextSentence();
+            GetComponent<AudioSource>().PlayOneShot(lose);
         }
 
         else if (index == 76 && Event.current.Equals(Event.KeyboardEvent("return")) && isTyping == false)
@@ -525,12 +532,14 @@ public class BoardManager : MonoBehaviour {
             index = 84;
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 20;
             NextSentence();
+            GetComponent<AudioSource>().PlayOneShot(win);
         }
 
         else if (index == 83 && boardOptionManager.GetComponent<BoardOptionManager>().currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return")) && isTyping == false)
         {
             index = 86;
             NextSentence();
+            GetComponent<AudioSource>().PlayOneShot(lose);
         }
 
         else if (index == 84 && Event.current.Equals(Event.KeyboardEvent("return")) && isTyping == false)
@@ -543,12 +552,14 @@ public class BoardManager : MonoBehaviour {
             index = 93;
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 60;
             NextSentence();
+            GetComponent<AudioSource>().PlayOneShot(win);
         }
 
         else if (index == 92 && boardOptionManager.GetComponent<BoardOptionManager>().currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return")) && isTyping == false)
         {
             index = 94;
             NextSentence();
+            GetComponent<AudioSource>().PlayOneShot(lose);
         }
 
         else if (index == 93 && Event.current.Equals(Event.KeyboardEvent("return")) && isTyping == false)
@@ -562,12 +573,14 @@ public class BoardManager : MonoBehaviour {
             index = 98;
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 40;
             NextSentence();
+            GetComponent<AudioSource>().PlayOneShot(win);
         }
 
         else if (index == 97 && boardOptionManager.GetComponent<BoardOptionManager>().currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return")) && isTyping == false)
         {
             index = 98;
             NextSentence();
+            GetComponent<AudioSource>().PlayOneShot(lose);
         }
 
         else if (index == 102 && boardOptionManager.GetComponent<BoardOptionManager>().currentSelect == 1 && Event.current.Equals(Event.KeyboardEvent("return")) && isTyping == false)
@@ -575,12 +588,14 @@ public class BoardManager : MonoBehaviour {
             index = 103;
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 20;
             NextSentence();
+            GetComponent<AudioSource>().PlayOneShot(win);
         }
 
         else if (index == 102 && boardOptionManager.GetComponent<BoardOptionManager>().currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return")) && isTyping == false)
         {
             index = 105;
             NextSentence();
+            GetComponent<AudioSource>().PlayOneShot(lose);
         }
 
         else if (index == 104 && Event.current.Equals(Event.KeyboardEvent("return")) && isTyping == false)

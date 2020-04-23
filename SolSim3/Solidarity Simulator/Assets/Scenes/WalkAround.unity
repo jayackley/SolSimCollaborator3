@@ -239,6 +239,7 @@ GameObject:
   - component: {fileID: 39245739}
   - component: {fileID: 39245738}
   - component: {fileID: 39245737}
+  - component: {fileID: 39245740}
   m_Layer: 5
   m_Name: BoardPanel
   m_TagString: Untagged
@@ -440,6 +441,8 @@ MonoBehaviour:
   strikePongContainer: {fileID: 655461709}
   strikeInstructionPanel: {fileID: 1773843419}
   sceneManager: {fileID: 1928666685}
+  win: {fileID: 8300000, guid: a0fa70b48329a4c6fa368504bb750aa8, type: 3}
+  lose: {fileID: 8300000, guid: aa6efb6294ae64170a61fe69daa0469b, type: 3}
 --- !u!114 &39245738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -474,6 +477,101 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 39245735}
   m_CullTransparentMesh: 0
+--- !u!82 &39245740
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 39245735}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &64682306
 GameObject:
   m_ObjectHideFlags: 0
@@ -2064,8 +2162,8 @@ MonoBehaviour:
   - 
   - 
   - 
-  - That'd be a pretty great world. But I don't think it's this one, friend. I think
-    we should try another tack.
+  - That'd be a pretty great world. But I don't think it's this one. I think we should
+    try another tack.
   - 
   - 
   - 
@@ -4216,8 +4314,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a53da802b9fc4435b53e3db009a2af4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whosFocus: wrench
-  scene: walkaround
+  whosFocus: orb
+  scene: negotiate
   pcCam: {fileID: 1229460813}
   wrenchCam: {fileID: 743879707}
   tempCam: {fileID: 2111454026}
@@ -5841,7 +5939,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 655461709}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 60, y: 0, z: 0}
+  m_LocalPosition: {x: 80, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 26898151}
@@ -13357,6 +13455,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1223264658}
   - component: {fileID: 1223264657}
+  - component: {fileID: 1223264659}
   m_Layer: 0
   m_Name: StarsBG
   m_TagString: Untagged
@@ -13416,13 +13515,31 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1223264656}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.7, y: 0.8, z: 1}
+  m_LocalScale: {x: 2.5, y: 1.8, z: 1}
   m_Children: []
   m_Father: {fileID: 655461710}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1223264659
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1223264656}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5f71f7ab0185045e3a2f8ce39889994a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1229460813
 GameObject:
   m_ObjectHideFlags: 0
@@ -16175,6 +16292,8 @@ MonoBehaviour:
   sentences:
   - '***ATTENTION***                     Please Report to Conference Room Epsilon
     for a Mandatory Staff Meeting - We Have Very Important Issues to Discuss                   ***ATTENTION***    '
+  - "After some back and forth, the membership voted to ratify the collective bargaining
+    agreement. Congratulations on the new benefits! The struggle continues\u2026"
   typingSpeed: 0.02
   isTyping: 0
   buttonInstruction: {fileID: 1477504914}
@@ -22867,7 +22986,7 @@ MonoBehaviour:
   minWait: 0.2
   speedUpAmount: 0.05
   howManyShot: 0
-  shotLimit: 3
+  shotLimit: 25
   strikeInstructionManager: {fileID: 1773843419}
   sceneManager: {fileID: 1928666685}
 --- !u!82 &2007122865
