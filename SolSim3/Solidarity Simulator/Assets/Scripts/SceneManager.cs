@@ -177,10 +177,7 @@ public class SceneManager : MonoBehaviour {
             wrench.GetComponent<SpriteRenderer>().sortingOrder = 0;
             solidarityObject.SetActive(false);
             promptPanel.SetActive(true);
-            uiCanvas.GetComponent<Canvas>().enabled = true;
-            blackOutObject.SetActive(true);
-            blackOutObject.GetComponent<BlackOutManager>().index = 1;
-            blackOutObject.GetComponent<BlackOutManager>().NextSentence();
+            uiCanvas.GetComponent<Canvas>().enabled = false;
             convoCounter = 15;
             //change something for the interaction manager so that prompt panels go to different index numbers
         }
