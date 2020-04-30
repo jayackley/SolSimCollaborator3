@@ -76,9 +76,12 @@
     <Compile Include="Assets\Scripts\Hyperlink.cs" />
     <Compile Include="Assets\Scripts\InteractableManager.cs" />
     <Compile Include="Assets\Scripts\InteractionManager.cs" />
+    <Compile Include="Assets\Scripts\LookAwayManager.cs" />
     <Compile Include="Assets\Scripts\ManagerOutfit.cs" />
     <Compile Include="Assets\Scripts\MovementController.cs" />
     <Compile Include="Assets\Scripts\MusicManager.cs" />
+    <Compile Include="Assets\Scripts\NegotationSceneManager.cs" />
+    <Compile Include="Assets\Scripts\NegotiationDialogueManager.cs" />
     <Compile Include="Assets\Scripts\OptionManager.cs" />
     <Compile Include="Assets\Scripts\PressPanelManager.cs" />
     <Compile Include="Assets\Scripts\PromptManager.cs" />

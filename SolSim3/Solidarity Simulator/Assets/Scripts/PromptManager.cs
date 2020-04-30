@@ -8,16 +8,51 @@ public class PromptManager : MonoBehaviour {
     public TextMeshProUGUI textDisplay;
     public string[] sentences;
     public float typingSpeed;
+    public float pauseTime;
     public bool isTyping;
 
 
 
     IEnumerator Type()
     {
-        foreach (char letter in sentences[optionManager.GetComponent<OptionManager>().sentenceIndex].ToCharArray())
+        isTyping = true;
+
+        foreach (char letter in sentences[optionManager.GetComponent<OptionManager>().sentenceIndex])
         {
-            textDisplay.text += letter;
-            yield return new WaitForSeconds(typingSpeed);
+            if (letter == '&')
+            {
+                Debug.Log("ampersand!");
+                yield return new WaitForSeconds(pauseTime);
+            }
+
+            else if (letter == '.' || letter == '!' || letter == '?' || letter == ';')
+            {
+                textDisplay.text += letter;
+                yield return new WaitForSeconds(pauseTime);
+            }
+
+            else if (letter == ',')
+            {
+                textDisplay.text += letter;
+                yield return new WaitForSeconds(pauseTime/2);
+            }
+
+            else if (letter == '@')
+            {
+                isTyping = false;
+                break;
+            }
+
+            else if (letter == '~')
+            {
+
+            }
+
+            else
+            {
+                textDisplay.text += letter;
+                yield return new WaitForSeconds(typingSpeed);
+            }
         }
     }
 
@@ -34,6 +69,7 @@ public class PromptManager : MonoBehaviour {
         }
 
     }
+    /*
     private void Update()
     {
         if (textDisplay.text == sentences[optionManager.GetComponent<OptionManager>().sentenceIndex])
@@ -45,4 +81,5 @@ public class PromptManager : MonoBehaviour {
             isTyping = true;
         }
     }
+    */
 }

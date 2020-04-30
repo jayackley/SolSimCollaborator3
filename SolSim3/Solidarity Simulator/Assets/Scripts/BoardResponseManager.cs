@@ -17,7 +17,7 @@ public class BoardResponseManager : MonoBehaviour {
 
     void Update()
     {
-        textDisplay.text = sentences[boardPanel.GetComponent<BoardManager>().index];
+        textDisplay.text = sentences[boardPanel.GetComponent<NegotiationDialogueManager>().index];
     }
 
 }

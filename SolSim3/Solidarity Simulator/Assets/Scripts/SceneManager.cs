@@ -34,12 +34,15 @@ public class SceneManager : MonoBehaviour {
     public GameObject mainCamera;
     public GameObject perspectiveCamera;
     public GameObject promptPanel;
+    public GameObject walkaroundOptionManager;
     public GameObject boardPanel;
+    public GameObject negotiationDialogueManager;
     public GameObject boardOptionManager;
     public GameObject solidarityPanel;
     public GameObject solidarityObject;
     public GameObject blackOutObject;
     public GameObject uiPressCircle;
+    public GameObject optionManager;
 
 
     void Start()
@@ -60,6 +63,10 @@ public class SceneManager : MonoBehaviour {
         if (Event.current.Equals(Event.KeyboardEvent("b")))
         {
             convoCounter = 8;
+        }
+        if (Event.current.Equals(Event.KeyboardEvent("n")))
+        {
+            convoCounter = 12;
         }
         if (Event.current.Equals(Event.KeyboardEvent("return"))&& convoCounter == 9 && blackOutObject.GetComponent<BlackOutManager>().isTyping == false)
         {
@@ -116,6 +123,7 @@ public class SceneManager : MonoBehaviour {
             blackOutObject.GetComponent<BlackOutManager>().NextSentence();
             uiPressCircle.SetActive(true);
             mainCamera.GetComponent<CameraManager>().scene = "board";
+            walkaroundOptionManager.SetActive(false);
 
             convoCounter = 9;
         }
@@ -126,14 +134,18 @@ public class SceneManager : MonoBehaviour {
             blackOutObject.SetActive(false);
             playerObject.transform.position = playerBoard.transform.position;
             playerObject.GetComponent<InteractionManager>().enabled = false;
+            uiPressCircle.transform.localPosition = new Vector3(225, 90, 0);
             convoCounter = 11;
         }
         if (convoCounter == 12)
         {
-            boardPanel.SetActive(true);
+            uiCanvas.GetComponent<Canvas>().enabled = true;
+            promptPanel.SetActive(false);
+            optionManager.SetActive(false);
+            negotiationDialogueManager.SetActive(true);
             boardOptionManager.SetActive(true);
-            boardPanel.GetComponent<BoardManager>().index = 50;
-            boardPanel.GetComponent<BoardManager>().NextSentence();
+            negotiationDialogueManager.GetComponent<NegotiationDialogueManager>().index = 50;
+            negotiationDialogueManager.GetComponent<NegotiationDialogueManager>().NextSentence();
 
             temp.transform.position = tempFactory.transform.position;
             temp.GetComponent<CapsuleCollider2D>().enabled = true;

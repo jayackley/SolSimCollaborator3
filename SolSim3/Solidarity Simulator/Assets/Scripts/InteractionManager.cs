@@ -61,7 +61,7 @@ public class InteractionManager : MonoBehaviour
             optionManager.GetComponent<OptionManager>().currentSelect = 1;
             playerObject.GetComponent<SpriteRenderer>().flipX = true;
             mainCamera.GetComponent<CameraManager>().whosFocus = "wrench";
-            pressCircle.transform.localPosition = new Vector3(-290,-230,0);
+            pressCircle.transform.localPosition = new Vector3(350,70,0);
             buttonInstruction.transform.localPosition = new Vector3(-290, -200, 0);
 
         }
@@ -90,8 +90,8 @@ public class InteractionManager : MonoBehaviour
             solidarityPanel.transform.localPosition = new Vector3(-250,-250, 0);
             optionManager.GetComponent<OptionManager>().currentSelect = 1;
             playerObject.GetComponent<SpriteRenderer>().flipX = false;
-            pressCircle.transform.localPosition = new Vector3(290, -230, 0);
-            buttonInstruction.transform.localPosition = new Vector3(290, -200, 0);
+            pressCircle.transform.localPosition = new Vector3(-7, 70, 0);
+            buttonInstruction.transform.localPosition = new Vector3(-7, 70, 0);
         }
 
 
@@ -120,8 +120,8 @@ public class InteractionManager : MonoBehaviour
             optionManager.GetComponent<OptionManager>().currentSelect = 1;
             mainCamera.GetComponent<CameraManager>().whosFocus = "welder";
             playerObject.GetComponent<SpriteRenderer>().flipX = false;
-            pressCircle.transform.localPosition = new Vector3(290, -230, 0);
-            buttonInstruction.transform.localPosition = new Vector3(290, -200, 0);
+            pressCircle.transform.localPosition = new Vector3(-7, 70, 0);
+            buttonInstruction.transform.localPosition = new Vector3(-7, 70, 0);
         }
 
         else if (collision.gameObject.name == "BigGuy")
@@ -148,7 +148,7 @@ public class InteractionManager : MonoBehaviour
             solidarityPanel.transform.localPosition = new Vector3(250,-250, 0);
             optionManager.GetComponent<OptionManager>().currentSelect = 1;
             mainCamera.GetComponent<CameraManager>().whosFocus = "bigguy";
-            pressCircle.transform.localPosition = new Vector3(-290, -230, 0);
+            pressCircle.transform.localPosition = new Vector3(350, 70, 0);
             buttonInstruction.transform.localPosition = new Vector3(-290, -200, 0);
         }
 
@@ -176,7 +176,7 @@ public class InteractionManager : MonoBehaviour
             solidarityPanel.transform.localPosition = new Vector3(250,-250, 0);
             optionManager.GetComponent<OptionManager>().currentSelect = 1;
             mainCamera.GetComponent<CameraManager>().whosFocus = "data";
-            pressCircle.transform.localPosition = new Vector3(-290, -230, 0);
+            pressCircle.transform.localPosition = new Vector3(350, 70, 0);
             buttonInstruction.transform.localPosition = new Vector3(-290, -200, 0);
         }
 
@@ -204,7 +204,7 @@ public class InteractionManager : MonoBehaviour
             solidarityPanel.transform.localPosition = new Vector3(250,-250, 0);
             optionManager.GetComponent<OptionManager>().currentSelect = 1;
             mainCamera.GetComponent<CameraManager>().whosFocus = "accounting";
-            pressCircle.transform.localPosition = new Vector3(-290, -230, 0);
+            pressCircle.transform.localPosition = new Vector3(350, 70, 0);
             buttonInstruction.transform.localPosition = new Vector3(-290, -200, 0);
         }
         else if (collision.gameObject.name == "Manager")
@@ -231,7 +231,7 @@ public class InteractionManager : MonoBehaviour
             solidarityPanel.transform.localPosition = new Vector3(-250,-250, 0);
             optionManager.GetComponent<OptionManager>().currentSelect = 1;
             mainCamera.GetComponent<CameraManager>().whosFocus = "manager";
-            pressCircle.transform.localPosition = new Vector3(290, -230, 0);
+            pressCircle.transform.localPosition = new Vector3(-7, 70, 0);
             buttonInstruction.transform.localPosition = new Vector3(290, -200, 0);
         }
     }
@@ -331,7 +331,7 @@ public class InteractionManager : MonoBehaviour
             {
                 blackOutManager.GetComponent<AudioSource>().volume -= voxFadeSpeed * Time.deltaTime;
             }
-            promptPanel.GetComponent<PromptManager>().typingSpeed = 0.02f;
+
             wrench.GetComponent<Animator>().SetBool("IsTalking", false);
         }
 

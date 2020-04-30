@@ -38,12 +38,10 @@ public class OptionManager : MonoBehaviour
         {
             numberOfOptions = 3;
         }
-
         else if (sentenceIndex == 2 || sentenceIndex == 3 || sentenceIndex == 21 || sentenceIndex == 23 || sentenceIndex == 29 || sentenceIndex == 30 || sentenceIndex == 31 || sentenceIndex == 37 || sentenceIndex == 43 || sentenceIndex == 44 || sentenceIndex == 45 || sentenceIndex == 53 || sentenceIndex == 54)
         {
             numberOfOptions = 2;
         }
-
         else if ((sentenceIndex >= 4 && sentenceIndex <= 10) || (sentenceIndex >= 14 && sentenceIndex <= 20) || (sentenceIndex >= 24 && sentenceIndex <= 28) || (sentenceIndex >= 32 && sentenceIndex <= 35) || (sentenceIndex >= 38 && sentenceIndex <= 41) || (sentenceIndex >= 46 && sentenceIndex <= 51) || (sentenceIndex >= 55 && sentenceIndex <= 59))
         {
             numberOfOptions = 0;
@@ -58,7 +56,6 @@ public class OptionManager : MonoBehaviour
             optionOne.GetComponent<Image>().color = UnityEngine.Color.blue;
             optionTwo.GetComponent<Image>().color = UnityEngine.Color.black;
         }
-
         else if (numberOfOptions == 2 && currentSelect == 2 && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             optionOne.SetActive(true);
@@ -66,7 +63,6 @@ public class OptionManager : MonoBehaviour
             optionOne.GetComponent<Image>().color = UnityEngine.Color.black;
             optionTwo.GetComponent<Image>().color = UnityEngine.Color.blue;
         }
-
         //if three options
 
         else if (numberOfOptions == 3 && currentSelect == 1 && promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -77,7 +73,6 @@ public class OptionManager : MonoBehaviour
             optionOne.GetComponent<Image>().color = UnityEngine.Color.blue;
             optionTwo.GetComponent<Image>().color = UnityEngine.Color.black;
             optionThree.GetComponent<Image>().color = UnityEngine.Color.black;
-
         }
         else if (numberOfOptions == 3 && currentSelect == 2 && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
@@ -97,15 +92,12 @@ public class OptionManager : MonoBehaviour
             optionOne.GetComponent<Image>().color = UnityEngine.Color.black;
             optionTwo.GetComponent<Image>().color = UnityEngine.Color.black;
             optionThree.GetComponent<Image>().color = UnityEngine.Color.blue;
-
         }
-
         else
         {
             optionOne.SetActive(false);
             optionTwo.SetActive(false);
             optionThree.SetActive(false);
-
         }
     }
 
@@ -627,7 +619,6 @@ public class OptionManager : MonoBehaviour
             playerObject.GetComponent<InteractionManager>().whosTalking = "";
             uiPressCircle.SetActive(false);
             buttonInstruction.SetActive(false);
-
         }
         else if (Event.current.Equals(Event.KeyboardEvent("return")) && numberOfOptions == 0 && promptPanel.GetComponent<PromptManager>().isTyping == false && sceneManager.GetComponent<SceneManager>().convoCounter < 7)
         {

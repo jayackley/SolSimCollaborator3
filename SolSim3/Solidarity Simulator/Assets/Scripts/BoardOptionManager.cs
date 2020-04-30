@@ -30,7 +30,7 @@ public class BoardOptionManager : MonoBehaviour
     private void Update()
     {
 
-        if (boardPanel.GetComponent<BoardManager>().index == 51 || boardPanel.GetComponent<BoardManager>().index == 58 || boardPanel.GetComponent<BoardManager>().index == 64 || boardPanel.GetComponent<BoardManager>().index == 74 || boardPanel.GetComponent<BoardManager>().index == 83 || boardPanel.GetComponent<BoardManager>().index == 92 || boardPanel.GetComponent<BoardManager>().index == 97 || boardPanel.GetComponent<BoardManager>().index == 102)
+        if (boardPanel.GetComponent<NegotiationDialogueManager>().index == 51 || boardPanel.GetComponent<NegotiationDialogueManager>().index == 58 || boardPanel.GetComponent<NegotiationDialogueManager>().index == 64 || boardPanel.GetComponent<NegotiationDialogueManager>().index == 74 || boardPanel.GetComponent<NegotiationDialogueManager>().index == 83 || boardPanel.GetComponent<NegotiationDialogueManager>().index == 92 || boardPanel.GetComponent<NegotiationDialogueManager>().index == 97 || boardPanel.GetComponent<NegotiationDialogueManager>().index == 102)
         {
             numberOfOptions = 2;
         }
@@ -42,7 +42,7 @@ public class BoardOptionManager : MonoBehaviour
 
         //if two options
 
-        if (numberOfOptions == 2 && currentSelect == 1 && boardPanel.GetComponent<BoardManager>().isTyping == false)
+        if (numberOfOptions == 2 && currentSelect == 1 && boardPanel.GetComponent<NegotiationDialogueManager>().isTyping == false)
         {
             optionOne.SetActive(true);
             optionTwo.SetActive(true);
@@ -50,7 +50,7 @@ public class BoardOptionManager : MonoBehaviour
             optionTwo.GetComponent<Image>().color = UnityEngine.Color.black;
         }
 
-        else if (numberOfOptions == 2 && currentSelect == 2 && boardPanel.GetComponent<BoardManager>().isTyping == false)
+        else if (numberOfOptions == 2 && currentSelect == 2 && boardPanel.GetComponent<NegotiationDialogueManager>().isTyping == false)
         {
             optionOne.SetActive(true);
             optionTwo.SetActive(true);
@@ -91,7 +91,7 @@ public class BoardOptionManager : MonoBehaviour
             currentSelect = 1;
         }
 
-        else if (numberOfOptions == 0 && boardPanel.GetComponent<BoardManager>().isTyping == false)
+        else if (numberOfOptions == 0 && boardPanel.GetComponent<NegotiationDialogueManager>().isTyping == false)
         {
             primed = true;
         }
