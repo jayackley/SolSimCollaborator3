@@ -82,7 +82,7 @@ public class NegotiationDialogueManager : MonoBehaviour {
     }
     private void Update()
     {
-
+        /*
         if (isTyping == false)
         {
             primed = true;
@@ -91,6 +91,7 @@ public class NegotiationDialogueManager : MonoBehaviour {
         {
             primed = false;
         }
+        */
 
         if (isTyping == true & whosTalking == "wrench")
         {

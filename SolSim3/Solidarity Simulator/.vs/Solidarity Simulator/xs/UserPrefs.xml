@@ -1,21 +1,18 @@
 ﻿<Properties StartupConfiguration="{3CEEF635-3A15-1682-C997-198328937ED8}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PromptManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BoardOptionManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/BoardManager.cs" Line="484" Column="1" />
-      <File FileName="Assets/Scripts/BoardOptionManager.cs" Line="94" Column="92" />
+      <File FileName="Assets/Scripts/BoardManager.cs" Line="449" Column="41" />
+      <File FileName="Assets/Scripts/SceneManager.cs" Line="68" Column="19" />
       <File FileName="Assets/Scripts/BoardResponseManager.cs" Line="20" Column="88" />
       <File FileName="Assets/Scripts/MusicManager.cs" Line="284" Column="55" />
-      <File FileName="Assets/Scripts/CameraManager.cs" Line="290" Column="30" />
       <File FileName="Assets/Scripts/LookAwayManager.cs" Line="19" Column="60" />
-      <File FileName="Assets/Scripts/SceneManager.cs" Line="137" Column="71" />
-      <File FileName="Assets/Scripts/NegotationSceneManager.cs" Line="7" Column="30" />
-      <File FileName="Assets/Scripts/NegotiationDialogueManager.cs" Line="136" Column="98" />
-      <File FileName="Assets/Scripts/InteractionManager.cs" Line="49" Column="62" />
-      <File FileName="Assets/Scripts/InteractableManager.cs" Line="65" Column="66" />
-      <File FileName="Assets/Scripts/OptionManager.cs" Line="164" Column="55" />
-      <File FileName="Assets/Scripts/StrikeInstructionManager.cs" Line="34" Column="17" />
+      <File FileName="Assets/Scripts/NegotiationDialogueManager.cs" Line="94" Column="11" />
+      <File FileName="Assets/Scripts/BoardOptionManager.cs" Line="42" Column="28" />
+      <File FileName="Assets/Scripts/InteractionManager.cs" Line="268" Column="24" />
+      <File FileName="Assets/Scripts/StrikeInstructionManager.cs" Line="68" Column="81" />
       <File FileName="Assets/Scripts/PromptManager.cs" Line="72" Column="7" />
+      <File FileName="Assets/Scripts/PressPanelManager.cs" Line="24" Column="258" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

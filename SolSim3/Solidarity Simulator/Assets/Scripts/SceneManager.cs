@@ -63,6 +63,7 @@ public class SceneManager : MonoBehaviour {
         if (Event.current.Equals(Event.KeyboardEvent("b")))
         {
             convoCounter = 8;
+            solidarityObject.GetComponent<SolidarityManager>().solidarity = 100;
         }
         if (Event.current.Equals(Event.KeyboardEvent("n")))
         {
@@ -174,6 +175,10 @@ public class SceneManager : MonoBehaviour {
             solidarityPanel.transform.localPosition = new Vector3(250, -245, 0);
             solidarityObject.GetComponent<SolidarityManager>().leverage = true;
             mainCamera.GetComponent<CameraManager>().scene = "negotiate";
+        }
+        if (convoCounter == 13)
+        {
+            uiPressCircle.transform.localPosition = new Vector3(0, 50, 0);
         }
 
         if (convoCounter == 14)

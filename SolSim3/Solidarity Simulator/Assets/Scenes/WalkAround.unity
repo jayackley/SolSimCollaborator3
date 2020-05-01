@@ -416,7 +416,7 @@ MonoBehaviour:
   - 
   - 
   - 
-  typingSpeed: 0.02
+  typingSpeed: 0.001
   pauseTime: 1
   solidarityPanel: {fileID: 1645505036}
   solidarityObject: {fileID: 240925957}
@@ -441,6 +441,7 @@ MonoBehaviour:
   strikePongContainer: {fileID: 655461709}
   strikeInstructionPanel: {fileID: 1773843419}
   sceneManager: {fileID: 1928666685}
+  uiPressCircle: {fileID: 1803079324}
 --- !u!114 &39245738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1330,7 +1331,7 @@ MonoBehaviour:
   - 
   - 
   - 
-  typingSpeed: 0.02
+  typingSpeed: 0.001
   pauseTime: 1
   solidarityPanel: {fileID: 1645505036}
   solidarityObject: {fileID: 240925957}
@@ -11135,7 +11136,7 @@ MonoBehaviour:
   primedIndicator: {fileID: 1803079324}
   optionManager: {fileID: 1695026972}
   strikeInstructionManager: {fileID: 1773843419}
-  negotiationDialogueManager: {fileID: 111844518}
+  negotiationDialogueManager: {fileID: 926455342}
 --- !u!1 &963230295
 GameObject:
   m_ObjectHideFlags: 0
@@ -16114,7 +16115,7 @@ MonoBehaviour:
   - That's what I keep saying! Don't tell anyone I said this, but there are a LOT
     of ingrates here.@
   - Glad to hear it! Have a good day, now. I'll be seeing you.@
-  typingSpeed: 0.01
+  typingSpeed: 0.001
   pauseTime: 1
   isTyping: 0
 --- !u!1 &1392976780
@@ -20561,7 +20562,7 @@ MonoBehaviour:
   - 
   - Strike's Over! Time to Bargain!
   - 
-  typingSpeed: 0.02
+  typingSpeed: 0.001
   isTyping: 0
   primed: 0
   scabSpawnPoint: {fileID: 2007122862}

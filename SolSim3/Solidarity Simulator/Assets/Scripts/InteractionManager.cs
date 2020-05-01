@@ -267,7 +267,6 @@ public class InteractionManager : MonoBehaviour
             {
                 bigGuy.GetComponent<AudioSource>().volume += voxFadeSpeed * Time.deltaTime;
             }
-            promptPanel.GetComponent<PromptManager>().typingSpeed = 0.06f;
         }
         else if (promptPanel.GetComponent<PromptManager>().isTyping == true & whosTalking == "data")
         {

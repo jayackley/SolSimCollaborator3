@@ -21,7 +21,7 @@ public class PressPanelManager : MonoBehaviour {
 
     void Update ()
     {
-        if (waterCooler.GetComponent<InteractableManager>().primed == true || button.GetComponent<InteractableManager>().primed == true || boardManager.GetComponent<BoardManager>().primed == true || negotiationDialogueManager.GetComponent<NegotiationDialogueManager>().primed == true || blackOutManager.GetComponent<BlackOutManager>().primed == true || optionManager.GetComponent<OptionManager>().primed == true || strikeInstructionManager.GetComponent<StrikeInstructionManager>().primed == true)
+        if (waterCooler.GetComponent<InteractableManager>().primed == true || button.GetComponent<InteractableManager>().primed == true || boardManager.GetComponent<BoardManager>().primed == true || negotiationDialogueManager.GetComponent<BoardOptionManager>().primed == true || blackOutManager.GetComponent<BlackOutManager>().primed == true || optionManager.GetComponent<OptionManager>().primed == true || strikeInstructionManager.GetComponent<StrikeInstructionManager>().primed == true)
         {
             GetComponent<Canvas>().enabled = true;
             primedIndicator.GetComponent<SpriteRenderer>().enabled = true;

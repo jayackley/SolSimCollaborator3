@@ -65,6 +65,7 @@ public class StrikeInstructionManager : MonoBehaviour
         {
             primed = false;
             mainCameraManager.GetComponent<CameraManager>().whosFocus = "orb";
+            mainCameraManager.GetComponent<CameraManager>().scene = "negotiate";
             sceneManager.GetComponent<SceneManager>().convoCounter = 12;
             gameObject.SetActive(false);
         }

@@ -33,11 +33,13 @@ public class BoardOptionManager : MonoBehaviour
         if (boardPanel.GetComponent<NegotiationDialogueManager>().index == 51 || boardPanel.GetComponent<NegotiationDialogueManager>().index == 58 || boardPanel.GetComponent<NegotiationDialogueManager>().index == 64 || boardPanel.GetComponent<NegotiationDialogueManager>().index == 74 || boardPanel.GetComponent<NegotiationDialogueManager>().index == 83 || boardPanel.GetComponent<NegotiationDialogueManager>().index == 92 || boardPanel.GetComponent<NegotiationDialogueManager>().index == 97 || boardPanel.GetComponent<NegotiationDialogueManager>().index == 102)
         {
             numberOfOptions = 2;
+            primed = false;
         }
 
         else 
         {
             numberOfOptions = 0;
+            primed = false;
         }
 
         //if two options
@@ -48,6 +50,7 @@ public class BoardOptionManager : MonoBehaviour
             optionTwo.SetActive(true);
             optionOne.GetComponent<Image>().color = UnityEngine.Color.blue;
             optionTwo.GetComponent<Image>().color = UnityEngine.Color.black;
+            primed = false;
         }
 
         else if (numberOfOptions == 2 && currentSelect == 2 && boardPanel.GetComponent<NegotiationDialogueManager>().isTyping == false)
@@ -56,6 +59,7 @@ public class BoardOptionManager : MonoBehaviour
             optionTwo.SetActive(true);
             optionOne.GetComponent<Image>().color = UnityEngine.Color.black;
             optionTwo.GetComponent<Image>().color = UnityEngine.Color.blue;
+            primed = false;
         }
 
         else
