@@ -339,83 +339,6 @@ MonoBehaviour:
   - 
   - 
   - 
-  - This strike has cut into productivity enough. Let's make this quick.
-  - It'll take however long it takes. Ain't that right, pal?
-  - '[sigh] Let''s get started, shall we?'
-  - First up --
-  - -- let's start with healthcare. We need it to live. You need us alive to work.
-    Really, this is an obvious win-win.
-  - It's a *little* more nuanced than that, I think!
-  - Deborah, let's agree to disagree on that. For us to come back to work, you need
-    to cover our premiums, and these deductibles gotta come WAY down.
-  - That's entirely unreasonable!
-  - Whaddya think? We'll have to use up some of our leverage, but we can win this
-    fight.
-  - 'You heard the person. No health, no peace. '
-  - Hmph! Fine. Have your healthcare.
-  - If that's how you feel... Let's focus our fight elsewhere.
-  - At least you union people can be reasonable about SOME things.
-  - All right. But don't forget about dental.
-  - Do you *REALLY* need dental? How often do you even go to the dentist?
-  - 'That''s right, that''s right! '
-  - Sure, and the dental, too. But don't think you can keep pushing management around
-    like this!
-  - It's about setting a standard of living, friend. But fine, we'll get back to that
-    another time.
-  - Running into some trouble delivering on all of those ponies you promised, comrade?
-  - Now, let's talk parental benefits.
-  - In accordance with Minimum Civilization Standard Section 3, subsection C, paragraph
-    2, Project Epsilon already offers paid parental leave.
-  - Yes, I'm aware you're not wholly soulless barbarians. But what we need is for
-    YOU to pay for workers' childcare during the day.
-  - Preposterous! What's next, personally feeding and clothing each employee?
-  - You're making parents pay out of pocket for the privilege to go to work!
-  - What do you think?
-  - You fools know eventually you'll run out of other people's money, right?
-  - Yeah, yeah, "other people's money." Who does all the work around here that earns
-    that money we're talkin' about, again?
-  - Sensible! Let me head off any requests for a rainbow made of puppies, while we're
-    at it.
-  - If we want to discuss the puppy rainbow question, we'll bring it up.
-  - As you know, these folks have been working harder and making you more money every
-    year. But they're not makin' more money. We want a raise now, and we want 'em
-    to keep coming, yearly.
-  - Can we tie it to performance?
-  - You can do anything you want on top of the minimum raise.
-  - Minimum raise?!
-  - Perhaps my friend here can enunciate a little better for your audio sensors.
-  - Now that's solidarity.
-  - As a fully corporate, semicorporeal orb, your sense of solidarity means nothing
-    to me.
-  - 'There''s a word for that: management.'
-  - Hey!
-  - All right, what other howling nonsense are you going to ask for now? The sooner
-    I can stop dealing with you, the better.
-  - I'm sorry you feel that way, 'cause what we want here is union representation
-    on Project Epsilon's board of directors.
-  - WHAT?!
-  - You're not makin' me feel very well-liked.
-  - How terrible for you.
-  - Exactly! And speaking of us all being in this together...
-  - Hmph. Fine. Next up...
-  - 'Let''s talk layoff protection. If cuts come, we have it in writing: you lay off
-    just as many managers, proportionally, as you do us regular folks.'
-  - 'We can''t possibly guarantee -- '
-  - "Try to imagine a world where you could.\t"
-  - Is this just about done?
-  - Yeah, just about.
-  - Great! I'll be seeing  y--
-  - Just give us 10 percent match on our retirement accounts, and we're out of here.
-  - '*cough* 10 PERCENT?!'
-  - Haha! Not a penny less!
-  - Hmph!
-  - Come on! Agh!
-  - Oh, well. Nice try.
-  - Well, that is *QUITE* enough of that. We have given you our best offer. Take it
-    to your membership.
-  - 
-  - 
-  - 
   typingSpeed: 0.001
   pauseTime: 1
   solidarityPanel: {fileID: 1645505036}
@@ -1151,7 +1074,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -171, y: 125}
+  m_AnchoredPosition: {x: -171.00003, y: 125}
   m_SizeDelta: {x: -400, y: -372}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &111844521
@@ -2045,6 +1968,8 @@ MonoBehaviour:
   waitTime: 1
   soundholder: {fileID: 195151222}
   sound: {fileID: 8300000, guid: 9152b84b77fb849e2966dc837e3c0cb4, type: 3}
+  pushMax: 4
+  pushCount: 0
 --- !u!95 &195151219
 Animator:
   serializedVersion: 3
@@ -2312,19 +2237,17 @@ MonoBehaviour:
   loremIpsum: {fileID: 263266211}
   loremIpsum2: {fileID: 1873602891}
   loremIpsum3: {fileID: 2098350901}
+  buttonObject: {fileID: 195151215}
   buttonTypingSpeed: 0.02
   buttonIndex: 0
   buttonSentences:
-  - Press Button to Add Value
-  - Great! Add More Value
+  - Press Button to Add Value.
+  - Great!^Add More Value.
   - You're Making a Difference!
-  - Okay, Time for Your Break
-  - Breaks Are Mandatory
-  - XXXxxxXXXxxxXXX
-  - xxxXXXxxxXXX
-  - XXXxxxXXX
-  - xxxXXX
-  - xxx
+  - Okay, Time for Your Break.
+  - Breaks Are Mandatory.
+  - PPr$s Bu{to}^fnord A** V****.
+  - ' $$$ ${ $$ } fnord'
   safetyTypingSpeed: 0.05
   waitBetweenSafetyMessages: 0
   safetyIndex: 0
@@ -2341,6 +2264,8 @@ MonoBehaviour:
     corporeality, syntheticity, or creed is illegal in this sector.
   - Intergalactic corporeal rights treaties prohibit the microwaving of fish in the
     office kitchen.
+  isTyping: 0
+  pauseTime: 1
 --- !u!1 &220496928
 GameObject:
   m_ObjectHideFlags: 0
@@ -2675,11 +2600,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -4616,15 +4541,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.88235295}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: e72d16ef800f14f21996df52bd992a49, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4957,13 +4882,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 525423937}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0.08109127, y: -0.36510652, z: -0.0319427, w: 0.9268771}
   m_LocalPosition: {x: -0.21500006, y: 0.15700023, z: 0}
   m_LocalScale: {x: 0.2777778, y: 0.2777778, z: 1}
   m_Children: []
   m_Father: {fileID: 195151216}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -10, y: -43, z: 0}
 --- !u!95 &525423939
 Animator:
   serializedVersion: 3
@@ -7475,15 +7400,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.88235295}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: e72d16ef800f14f21996df52bd992a49, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -10089,7 +10014,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: -0.86, y: 0.13}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -10637,8 +10562,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 275, y: 75}
+  m_AnchoredPosition: {x: -10, y: -5}
+  m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &920720121
 MonoBehaviour:
@@ -10661,8 +10586,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Nice to meet you wrenchperson
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6d0919747a1354dc8a5092ac067dc65a, type: 2}
-  m_sharedMaterial: {fileID: 21512518544345808, guid: 6d0919747a1354dc8a5092ac067dc65a,
+  m_fontAsset: {fileID: 11400000, guid: 178b1bddd9d964489a5b0aab16402fdd, type: 2}
+  m_sharedMaterial: {fileID: 21720709697650834, guid: 178b1bddd9d964489a5b0aab16402fdd,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -10687,18 +10612,18 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_textAlignment: 514
+  m_fontStyle: 16
+  m_textAlignment: 513
   m_isAlignmentEnumConverted: 1
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 80
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -10733,14 +10658,14 @@ MonoBehaviour:
     spaceCount: 4
     wordCount: 5
     linkCount: 0
-    lineCount: 2
+    lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -10898,8 +10823,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 350, y: 150}
+  m_AnchoredPosition: {x: -4, y: 0}
+  m_SizeDelta: {x: 340, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &960094886
 MonoBehaviour:
@@ -10920,10 +10845,10 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: I'm the <i>wrench</i> around here. I heard Corporate is coming
+  m_text: I'm the <u>wrench</u> around here. \nI heard Corporate is coming
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6d0919747a1354dc8a5092ac067dc65a, type: 2}
-  m_sharedMaterial: {fileID: 21512518544345808, guid: 6d0919747a1354dc8a5092ac067dc65a,
+  m_fontAsset: {fileID: 11400000, guid: 178b1bddd9d964489a5b0aab16402fdd, type: 2}
+  m_sharedMaterial: {fileID: 21720709697650834, guid: 178b1bddd9d964489a5b0aab16402fdd,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -10954,12 +10879,12 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 16
   m_textAlignment: 513
   m_isAlignmentEnumConverted: 1
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 50
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -10989,19 +10914,19 @@ MonoBehaviour:
   m_margin: {x: 0, y: -17.830107, z: 0, w: -17.83012}
   m_textInfo:
     textComponent: {fileID: 960094886}
-    characterCount: 55
+    characterCount: 56
     spriteCount: 0
-    spaceCount: 9
+    spaceCount: 10
     wordCount: 10
     linkCount: 0
     lineCount: 2
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -11694,8 +11619,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 275, y: 75}
+  m_AnchoredPosition: {x: -10, y: -5}
+  m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1038536109
 MonoBehaviour:
@@ -11718,8 +11643,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: I have questions about your job function
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6d0919747a1354dc8a5092ac067dc65a, type: 2}
-  m_sharedMaterial: {fileID: 21512518544345808, guid: 6d0919747a1354dc8a5092ac067dc65a,
+  m_fontAsset: {fileID: 11400000, guid: 178b1bddd9d964489a5b0aab16402fdd, type: 2}
+  m_sharedMaterial: {fileID: 21720709697650834, guid: 178b1bddd9d964489a5b0aab16402fdd,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -11744,18 +11669,18 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_textAlignment: 514
+  m_fontStyle: 16
+  m_textAlignment: 513
   m_isAlignmentEnumConverted: 1
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 80
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -11793,11 +11718,11 @@ MonoBehaviour:
     lineCount: 2
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -11895,15 +11820,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.88235295}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: e72d16ef800f14f21996df52bd992a49, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -12143,8 +12068,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 275, y: 75}
+  m_AnchoredPosition: {x: -10, y: -5}
+  m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1084042244
 MonoBehaviour:
@@ -12167,8 +12092,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: I'm not interested in whatever you're doing
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6d0919747a1354dc8a5092ac067dc65a, type: 2}
-  m_sharedMaterial: {fileID: 21512518544345808, guid: 6d0919747a1354dc8a5092ac067dc65a,
+  m_fontAsset: {fileID: 11400000, guid: 178b1bddd9d964489a5b0aab16402fdd, type: 2}
+  m_sharedMaterial: {fileID: 21720709697650834, guid: 178b1bddd9d964489a5b0aab16402fdd,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -12193,18 +12118,18 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_textAlignment: 514
+  m_fontStyle: 16
+  m_textAlignment: 513
   m_isAlignmentEnumConverted: 1
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 80
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -12242,11 +12167,11 @@ MonoBehaviour:
     lineCount: 2
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -16004,15 +15929,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.88235295}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 3b5eb213702ed4287b43bc5a9a042787, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -16040,7 +15965,7 @@ MonoBehaviour:
   optionManager: {fileID: 1695026972}
   textDisplay: {fileID: 960094886}
   sentences:
-  - Hey, you know how I was saying <i>something</i> was up with management?@
+  - Hey, you know how I was saying [{something}] was up with management?@
   - "New executive VP. Boss\u2019s brat kid. Looks like he\u2019s coming with a corporate
     contingent to get the lay of the land.@"
   - "They\u2019ve been acting weird. And when something weird happens with them, us
@@ -16115,8 +16040,70 @@ MonoBehaviour:
   - That's what I keep saying! Don't tell anyone I said this, but there are a LOT
     of ingrates here.@
   - Glad to hear it! Have a good day, now. I'll be seeing you.@
+  - That sure was a huge thing!@
+  - 
+  - 
+  - I feel closer to my coworkers@
+  - 
+  - 
+  - I'll never forget that!@
+  - 
+  - 
+  - Hey friend, good to see you.@
+  - 
+  - 
+  - Good job coding Jay.@
+  - 
+  - 
+  - Solidarity forever.@
+  - 
+  - 
+  - Oh the union makes us strong.@
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   typingSpeed: 0.001
   pauseTime: 1
+  slowSpeed: 0.1
+  fastSpeed: 0.001
   isTyping: 0
 --- !u!1 &1392976780
 GameObject:
@@ -16179,7 +16166,7 @@ Canvas:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1392976780}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 981840967}
@@ -16805,12 +16792,14 @@ MonoBehaviour:
   textDisplay: {fileID: 1846509789}
   index: 0
   sentences:
-  - '***ATTENTION***                     Please Report to Conference Room Epsilon
-    for a Mandatory Staff Meeting - We Have Very Important Issues to Discuss                   ***ATTENTION***    '
+  - '***ATTENTION***&^^Please Report to Conference Room Epsilon for a Mandatory Staff
+    Meeting -& We Have Very Important Issues to Discuss^^&***ATTENTION***@'
+  - '***ATTENTION***&^^Negotiation is Over^^&***ATTENTION***@'
   typingSpeed: 0.02
   isTyping: 0
   buttonInstruction: {fileID: 1477504914}
   primed: 0
+  pauseTime: 1
 --- !u!82 &1442830974
 AudioSource:
   m_ObjectHideFlags: 0
@@ -17316,6 +17305,8 @@ MonoBehaviour:
   waitTime: 1
   soundholder: {fileID: 1483363893}
   sound: {fileID: 8300000, guid: f5937e61a0dde428f9ca60ad70a8fed3, type: 3}
+  pushMax: 5
+  pushCount: 0
 --- !u!61 &1483363892
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19748,7 +19739,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1695026972}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b963d430dc125432d9394f32c642ce31, type: 3}
   m_Name: 
@@ -19756,8 +19747,11 @@ MonoBehaviour:
   sentenceIndex: 0
   currentSelect: 0
   optionOne: {fileID: 759193335}
+  optionOneText: {fileID: 920720119}
   optionTwo: {fileID: 1056762447}
+  optionTwoText: {fileID: 1084042242}
   optionThree: {fileID: 504356798}
+  optionThreeText: {fileID: 1038536107}
   promptPanel: {fileID: 1387403031}
   solidarityObject: {fileID: 240925957}
   playerObject: {fileID: 886578480}

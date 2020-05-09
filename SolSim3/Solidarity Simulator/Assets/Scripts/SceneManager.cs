@@ -69,9 +69,17 @@ public class SceneManager : MonoBehaviour {
         {
             convoCounter = 12;
         }
+        if (Event.current.Equals(Event.KeyboardEvent("e")))
+        {
+            convoCounter = 14;
+        }
         if (Event.current.Equals(Event.KeyboardEvent("return"))&& convoCounter == 9 && blackOutObject.GetComponent<BlackOutManager>().isTyping == false)
         {
             convoCounter = 10;
+        }
+        if (Event.current.Equals(Event.KeyboardEvent("return")) && convoCounter == 16 && blackOutObject.GetComponent<BlackOutManager>().isTyping == false)
+        {
+            convoCounter = 17;
         }
     }
 
@@ -183,20 +191,34 @@ public class SceneManager : MonoBehaviour {
 
         if (convoCounter == 14)
         {
+            negotiationDialogueManager.SetActive(false);
             mainCamera.GetComponent<CameraManager>().whosFocus = "pc";
             mainCamera.GetComponent<CameraManager>().scene = "walkaround";
             playerObject.transform.position = playerFactory.transform.position;
             wrench.transform.position = wrenchFactory.transform.position;
             playerObject.GetComponent<SpriteRenderer>().flipX = false;
-            playerObject.GetComponent<MovementController>().canPoke = true;
+            playerObject.GetComponent<MovementController>().enabled = false;
             wrench.GetComponent<CapsuleCollider2D>().enabled = true;
             wrench.GetComponent<SpriteRenderer>().flipX = false;
             wrench.GetComponent<SpriteRenderer>().sortingOrder = 0;
             solidarityObject.SetActive(false);
             promptPanel.SetActive(true);
-            uiCanvas.GetComponent<Canvas>().enabled = false;
+            blackOutObject.SetActive(true);
+            blackOutObject.GetComponent<BlackOutManager>().index += 1;
+            blackOutObject.GetComponent<BlackOutManager>().NextSentence();
             convoCounter = 15;
+            uiPressCircle.SetActive(false);
+            boardOptionManager.SetActive(false);
+
+        }
+        if (convoCounter == 17)
+        {
+            uiCanvas.GetComponent<Canvas>().enabled = false;
+            optionManager.SetActive(true);
+            playerObject.GetComponent<MovementController>().enabled = true;
+            blackOutObject.SetActive(false);
             //change something for the interaction manager so that prompt panels go to different index numbers
         }
+
     }
 }

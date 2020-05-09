@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class OptionManager : MonoBehaviour
 {
@@ -9,8 +10,11 @@ public class OptionManager : MonoBehaviour
     public int sentenceIndex;
     public int currentSelect;
     public GameObject optionOne;
+    public GameObject optionOneText;
     public GameObject optionTwo;
+    public GameObject optionTwoText;
     public GameObject optionThree;
+    public GameObject optionThreeText;
     public GameObject promptPanel;
     public GameObject solidarityObject;
     public GameObject playerObject;
@@ -42,7 +46,7 @@ public class OptionManager : MonoBehaviour
         {
             numberOfOptions = 2;
         }
-        else if ((sentenceIndex >= 4 && sentenceIndex <= 10) || (sentenceIndex >= 14 && sentenceIndex <= 20) || (sentenceIndex >= 24 && sentenceIndex <= 28) || (sentenceIndex >= 32 && sentenceIndex <= 35) || (sentenceIndex >= 38 && sentenceIndex <= 41) || (sentenceIndex >= 46 && sentenceIndex <= 51) || (sentenceIndex >= 55 && sentenceIndex <= 59))
+        else if ((sentenceIndex >= 4 && sentenceIndex <= 10) || (sentenceIndex >= 14 && sentenceIndex <= 20) || (sentenceIndex >= 24 && sentenceIndex <= 28) || (sentenceIndex >= 32 && sentenceIndex <= 35) || (sentenceIndex >= 38 && sentenceIndex <= 41) || (sentenceIndex >= 46 && sentenceIndex <= 51) || (sentenceIndex >= 55 && sentenceIndex <= 59)||sentenceIndex >= 60)
         {
             numberOfOptions = 0;
         }
@@ -53,15 +57,19 @@ public class OptionManager : MonoBehaviour
         {
             optionOne.SetActive(true);
             optionTwo.SetActive(true);
-            optionOne.GetComponent<Image>().color = UnityEngine.Color.blue;
-            optionTwo.GetComponent<Image>().color = UnityEngine.Color.black;
+            optionOne.GetComponent<Image>().color = UnityEngine.Color.white;
+            optionOneText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(0, 255, 128, 255);
+            optionTwo.GetComponent<Image>().color = UnityEngine.Color.blue;
+            optionTwoText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(0, 255, 128, 60);
         }
         else if (numberOfOptions == 2 && currentSelect == 2 && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             optionOne.SetActive(true);
             optionTwo.SetActive(true);
-            optionOne.GetComponent<Image>().color = UnityEngine.Color.black;
-            optionTwo.GetComponent<Image>().color = UnityEngine.Color.blue;
+            optionOne.GetComponent<Image>().color = UnityEngine.Color.blue;
+            optionOneText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(0, 255, 128, 60);
+            optionTwo.GetComponent<Image>().color = UnityEngine.Color.white;
+            optionTwoText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(0, 255, 128, 255);
         }
         //if three options
 
@@ -70,18 +78,24 @@ public class OptionManager : MonoBehaviour
             optionOne.SetActive(true);
             optionTwo.SetActive(true);
             optionThree.SetActive(true);
-            optionOne.GetComponent<Image>().color = UnityEngine.Color.blue;
-            optionTwo.GetComponent<Image>().color = UnityEngine.Color.black;
-            optionThree.GetComponent<Image>().color = UnityEngine.Color.black;
+            optionOne.GetComponent<Image>().color = UnityEngine.Color.white;
+            optionOneText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(0, 255, 128, 255);
+            optionTwo.GetComponent<Image>().color = UnityEngine.Color.blue;
+            optionTwoText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(0, 255, 128, 60);
+            optionThree.GetComponent<Image>().color = UnityEngine.Color.blue;
+            optionThreeText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(0, 255, 128, 60);
         }
         else if (numberOfOptions == 3 && currentSelect == 2 && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             optionOne.SetActive(true);
             optionTwo.SetActive(true);
             optionThree.SetActive(true);
-            optionOne.GetComponent<Image>().color = UnityEngine.Color.black;
-            optionTwo.GetComponent<Image>().color = UnityEngine.Color.blue;
-            optionThree.GetComponent<Image>().color = UnityEngine.Color.black;
+            optionOne.GetComponent<Image>().color = UnityEngine.Color.blue;
+            optionOneText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(0, 255, 128, 60);
+            optionTwo.GetComponent<Image>().color = UnityEngine.Color.white;
+            optionTwoText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(0, 255, 128, 255);
+            optionThree.GetComponent<Image>().color = UnityEngine.Color.blue;
+            optionThreeText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(0, 255, 128, 60);
 
         }
         else if (numberOfOptions == 3 && currentSelect == 3 && promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -89,9 +103,12 @@ public class OptionManager : MonoBehaviour
             optionOne.SetActive(true);
             optionTwo.SetActive(true);
             optionThree.SetActive(true);
-            optionOne.GetComponent<Image>().color = UnityEngine.Color.black;
-            optionTwo.GetComponent<Image>().color = UnityEngine.Color.black;
-            optionThree.GetComponent<Image>().color = UnityEngine.Color.blue;
+            optionOne.GetComponent<Image>().color = UnityEngine.Color.blue;
+            optionOneText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(0, 255, 128, 60);
+            optionTwo.GetComponent<Image>().color = UnityEngine.Color.blue;
+            optionTwoText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(0, 255, 128, 60);
+            optionThree.GetComponent<Image>().color = UnityEngine.Color.white;
+            optionThreeText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(0, 255, 128, 255);
         }
         else
         {
@@ -617,10 +634,11 @@ public class OptionManager : MonoBehaviour
             sentenceIndex = 0;
             numberOfOptions = 3;
             playerObject.GetComponent<InteractionManager>().whosTalking = "";
+            gameObject.GetComponent<OptionManager>().enabled = false;
             uiPressCircle.SetActive(false);
             buttonInstruction.SetActive(false);
         }
-        else if (Event.current.Equals(Event.KeyboardEvent("return")) && numberOfOptions == 0 && promptPanel.GetComponent<PromptManager>().isTyping == false && sceneManager.GetComponent<SceneManager>().convoCounter < 7)
+        else if (Event.current.Equals(Event.KeyboardEvent("return")) && numberOfOptions == 0 && promptPanel.GetComponent<PromptManager>().isTyping == false && (sceneManager.GetComponent<SceneManager>().convoCounter < 7 || sceneManager.GetComponent<SceneManager>().convoCounter > 7))
         {
             playerObject.GetComponent<MovementController>().enabled = true;
             playerObject.GetComponent<InteractionManager>().dialogueVisible = false;
@@ -632,6 +650,7 @@ public class OptionManager : MonoBehaviour
             sentenceIndex = 0;
             numberOfOptions = 3;
             playerObject.GetComponent<InteractionManager>().whosTalking = "";
+            gameObject.GetComponent<OptionManager>().enabled = false;
             uiPressCircle.SetActive(false);
             buttonInstruction.SetActive(false);
 

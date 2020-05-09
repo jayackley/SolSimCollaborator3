@@ -13,18 +13,61 @@ public class BlackOutManager : MonoBehaviour
     public bool isTyping;
     public GameObject buttonInstruction;
     public bool primed;
+    public float pauseTime;
 
-    private void Start()
-    {
-        isTyping = false;
-    }
 
     IEnumerator Type()
     {
-        foreach (char letter in sentences[index].ToCharArray())
+        isTyping = true;
+
+        foreach (char letter in sentences[index])
         {
-            textDisplay.text += letter;
-            yield return new WaitForSeconds(typingSpeed);
+            if (letter == '&')
+            {
+                Debug.Log("ampersand!");
+                yield return new WaitForSeconds(pauseTime);
+            }
+
+            else if (letter == '.' || letter == '!' || letter == '?' || letter == ';')
+            {
+                textDisplay.text += letter;
+                yield return new WaitForSeconds(pauseTime);
+            }
+
+            else if (letter == ',')
+            {
+                textDisplay.text += letter;
+                yield return new WaitForSeconds(pauseTime / 2);
+            }
+
+            else if (letter == '^')
+            {
+                textDisplay.text += "\n";
+                yield return new WaitForSeconds(typingSpeed);
+            }
+
+            else if (letter == '@')
+            {
+                isTyping = false;
+                break;
+            }
+
+            else if (letter == '{')
+            {
+                textDisplay.text += "<i>";
+                yield return new WaitForSeconds(typingSpeed);
+            }
+            else if (letter == '}')
+            {
+                textDisplay.text += "</i>";
+                yield return new WaitForSeconds(typingSpeed);
+            }
+
+            else
+            {
+                textDisplay.text += letter;
+                yield return new WaitForSeconds(typingSpeed);
+            }
         }
     }
     public void NextSentence()
@@ -34,14 +77,7 @@ public class BlackOutManager : MonoBehaviour
     }
     private void Update()
     {
-        if (textDisplay.text == sentences[index])
-        {
-            isTyping = false;
-        }
-        else
-        {
-            isTyping = true;
-        }
+
 
         if (isTyping == false)
         {

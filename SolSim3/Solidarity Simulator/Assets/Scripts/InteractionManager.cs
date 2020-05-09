@@ -36,8 +36,9 @@ public class InteractionManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Wrench")
+        if (collision.gameObject.name == "Wrench" && sceneManager.GetComponent<SceneManager>().convoCounter <= 7)
         {
+            optionManager.GetComponent<OptionManager>().enabled = true;
             playerObject.GetComponent<MovementController>().canPoke = false; 
             dialogueVisible = true;
             uiCanvas.GetComponent<Canvas>().enabled = true;
@@ -66,8 +67,9 @@ public class InteractionManager : MonoBehaviour
 
         }
 
-        else if (collision.gameObject.name == "Temp")
+        else if (collision.gameObject.name == "Temp" && sceneManager.GetComponent<SceneManager>().convoCounter <= 7)
         {
+            optionManager.GetComponent<OptionManager>().enabled = true;
             playerObject.GetComponent<MovementController>().canPoke = false; 
             dialogueVisible = true;
             uiCanvas.GetComponent<Canvas>().enabled = true;
@@ -95,8 +97,9 @@ public class InteractionManager : MonoBehaviour
         }
 
 
-        else if (collision.gameObject.name == "Welder")
+        else if (collision.gameObject.name == "Welder" && sceneManager.GetComponent<SceneManager>().convoCounter <= 7)
         {
+            optionManager.GetComponent<OptionManager>().enabled = true;
             playerObject.GetComponent<MovementController>().canPoke = false; 
             dialogueVisible = true;
             uiCanvas.GetComponent<Canvas>().enabled = true;
@@ -124,8 +127,9 @@ public class InteractionManager : MonoBehaviour
             buttonInstruction.transform.localPosition = new Vector3(-7, 70, 0);
         }
 
-        else if (collision.gameObject.name == "BigGuy")
+        else if (collision.gameObject.name == "BigGuy" && sceneManager.GetComponent<SceneManager>().convoCounter <= 7)
         {
+            optionManager.GetComponent<OptionManager>().enabled = true;
             playerObject.GetComponent<MovementController>().canPoke = false; 
             dialogueVisible = true;
             uiCanvas.GetComponent<Canvas>().enabled = true;
@@ -152,8 +156,9 @@ public class InteractionManager : MonoBehaviour
             buttonInstruction.transform.localPosition = new Vector3(-290, -200, 0);
         }
 
-        else if (collision.gameObject.name == "Data")
+        else if (collision.gameObject.name == "Data" && sceneManager.GetComponent<SceneManager>().convoCounter <= 7)
         {
+            optionManager.GetComponent<OptionManager>().enabled = true;
             playerObject.GetComponent<MovementController>().canPoke = false; 
             dialogueVisible = true;
             uiCanvas.GetComponent<Canvas>().enabled = true;
@@ -180,8 +185,9 @@ public class InteractionManager : MonoBehaviour
             buttonInstruction.transform.localPosition = new Vector3(-290, -200, 0);
         }
 
-        else if (collision.gameObject.name == "Accounting")
+        else if (collision.gameObject.name == "Accounting" && sceneManager.GetComponent<SceneManager>().convoCounter <= 7)
         {
+            optionManager.GetComponent<OptionManager>().enabled = true;
             playerObject.GetComponent<MovementController>().canPoke = false; 
             dialogueVisible = true;
             uiCanvas.GetComponent<Canvas>().enabled = true;
@@ -207,8 +213,9 @@ public class InteractionManager : MonoBehaviour
             pressCircle.transform.localPosition = new Vector3(350, 70, 0);
             buttonInstruction.transform.localPosition = new Vector3(-290, -200, 0);
         }
-        else if (collision.gameObject.name == "Manager")
+        else if (collision.gameObject.name == "Manager" && sceneManager.GetComponent<SceneManager>().convoCounter <= 7)
         {
+            optionManager.GetComponent<OptionManager>().enabled = true;
             playerObject.GetComponent<MovementController>().canPoke = false; 
             dialogueVisible = true;
             uiCanvas.GetComponent<Canvas>().enabled = true;
@@ -229,6 +236,215 @@ public class InteractionManager : MonoBehaviour
             optionTwo.transform.localPosition = new Vector3(221, -75, 0);
             optionThree.transform.localPosition = new Vector3(221, -200, 0);
             solidarityPanel.transform.localPosition = new Vector3(-250,-250, 0);
+            optionManager.GetComponent<OptionManager>().currentSelect = 1;
+            mainCamera.GetComponent<CameraManager>().whosFocus = "manager";
+            pressCircle.transform.localPosition = new Vector3(-7, 70, 0);
+            buttonInstruction.transform.localPosition = new Vector3(290, -200, 0);
+        }
+
+        //second round of walkaround
+
+        else if (collision.gameObject.name == "Wrench" && sceneManager.GetComponent<SceneManager>().convoCounter >= 7)
+        {
+            optionManager.GetComponent<OptionManager>().enabled = true;
+            playerObject.GetComponent<MovementController>().canPoke = false;
+            dialogueVisible = true;
+            uiCanvas.GetComponent<Canvas>().enabled = true;
+            playerObject.GetComponent<MovementController>().enabled = false;
+            playerObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+            collision.gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+            sceneManager.GetComponent<SceneManager>().convoCounter += 1;
+            optionManager.GetComponent<OptionManager>().sentenceIndex = 60;
+            promptPanel.GetComponent<PromptManager>().NextSentence();
+            playerObject.GetComponent<Animator>().SetBool("iswalking", false);
+            playerObject.GetComponent<Animator>().SetBool("isjumping", false);
+            playerObject.GetComponent<Animator>().SetBool("isfalling", false);
+            whosTalking = "wrench";
+            promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
+            promptText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(101, 100, 219, 255);
+            promptPanel.transform.localPosition = new Vector3(170, 150, 0);
+            optionOne.transform.localPosition = new Vector3(-221, 50, 0);
+            optionTwo.transform.localPosition = new Vector3(-221, -75, 0);
+            optionThree.transform.localPosition = new Vector3(-221, -200, 0);
+            solidarityPanel.transform.localPosition = new Vector3(250, -250, 0);
+            optionManager.GetComponent<OptionManager>().currentSelect = 1;
+            playerObject.GetComponent<SpriteRenderer>().flipX = true;
+            mainCamera.GetComponent<CameraManager>().whosFocus = "wrench";
+            pressCircle.transform.localPosition = new Vector3(350, 70, 0);
+            buttonInstruction.transform.localPosition = new Vector3(-290, -200, 0);
+
+        }
+
+
+        else if (collision.gameObject.name == "Temp" && sceneManager.GetComponent<SceneManager>().convoCounter >= 7)
+        {
+            optionManager.GetComponent<OptionManager>().enabled = true;
+            playerObject.GetComponent<MovementController>().canPoke = false;
+            dialogueVisible = true;
+            uiCanvas.GetComponent<Canvas>().enabled = true;
+            playerObject.GetComponent<MovementController>().enabled = false;
+            playerObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+            collision.gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+            sceneManager.GetComponent<SceneManager>().convoCounter += 1;
+            optionManager.GetComponent<OptionManager>().sentenceIndex = 63;
+            promptPanel.GetComponent<PromptManager>().NextSentence();
+            playerObject.GetComponent<Animator>().SetBool("iswalking", false);
+            playerObject.GetComponent<Animator>().SetBool("isjumping", false);
+            playerObject.GetComponent<Animator>().SetBool("isfalling", false);
+            whosTalking = "temp";
+            promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
+            promptText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(137, 210, 220, 255);
+            promptPanel.transform.localPosition = new Vector3(-170, 150, 0);
+            optionOne.transform.localPosition = new Vector3(221, 50, 0);
+            optionTwo.transform.localPosition = new Vector3(221, -75, 0);
+            optionThree.transform.localPosition = new Vector3(221, -200, 0);
+            solidarityPanel.transform.localPosition = new Vector3(-250, -250, 0);
+            optionManager.GetComponent<OptionManager>().currentSelect = 1;
+            playerObject.GetComponent<SpriteRenderer>().flipX = false;
+            pressCircle.transform.localPosition = new Vector3(-7, 70, 0);
+            buttonInstruction.transform.localPosition = new Vector3(-7, 70, 0);
+        }
+
+
+        else if (collision.gameObject.name == "Welder" && sceneManager.GetComponent<SceneManager>().convoCounter >= 7)
+        {
+            optionManager.GetComponent<OptionManager>().enabled = true;
+            playerObject.GetComponent<MovementController>().canPoke = false;
+            dialogueVisible = true;
+            uiCanvas.GetComponent<Canvas>().enabled = true;
+            playerObject.GetComponent<MovementController>().enabled = false;
+            playerObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+            collision.gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+            sceneManager.GetComponent<SceneManager>().convoCounter += 1;
+            optionManager.GetComponent<OptionManager>().sentenceIndex = 66;
+            promptPanel.GetComponent<PromptManager>().NextSentence();
+            playerObject.GetComponent<Animator>().SetBool("iswalking", false);
+            playerObject.GetComponent<Animator>().SetBool("isjumping", false);
+            playerObject.GetComponent<Animator>().SetBool("isfalling", false);
+            whosTalking = "welder";
+            promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
+            promptText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(255, 195, 0, 255);
+            promptPanel.transform.localPosition = new Vector3(-170, 150, 0);
+            optionOne.transform.localPosition = new Vector3(221, 50, 0);
+            optionTwo.transform.localPosition = new Vector3(221, -75, 0);
+            optionThree.transform.localPosition = new Vector3(221, -200, 0);
+            solidarityPanel.transform.localPosition = new Vector3(-250, -250, 0);
+            optionManager.GetComponent<OptionManager>().currentSelect = 1;
+            mainCamera.GetComponent<CameraManager>().whosFocus = "welder";
+            playerObject.GetComponent<SpriteRenderer>().flipX = false;
+            pressCircle.transform.localPosition = new Vector3(-7, 70, 0);
+            buttonInstruction.transform.localPosition = new Vector3(-7, 70, 0);
+        }
+
+        else if (collision.gameObject.name == "BigGuy" && sceneManager.GetComponent<SceneManager>().convoCounter >= 7)
+        {
+            optionManager.GetComponent<OptionManager>().enabled = true;
+            playerObject.GetComponent<MovementController>().canPoke = false;
+            dialogueVisible = true;
+            uiCanvas.GetComponent<Canvas>().enabled = true;
+            playerObject.GetComponent<MovementController>().enabled = false;
+            playerObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+            collision.gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+            sceneManager.GetComponent<SceneManager>().convoCounter += 1;
+            optionManager.GetComponent<OptionManager>().sentenceIndex = 69;
+            promptPanel.GetComponent<PromptManager>().NextSentence();
+            playerObject.GetComponent<Animator>().SetBool("iswalking", false);
+            playerObject.GetComponent<Animator>().SetBool("isjumping", false);
+            playerObject.GetComponent<Animator>().SetBool("isfalling", false);
+            whosTalking = "bigguy";
+            promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
+            promptText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(16, 83, 73, 255);
+            promptPanel.transform.localPosition = new Vector3(170, 150, 0);
+            optionOne.transform.localPosition = new Vector3(-221, 50, 0);
+            optionTwo.transform.localPosition = new Vector3(-221, -75, 0);
+            optionThree.transform.localPosition = new Vector3(-221, -200, 0);
+            solidarityPanel.transform.localPosition = new Vector3(250, -250, 0);
+            optionManager.GetComponent<OptionManager>().currentSelect = 1;
+            mainCamera.GetComponent<CameraManager>().whosFocus = "bigguy";
+            pressCircle.transform.localPosition = new Vector3(350, 70, 0);
+            buttonInstruction.transform.localPosition = new Vector3(-290, -200, 0);
+        }
+
+        else if (collision.gameObject.name == "Data" && sceneManager.GetComponent<SceneManager>().convoCounter >= 7)
+        {
+            optionManager.GetComponent<OptionManager>().enabled = true;
+            playerObject.GetComponent<MovementController>().canPoke = false;
+            dialogueVisible = true;
+            uiCanvas.GetComponent<Canvas>().enabled = true;
+            playerObject.GetComponent<MovementController>().enabled = false;
+            playerObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+            collision.gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+            sceneManager.GetComponent<SceneManager>().convoCounter += 1;
+            optionManager.GetComponent<OptionManager>().sentenceIndex = 72;
+            promptPanel.GetComponent<PromptManager>().NextSentence();
+            playerObject.GetComponent<Animator>().SetBool("iswalking", false);
+            playerObject.GetComponent<Animator>().SetBool("isjumping", false);
+            playerObject.GetComponent<Animator>().SetBool("isfalling", false);
+            whosTalking = "data";
+            promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
+            promptText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(255, 255, 255, 255);
+            promptPanel.transform.localPosition = new Vector3(170, 150, 0);
+            optionOne.transform.localPosition = new Vector3(-221, 50, 0);
+            optionTwo.transform.localPosition = new Vector3(-221, -75, 0);
+            optionThree.transform.localPosition = new Vector3(-221, -200, 0);
+            solidarityPanel.transform.localPosition = new Vector3(250, -250, 0);
+            optionManager.GetComponent<OptionManager>().currentSelect = 1;
+            mainCamera.GetComponent<CameraManager>().whosFocus = "data";
+            pressCircle.transform.localPosition = new Vector3(350, 70, 0);
+            buttonInstruction.transform.localPosition = new Vector3(-290, -200, 0);
+        }
+
+        else if (collision.gameObject.name == "Accounting" && sceneManager.GetComponent<SceneManager>().convoCounter >= 7)
+        {
+            optionManager.GetComponent<OptionManager>().enabled = true;
+            playerObject.GetComponent<MovementController>().canPoke = false;
+            dialogueVisible = true;
+            uiCanvas.GetComponent<Canvas>().enabled = true;
+            playerObject.GetComponent<MovementController>().enabled = false;
+            playerObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+            collision.gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+            sceneManager.GetComponent<SceneManager>().convoCounter += 1;
+            optionManager.GetComponent<OptionManager>().sentenceIndex = 75;
+            promptPanel.GetComponent<PromptManager>().NextSentence();
+            playerObject.GetComponent<Animator>().SetBool("iswalking", false);
+            playerObject.GetComponent<Animator>().SetBool("isjumping", false);
+            playerObject.GetComponent<Animator>().SetBool("isfalling", false);
+            whosTalking = "accounting";
+            promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
+            promptText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(255, 148, 0, 255);
+            promptPanel.transform.localPosition = new Vector3(170, 150, 0);
+            optionOne.transform.localPosition = new Vector3(-221, 50, 0);
+            optionTwo.transform.localPosition = new Vector3(-221, -75, 0);
+            optionThree.transform.localPosition = new Vector3(-221, -200, 0);
+            solidarityPanel.transform.localPosition = new Vector3(250, -250, 0);
+            optionManager.GetComponent<OptionManager>().currentSelect = 1;
+            mainCamera.GetComponent<CameraManager>().whosFocus = "accounting";
+            pressCircle.transform.localPosition = new Vector3(350, 70, 0);
+            buttonInstruction.transform.localPosition = new Vector3(-290, -200, 0);
+        }
+        else if (collision.gameObject.name == "Manager" && sceneManager.GetComponent<SceneManager>().convoCounter >= 7)
+        {
+            optionManager.GetComponent<OptionManager>().enabled = true;
+            playerObject.GetComponent<MovementController>().canPoke = false;
+            dialogueVisible = true;
+            uiCanvas.GetComponent<Canvas>().enabled = true;
+            playerObject.GetComponent<MovementController>().enabled = false;
+            playerObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+            collision.gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+            sceneManager.GetComponent<SceneManager>().convoCounter += 1;
+            optionManager.GetComponent<OptionManager>().sentenceIndex = 78;
+            promptPanel.GetComponent<PromptManager>().NextSentence();
+            playerObject.GetComponent<Animator>().SetBool("iswalking", false);
+            playerObject.GetComponent<Animator>().SetBool("isjumping", false);
+            playerObject.GetComponent<Animator>().SetBool("isfalling", false);
+            whosTalking = "manager";
+            promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
+            promptText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(127, 5, 40, 255);
+            promptPanel.transform.localPosition = new Vector3(-170, 150, 0);
+            optionOne.transform.localPosition = new Vector3(221, 50, 0);
+            optionTwo.transform.localPosition = new Vector3(221, -75, 0);
+            optionThree.transform.localPosition = new Vector3(221, -200, 0);
+            solidarityPanel.transform.localPosition = new Vector3(-250, -250, 0);
             optionManager.GetComponent<OptionManager>().currentSelect = 1;
             mainCamera.GetComponent<CameraManager>().whosFocus = "manager";
             pressCircle.transform.localPosition = new Vector3(-7, 70, 0);
