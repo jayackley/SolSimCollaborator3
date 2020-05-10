@@ -5,7 +5,7 @@
       <File FileName="Assets/Scripts/PromptManager.cs" Line="58" Column="34" />
       <File FileName="Assets/Scripts/OptionManager.cs" Line="650" Column="31" />
       <File FileName="Assets/Scripts/BlackOutManager.cs" Line="82" Column="13" />
-      <File FileName="Assets/Scripts/InteractionManager.cs" Line="140" Column="76" />
+      <File FileName="Assets/Scripts/InteractionManager.cs" Line="95" Column="70" />
       <File FileName="Assets/Scripts/SceneManager.cs" Line="45" Column="5" />
       <File FileName="Assets/Scripts/MusicManager.cs" Line="304" Column="73" />
     </Files>
