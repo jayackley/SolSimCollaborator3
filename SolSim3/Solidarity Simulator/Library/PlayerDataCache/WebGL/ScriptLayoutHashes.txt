@@ -114,7 +114,7 @@ c7dd12c15208b0447e101f80038706df UnityEngine.Timeline.dll:UnityEngine.Timeline.A
 64f3a13c1277a7f1324321d93d0ec13b UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 ad0fda6222c939e815dba59435ea37ff Assembly-CSharp.dll:.BlackOutManager
 66b3109aa5921cf800bec17926c6adba Unity.TextMeshPro.dll:TMPro.TMP_SubMeshUI
-f3e78822e58cb703c2b2e112364e2bf3 Assembly-CSharp.dll:.NegotiationDialogueManager
+3addff69f5807c911c199ebdeceb9248 Assembly-CSharp.dll:.NegotiationDialogueManager
 d342de9f065fbe6af7871f5c671fad9e Assembly-CSharp.dll:.PromptManager
 a2dc04fb92783ae68bbe20a5447c689f Assembly-CSharp.dll:.PressPanelManager
 201273fb4f889724fb090164b7d6c657 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
@@ -221,7 +221,7 @@ aac9c55ae7ba4b95b852a7d9c191acd1 Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
 d617d4658b57fec63481cb1edf02cbcb Assembly-CSharp.dll:.ElevatorManager
 17344a69f7eb9c169b50f9f11a5ea9f3 Assembly-CSharp.dll:.ElevatorMiddleTriggerUp
 0a006f3734181ba8b26758f0866152c0 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
-867d8350237d85cbc015eacdbfdf1b78 Assembly-CSharp.dll:.BoardOptionManager
+5b7f3cc95b57ba7c9d9a51de14a9a9a0 Assembly-CSharp.dll:.BoardOptionManager
 3440e114848660940aab66a2e380929b Cinemachine.dll:Cinemachine.CinemachineSmoothPath
 486cd95c82d8305219c352c06b776e1f Cinemachine.dll:Cinemachine.CinemachineHardLookAt
 eb518fa11db9b8c2a3c19a96d1aa691f Assembly-CSharp.dll:.SceneManager
