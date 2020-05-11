@@ -1,13 +1,17 @@
 ﻿<Properties StartupConfiguration="{3CEEF635-3A15-1682-C997-198328937ED8}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/InteractionManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/SignTextManger.cs">
     <Files>
-      <File FileName="Assets/Scripts/PromptManager.cs" Line="58" Column="34" />
-      <File FileName="Assets/Scripts/OptionManager.cs" Line="650" Column="31" />
-      <File FileName="Assets/Scripts/BlackOutManager.cs" Line="82" Column="13" />
-      <File FileName="Assets/Scripts/InteractionManager.cs" Line="95" Column="70" />
-      <File FileName="Assets/Scripts/SceneManager.cs" Line="45" Column="5" />
+      <File FileName="Assets/Scripts/PromptManager.cs" Line="76" Column="14" />
+      <File FileName="Assets/Scripts/NegotiationDialogueManager.cs" Line="26" Column="28" />
+      <File FileName="Assets/Scripts/BlackOutManager.cs" Line="57" Column="47" />
+      <File FileName="Assets/Scripts/InteractionManager.cs" Line="20" Column="30" />
+      <File FileName="Assets/Scripts/SceneManager.cs" Line="128" Column="25" />
       <File FileName="Assets/Scripts/MusicManager.cs" Line="304" Column="73" />
+      <File FileName="Assets/Scripts/BoardManager.cs" Line="448" Column="28" />
+      <File FileName="Assets/Scripts/OptionManager.cs" Line="108" Column="39" />
+      <File FileName="Assets/Scripts/BoardOptionManager.cs" Line="5" Column="13" />
+      <File FileName="Assets/Scripts/SignTextManger.cs" Line="179" Column="34" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

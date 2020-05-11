@@ -436,7 +436,7 @@ public class BoardManager : MonoBehaviour {
             primed = false;
             gameObject.SetActive(false);
             solidarityPanel.transform.localPosition = new Vector3(250, 245, 0);
-            uiPressCircle.transform.localPosition = new Vector3(225, -100, 0);
+            uiPressCircle.transform.localPosition = new Vector3(200, -80, 0);
         }
 
         else if (Event.current.Equals(Event.KeyboardEvent("s")))
@@ -448,7 +448,7 @@ public class BoardManager : MonoBehaviour {
             primed = false;
             gameObject.SetActive(false);
             solidarityPanel.transform.localPosition = new Vector3(250, 245, 0);
-            uiPressCircle.transform.localPosition = new Vector3(225, -100, 0);
+            uiPressCircle.transform.localPosition = new Vector3(200, -80, 0);
         }
 
 //random insult generator

@@ -54,12 +54,12 @@ public class BlackOutManager : MonoBehaviour
 
             else if (letter == '{')
             {
-                textDisplay.text += "<i>";
+                textDisplay.text += "<size=+14>";
                 yield return new WaitForSeconds(typingSpeed);
             }
             else if (letter == '}')
             {
-                textDisplay.text += "</i>";
+                textDisplay.text += "</size>";
                 yield return new WaitForSeconds(typingSpeed);
             }
 

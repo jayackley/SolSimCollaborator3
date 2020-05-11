@@ -149,7 +149,37 @@ public class SignTextManger : MonoBehaviour
             ButtonNextSentence();
             nextMessageCounter += 1;
         }
-        if (buttonObject.GetComponent<InteractableManager>().pushCount == 6 && nextMessageCounter == 4)
+        if (buttonObject.GetComponent<InteractableManager>().pushCount == 5 && nextMessageCounter == 4)
+        {
+            buttonIndex += 1;
+            ButtonNextSentence();
+            nextMessageCounter += 1;
+        }
+        if (buttonObject.GetComponent<InteractableManager>().pushCount == 6 && nextMessageCounter == 5)
+        {
+            buttonIndex += 1;
+            ButtonNextSentence();
+            nextMessageCounter += 1;
+        }
+        if (buttonObject.GetComponent<InteractableManager>().pushCount == 7 && nextMessageCounter == 6)
+        {
+            buttonIndex += 1;
+            ButtonNextSentence();
+            nextMessageCounter += 1;
+        }
+        if (buttonObject.GetComponent<InteractableManager>().pushCount == 8 && nextMessageCounter == 7)
+        {
+            buttonIndex += 1;
+            ButtonNextSentence();
+            nextMessageCounter += 1;
+        }
+        if (buttonObject.GetComponent<InteractableManager>().pushCount == 9 && nextMessageCounter == 8)
+        {
+            buttonIndex += 1;
+            ButtonNextSentence();
+            nextMessageCounter += 1;
+        }
+        if (buttonObject.GetComponent<InteractableManager>().pushCount == 11 && nextMessageCounter == 9)
         {
             buttonIndex += 1;
             ButtonNextSentence();
