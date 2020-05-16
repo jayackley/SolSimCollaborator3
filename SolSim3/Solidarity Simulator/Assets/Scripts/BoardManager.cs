@@ -34,6 +34,8 @@ public class BoardManager : MonoBehaviour {
     public GameObject strikeInstructionPanel;
     public GameObject sceneManager;
     public GameObject uiPressCircle;
+    public float slowSpeed;
+    public float fastSpeed;
 
     private void Awake()
     {
@@ -47,6 +49,10 @@ public class BoardManager : MonoBehaviour {
 
         foreach (char letter in sentences[index])
         {
+            if (textDisplay.text.Length > 0)
+            {
+                textDisplay.text = textDisplay.text.Substring(0, textDisplay.text.Length - 1);
+            }
             if (letter == '&')
             {
                 Debug.Log("ampersand!");
@@ -56,13 +62,22 @@ public class BoardManager : MonoBehaviour {
             else if (letter == '.' || letter == '!' || letter == '?' || letter == ';')
             {
                 textDisplay.text += letter;
+                textDisplay.text += '_';
                 yield return new WaitForSeconds(pauseTime);
             }
 
             else if (letter == ',')
             {
                 textDisplay.text += letter;
+                textDisplay.text += '_';
                 yield return new WaitForSeconds(pauseTime / 2);
+            }
+
+            else if (letter == '^')
+            {
+                textDisplay.text += "\n";
+                textDisplay.text += '_';
+                yield return new WaitForSeconds(typingSpeed);
             }
 
             else if (letter == '@')
@@ -71,14 +86,34 @@ public class BoardManager : MonoBehaviour {
                 break;
             }
 
-            else if (letter == '~')
+            else if (letter == '{')
             {
+                textDisplay.text += "<u>";
+                textDisplay.text += '_';
+                yield return new WaitForSeconds(typingSpeed);
+            }
+            else if (letter == '}')
+            {
+                textDisplay.text += "</u>";
+                textDisplay.text += '_';
+                yield return new WaitForSeconds(typingSpeed);
+            }
 
+            else if (letter == '[')
+            {
+                typingSpeed = slowSpeed;
+                textDisplay.text += '_';
+            }
+            else if (letter == ']')
+            {
+                typingSpeed = fastSpeed;
+                textDisplay.text += '_';
             }
 
             else
             {
                 textDisplay.text += letter;
+                textDisplay.text += '_';
                 yield return new WaitForSeconds(typingSpeed);
             }
         }
@@ -436,7 +471,7 @@ public class BoardManager : MonoBehaviour {
             primed = false;
             gameObject.SetActive(false);
             solidarityPanel.transform.localPosition = new Vector3(250, 245, 0);
-            uiPressCircle.transform.localPosition = new Vector3(225, -100, 0);
+            uiPressCircle.transform.localPosition = new Vector3(200, -80, 0);
         }
 
         else if (Event.current.Equals(Event.KeyboardEvent("s")))
@@ -448,7 +483,7 @@ public class BoardManager : MonoBehaviour {
             primed = false;
             gameObject.SetActive(false);
             solidarityPanel.transform.localPosition = new Vector3(250, 245, 0);
-            uiPressCircle.transform.localPosition = new Vector3(225, -100, 0);
+            uiPressCircle.transform.localPosition = new Vector3(200, -80, 0);
         }
 
 //random insult generator

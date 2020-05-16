@@ -9,6 +9,8 @@ public class PromptManager : MonoBehaviour {
     public string[] sentences;
     public float typingSpeed;
     public float pauseTime;
+    public float slowSpeed;
+    public float fastSpeed;
     public bool isTyping;
 
 
@@ -19,6 +21,11 @@ public class PromptManager : MonoBehaviour {
 
         foreach (char letter in sentences[optionManager.GetComponent<OptionManager>().sentenceIndex])
         {
+            if (textDisplay.text.Length > 0)
+            {
+                textDisplay.text = textDisplay.text.Substring(0, textDisplay.text.Length - 1);
+            }
+
             if (letter == '&')
             {
                 Debug.Log("ampersand!");
@@ -28,13 +35,22 @@ public class PromptManager : MonoBehaviour {
             else if (letter == '.' || letter == '!' || letter == '?' || letter == ';')
             {
                 textDisplay.text += letter;
+                textDisplay.text += '_';
                 yield return new WaitForSeconds(pauseTime);
             }
 
             else if (letter == ',')
             {
                 textDisplay.text += letter;
+                textDisplay.text += '_';
                 yield return new WaitForSeconds(pauseTime/2);
+            }
+
+            else if (letter == '^')
+            {
+                textDisplay.text += "\n";
+                textDisplay.text += '_';
+                yield return new WaitForSeconds(typingSpeed);
             }
 
             else if (letter == '@')
@@ -43,17 +59,38 @@ public class PromptManager : MonoBehaviour {
                 break;
             }
 
-            else if (letter == '~')
+            else if (letter == '{')
             {
+                textDisplay.text += "<u>";
+                textDisplay.text += '_';
+                yield return new WaitForSeconds(typingSpeed);
+            }
+            else if (letter == '}')
+            {
+                textDisplay.text += "</u>";
+                textDisplay.text += '_';
+                yield return new WaitForSeconds(typingSpeed);
+            }
 
+            else if (letter == '[')
+            {
+                typingSpeed = slowSpeed;
+                textDisplay.text += '_';
+            }
+            else if (letter == ']')
+            {
+                typingSpeed = fastSpeed;
+                textDisplay.text += '_';
             }
 
             else
             {
                 textDisplay.text += letter;
+                textDisplay.text += '_';
                 yield return new WaitForSeconds(typingSpeed);
             }
-        }
+
+        }  
     }
 
     public void NextSentence()

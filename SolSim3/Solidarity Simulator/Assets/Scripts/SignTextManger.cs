@@ -13,6 +13,7 @@ public class SignTextManger : MonoBehaviour
     public GameObject loremIpsum;
     public GameObject loremIpsum2;
     public GameObject loremIpsum3;
+    public GameObject buttonObject;
     public float buttonTypingSpeed;
     public int buttonIndex;
     public string[] buttonSentences;
@@ -20,6 +21,9 @@ public class SignTextManger : MonoBehaviour
     public float waitBetweenSafetyMessages;
     public int safetyIndex;
     public string[] safetySentences;
+    public bool isTyping;
+    public float pauseTime;
+    private int nextMessageCounter;
 
     void Start()
     {
@@ -35,10 +39,65 @@ public class SignTextManger : MonoBehaviour
 
     IEnumerator ButtonType()
     {
-        foreach (char letter in buttonSentences[buttonIndex].ToCharArray())
-        {
-            buttonTextDisplay.text += letter;
-            yield return new WaitForSeconds(buttonTypingSpeed);
+            isTyping = true;
+
+            foreach (char letter in buttonSentences[buttonIndex])
+            {
+      
+
+                if (letter == '&')
+                {
+                    Debug.Log("ampersand!");
+                    yield return new WaitForSeconds(pauseTime);
+                }
+
+                else if (letter == '.' || letter == '!' || letter == '?' || letter == ';')
+                {
+                    buttonTextDisplay.text += letter;
+    
+                    yield return new WaitForSeconds(pauseTime);
+                }
+
+                else if (letter == ',')
+                {
+                    buttonTextDisplay.text += letter;
+                 
+                    yield return new WaitForSeconds(pauseTime / 2);
+                }
+
+                else if (letter == '^')
+                {
+                    buttonTextDisplay.text += "\n";
+            
+                    yield return new WaitForSeconds(buttonTypingSpeed);
+                }
+
+                else if (letter == '@')
+                {
+                    isTyping = false;
+                    break;
+                }
+
+                else if (letter == '{')
+                {
+                    buttonTextDisplay.text += "<u>";
+                 
+                    yield return new WaitForSeconds(buttonTypingSpeed);
+                }
+                else if (letter == '}')
+                {
+                    buttonTextDisplay.text += "</u>";
+                   
+                    yield return new WaitForSeconds(buttonTypingSpeed);
+                }
+
+                else
+                {
+                    buttonTextDisplay.text += letter;
+                    
+                    yield return new WaitForSeconds(buttonTypingSpeed);
+                }
+
         }
     }
     public void ButtonNextSentence()
@@ -64,6 +123,70 @@ public class SignTextManger : MonoBehaviour
 
     private void Update()
     {
+
+        if (buttonObject.GetComponent<InteractableManager>().pushCount == 1 && nextMessageCounter == 0)
+        {
+            buttonIndex += 1;
+            ButtonNextSentence();
+            nextMessageCounter += 1;
+        }
+
+        if (buttonObject.GetComponent<InteractableManager>().pushCount == 2 && nextMessageCounter == 1)
+        {
+            buttonIndex += 1;
+            ButtonNextSentence();
+            nextMessageCounter += 1;
+        }
+        if (buttonObject.GetComponent<InteractableManager>().pushCount == 3 && nextMessageCounter == 2)
+        {
+            buttonIndex += 1;
+            ButtonNextSentence();
+            nextMessageCounter += 1;
+        }
+        if (buttonObject.GetComponent<InteractableManager>().pushCount == 4 && nextMessageCounter == 3)
+        {
+            buttonIndex += 1;
+            ButtonNextSentence();
+            nextMessageCounter += 1;
+        }
+        if (buttonObject.GetComponent<InteractableManager>().pushCount == 5 && nextMessageCounter == 4)
+        {
+            buttonIndex += 1;
+            ButtonNextSentence();
+            nextMessageCounter += 1;
+        }
+        if (buttonObject.GetComponent<InteractableManager>().pushCount == 6 && nextMessageCounter == 5)
+        {
+            buttonIndex += 1;
+            ButtonNextSentence();
+            nextMessageCounter += 1;
+        }
+        if (buttonObject.GetComponent<InteractableManager>().pushCount == 7 && nextMessageCounter == 6)
+        {
+            buttonIndex += 1;
+            ButtonNextSentence();
+            nextMessageCounter += 1;
+        }
+        if (buttonObject.GetComponent<InteractableManager>().pushCount == 8 && nextMessageCounter == 7)
+        {
+            buttonIndex += 1;
+            ButtonNextSentence();
+            nextMessageCounter += 1;
+        }
+        if (buttonObject.GetComponent<InteractableManager>().pushCount == 9 && nextMessageCounter == 8)
+        {
+            buttonIndex += 1;
+            ButtonNextSentence();
+            nextMessageCounter += 1;
+        }
+        if (buttonObject.GetComponent<InteractableManager>().pushCount == 11 && nextMessageCounter == 9)
+        {
+            buttonIndex += 1;
+            ButtonNextSentence();
+            nextMessageCounter += 1;
+        }
+
+
         if (safetyTextDisplay.text == safetySentences[safetyIndex])
         {
             safetyIndex += 1;
@@ -74,6 +197,7 @@ public class SignTextManger : MonoBehaviour
         {
             safetyIndex = 0;
         }
+
     }
 
     IEnumerator Wait()

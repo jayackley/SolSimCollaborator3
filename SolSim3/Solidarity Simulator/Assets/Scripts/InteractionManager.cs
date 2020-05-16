@@ -38,14 +38,22 @@ public class InteractionManager : MonoBehaviour
     {
         if (collision.gameObject.name == "Wrench")
         {
-            playerObject.GetComponent<MovementController>().canPoke = false; 
+            optionManager.GetComponent<OptionManager>().enabled = true;
+            playerObject.GetComponent<MovementController>().canPoke = false;
             dialogueVisible = true;
             uiCanvas.GetComponent<Canvas>().enabled = true;
             playerObject.GetComponent<MovementController>().enabled = false;
             playerObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
             collision.gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
             sceneManager.GetComponent<SceneManager>().convoCounter += 1;
-            optionManager.GetComponent<OptionManager>().sentenceIndex = 0;
+            if (sceneManager.GetComponent<SceneManager>().convoCounter <= 7)
+            {
+                optionManager.GetComponent<OptionManager>().sentenceIndex = 0;
+            }
+            else if (sceneManager.GetComponent<SceneManager>().convoCounter > 7)
+            {
+                optionManager.GetComponent<OptionManager>().sentenceIndex = 60;
+            }
             promptPanel.GetComponent<PromptManager>().NextSentence();
             playerObject.GetComponent<Animator>().SetBool("iswalking", false);
             playerObject.GetComponent<Animator>().SetBool("isjumping", false);
@@ -54,28 +62,36 @@ public class InteractionManager : MonoBehaviour
             promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
             promptText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(101, 100, 219, 255);
             promptPanel.transform.localPosition = new Vector3(170, 150, 0);
-            optionOne.transform.localPosition = new Vector3(-221, 50, 0);
-            optionTwo.transform.localPosition = new Vector3(-221, -75, 0);
-            optionThree.transform.localPosition = new Vector3(-221, -200, 0);
-            solidarityPanel.transform.localPosition = new Vector3(250,-250, 0);
-            optionManager.GetComponent<OptionManager>().currentSelect = 1;
+            optionOne.transform.localPosition = new Vector3(-221, -200, 0);
+            optionTwo.transform.localPosition = new Vector3(-221, 50, 0);
+            optionThree.transform.localPosition = new Vector3(-221, -75, 0);
+            solidarityPanel.transform.localPosition = new Vector3(250, -235, 0);
+            optionManager.GetComponent<OptionManager>().currentSelect = 2;
             playerObject.GetComponent<SpriteRenderer>().flipX = true;
             mainCamera.GetComponent<CameraManager>().whosFocus = "wrench";
-            pressCircle.transform.localPosition = new Vector3(350,70,0);
+            pressCircle.transform.localPosition = new Vector3(317, 77, 0);
             buttonInstruction.transform.localPosition = new Vector3(-290, -200, 0);
 
         }
 
         else if (collision.gameObject.name == "Temp")
         {
-            playerObject.GetComponent<MovementController>().canPoke = false; 
+            optionManager.GetComponent<OptionManager>().enabled = true;
+            playerObject.GetComponent<MovementController>().canPoke = false;
             dialogueVisible = true;
             uiCanvas.GetComponent<Canvas>().enabled = true;
             playerObject.GetComponent<MovementController>().enabled = false;
             playerObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
             collision.gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
             sceneManager.GetComponent<SceneManager>().convoCounter += 1;
-            optionManager.GetComponent<OptionManager>().sentenceIndex = 11;
+            if (sceneManager.GetComponent<SceneManager>().convoCounter <= 7)
+            {
+                optionManager.GetComponent<OptionManager>().sentenceIndex = 11;
+            }
+            else if (sceneManager.GetComponent<SceneManager>().convoCounter > 7)
+            {
+                optionManager.GetComponent<OptionManager>().sentenceIndex = 63;
+            }
             promptPanel.GetComponent<PromptManager>().NextSentence();
             playerObject.GetComponent<Animator>().SetBool("iswalking", false);
             playerObject.GetComponent<Animator>().SetBool("isjumping", false);
@@ -84,56 +100,72 @@ public class InteractionManager : MonoBehaviour
             promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
             promptText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(137, 210, 220, 255);
             promptPanel.transform.localPosition = new Vector3(-170, 150, 0);
-            optionOne.transform.localPosition = new Vector3(221, 50, 0);
-            optionTwo.transform.localPosition = new Vector3(221, -75, 0);
-            optionThree.transform.localPosition = new Vector3(221, -200, 0);
-            solidarityPanel.transform.localPosition = new Vector3(-250,-250, 0);
-            optionManager.GetComponent<OptionManager>().currentSelect = 1;
+            optionOne.transform.localPosition = new Vector3(221, -200, 0);
+            optionTwo.transform.localPosition = new Vector3(221, 50, 0);
+            optionThree.transform.localPosition = new Vector3(221, -75, 0);
+            solidarityPanel.transform.localPosition = new Vector3(-250, -235, 0);
+            optionManager.GetComponent<OptionManager>().currentSelect = 2;
             playerObject.GetComponent<SpriteRenderer>().flipX = false;
-            pressCircle.transform.localPosition = new Vector3(-7, 70, 0);
+            pressCircle.transform.localPosition = new Vector3(-23, 77, 0);
             buttonInstruction.transform.localPosition = new Vector3(-7, 70, 0);
         }
 
 
-        else if (collision.gameObject.name == "Welder")
+        else if (collision.gameObject.name == "WelderArea")
         {
-            playerObject.GetComponent<MovementController>().canPoke = false; 
+            optionManager.GetComponent<OptionManager>().enabled = true;
+            playerObject.GetComponent<MovementController>().canPoke = false;
             dialogueVisible = true;
             uiCanvas.GetComponent<Canvas>().enabled = true;
             playerObject.GetComponent<MovementController>().enabled = false;
             playerObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
             collision.gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
             sceneManager.GetComponent<SceneManager>().convoCounter += 1;
-            optionManager.GetComponent<OptionManager>().sentenceIndex = 21;
+            if (sceneManager.GetComponent<SceneManager>().convoCounter <= 7)
+            {
+                optionManager.GetComponent<OptionManager>().sentenceIndex = 21;
+            }
+            else if (sceneManager.GetComponent<SceneManager>().convoCounter > 7)
+            {
+                optionManager.GetComponent<OptionManager>().sentenceIndex = 66;
+            }
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            playerObject.GetComponent<Animator>().SetBool("iswalking", false);
+            playerObject.GetComponent<Animator>().SetBool("iswalking", true);
             playerObject.GetComponent<Animator>().SetBool("isjumping", false);
             playerObject.GetComponent<Animator>().SetBool("isfalling", false);
             whosTalking = "welder";
             promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
             promptText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(255, 195, 0, 255);
             promptPanel.transform.localPosition = new Vector3(-170, 150, 0);
-            optionOne.transform.localPosition = new Vector3(221, 50, 0);
-            optionTwo.transform.localPosition = new Vector3(221, -75, 0);
-            optionThree.transform.localPosition = new Vector3(221, -200, 0);
-            solidarityPanel.transform.localPosition = new Vector3(-250,-250, 0);
-            optionManager.GetComponent<OptionManager>().currentSelect = 1;
+            optionOne.transform.localPosition = new Vector3(221, -200, 0);
+            optionTwo.transform.localPosition = new Vector3(221, 50, 0);
+            optionThree.transform.localPosition = new Vector3(221, -75, 0);
+            solidarityPanel.transform.localPosition = new Vector3(-250, -235, 0);
+            optionManager.GetComponent<OptionManager>().currentSelect = 2;
             mainCamera.GetComponent<CameraManager>().whosFocus = "welder";
             playerObject.GetComponent<SpriteRenderer>().flipX = false;
-            pressCircle.transform.localPosition = new Vector3(-7, 70, 0);
+            pressCircle.transform.localPosition = new Vector3(-23, 77, 0);
             buttonInstruction.transform.localPosition = new Vector3(-7, 70, 0);
         }
 
         else if (collision.gameObject.name == "BigGuy")
         {
-            playerObject.GetComponent<MovementController>().canPoke = false; 
+            optionManager.GetComponent<OptionManager>().enabled = true;
+            playerObject.GetComponent<MovementController>().canPoke = false;
             dialogueVisible = true;
             uiCanvas.GetComponent<Canvas>().enabled = true;
             playerObject.GetComponent<MovementController>().enabled = false;
             playerObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
             collision.gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
             sceneManager.GetComponent<SceneManager>().convoCounter += 1;
-            optionManager.GetComponent<OptionManager>().sentenceIndex = 29;
+            if (sceneManager.GetComponent<SceneManager>().convoCounter <= 7)
+            {
+                optionManager.GetComponent<OptionManager>().sentenceIndex = 29;
+            }
+            else if (sceneManager.GetComponent<SceneManager>().convoCounter > 7)
+            {
+                optionManager.GetComponent<OptionManager>().sentenceIndex = 69;
+            }
             promptPanel.GetComponent<PromptManager>().NextSentence();
             playerObject.GetComponent<Animator>().SetBool("iswalking", false);
             playerObject.GetComponent<Animator>().SetBool("isjumping", false);
@@ -142,26 +174,34 @@ public class InteractionManager : MonoBehaviour
             promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
             promptText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(16, 83, 73, 255);
             promptPanel.transform.localPosition = new Vector3(170, 150, 0);
-            optionOne.transform.localPosition = new Vector3(-221, 50, 0);
-            optionTwo.transform.localPosition = new Vector3(-221, -75, 0);
-            optionThree.transform.localPosition = new Vector3(-221, -200, 0);
-            solidarityPanel.transform.localPosition = new Vector3(250,-250, 0);
-            optionManager.GetComponent<OptionManager>().currentSelect = 1;
+            optionOne.transform.localPosition = new Vector3(-221, -200, 0);
+            optionTwo.transform.localPosition = new Vector3(-221, 50, 0);
+            optionThree.transform.localPosition = new Vector3(-221, -75, 0);
+            solidarityPanel.transform.localPosition = new Vector3(250, -235, 0);
+            optionManager.GetComponent<OptionManager>().currentSelect = 2;
             mainCamera.GetComponent<CameraManager>().whosFocus = "bigguy";
-            pressCircle.transform.localPosition = new Vector3(350, 70, 0);
+            pressCircle.transform.localPosition = new Vector3(317, 77, 0);
             buttonInstruction.transform.localPosition = new Vector3(-290, -200, 0);
         }
 
         else if (collision.gameObject.name == "Data")
         {
-            playerObject.GetComponent<MovementController>().canPoke = false; 
+            optionManager.GetComponent<OptionManager>().enabled = true;
+            playerObject.GetComponent<MovementController>().canPoke = false;
             dialogueVisible = true;
             uiCanvas.GetComponent<Canvas>().enabled = true;
             playerObject.GetComponent<MovementController>().enabled = false;
             playerObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
             collision.gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
             sceneManager.GetComponent<SceneManager>().convoCounter += 1;
-            optionManager.GetComponent<OptionManager>().sentenceIndex = 36;
+            if (sceneManager.GetComponent<SceneManager>().convoCounter <= 7)
+            {
+                optionManager.GetComponent<OptionManager>().sentenceIndex = 36;
+            }
+            else if (sceneManager.GetComponent<SceneManager>().convoCounter > 7)
+            {
+                optionManager.GetComponent<OptionManager>().sentenceIndex = 72;
+            }
             promptPanel.GetComponent<PromptManager>().NextSentence();
             playerObject.GetComponent<Animator>().SetBool("iswalking", false);
             playerObject.GetComponent<Animator>().SetBool("isjumping", false);
@@ -170,25 +210,34 @@ public class InteractionManager : MonoBehaviour
             promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
             promptText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(255, 255, 255, 255);
             promptPanel.transform.localPosition = new Vector3(170, 150, 0);
-            optionOne.transform.localPosition = new Vector3(-221, 50, 0);
-            optionTwo.transform.localPosition = new Vector3(-221, -75, 0);
-            optionThree.transform.localPosition = new Vector3(-221, -200, 0);
-            solidarityPanel.transform.localPosition = new Vector3(250,-250, 0);
-            optionManager.GetComponent<OptionManager>().currentSelect = 1;
+            optionOne.transform.localPosition = new Vector3(-221, -200, 0);
+            optionTwo.transform.localPosition = new Vector3(-221, 50, 0);
+            optionThree.transform.localPosition = new Vector3(-221, -75, 0);
+            solidarityPanel.transform.localPosition = new Vector3(250, -235, 0);
+            optionManager.GetComponent<OptionManager>().currentSelect = 2;
             mainCamera.GetComponent<CameraManager>().whosFocus = "data";
-            pressCircle.transform.localPosition = new Vector3(350, 70, 0);
+            pressCircle.transform.localPosition = new Vector3(317, 77, 0);
             buttonInstruction.transform.localPosition = new Vector3(-290, -200, 0);
         }
 
         else if (collision.gameObject.name == "Accounting")
         {
-            playerObject.GetComponent<MovementController>().canPoke = false; 
+            optionManager.GetComponent<OptionManager>().enabled = true;
+            playerObject.GetComponent<MovementController>().canPoke = false;
             dialogueVisible = true;
             uiCanvas.GetComponent<Canvas>().enabled = true;
             playerObject.GetComponent<MovementController>().enabled = false;
             playerObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
             collision.gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
             sceneManager.GetComponent<SceneManager>().convoCounter += 1;
+            if (sceneManager.GetComponent<SceneManager>().convoCounter <= 7)
+            {
+                optionManager.GetComponent<OptionManager>().sentenceIndex = 42;
+            }
+            else if (sceneManager.GetComponent<SceneManager>().convoCounter > 7)
+            {
+                optionManager.GetComponent<OptionManager>().sentenceIndex = 75;
+            }
             optionManager.GetComponent<OptionManager>().sentenceIndex = 42;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             playerObject.GetComponent<Animator>().SetBool("iswalking", false);
@@ -198,24 +247,33 @@ public class InteractionManager : MonoBehaviour
             promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
             promptText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(255, 148, 0, 255);
             promptPanel.transform.localPosition = new Vector3(170, 150, 0);
-            optionOne.transform.localPosition = new Vector3(-221, 50, 0);
-            optionTwo.transform.localPosition = new Vector3(-221, -75, 0);
-            optionThree.transform.localPosition = new Vector3(-221, -200, 0);
-            solidarityPanel.transform.localPosition = new Vector3(250,-250, 0);
-            optionManager.GetComponent<OptionManager>().currentSelect = 1;
+            optionOne.transform.localPosition = new Vector3(-221, -200, 0);
+            optionTwo.transform.localPosition = new Vector3(-221, 50, 0);
+            optionThree.transform.localPosition = new Vector3(-221, -75, 0);
+            solidarityPanel.transform.localPosition = new Vector3(250, -235, 0);
+            optionManager.GetComponent<OptionManager>().currentSelect = 2;
             mainCamera.GetComponent<CameraManager>().whosFocus = "accounting";
-            pressCircle.transform.localPosition = new Vector3(350, 70, 0);
+            pressCircle.transform.localPosition = new Vector3(317, 77, 0);
             buttonInstruction.transform.localPosition = new Vector3(-290, -200, 0);
         }
         else if (collision.gameObject.name == "Manager")
         {
-            playerObject.GetComponent<MovementController>().canPoke = false; 
+            optionManager.GetComponent<OptionManager>().enabled = true;
+            playerObject.GetComponent<MovementController>().canPoke = false;
             dialogueVisible = true;
             uiCanvas.GetComponent<Canvas>().enabled = true;
             playerObject.GetComponent<MovementController>().enabled = false;
             playerObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
             collision.gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
             sceneManager.GetComponent<SceneManager>().convoCounter += 1;
+            if (sceneManager.GetComponent<SceneManager>().convoCounter <= 7)
+            {
+                optionManager.GetComponent<OptionManager>().sentenceIndex = 52;
+            }
+            else if (sceneManager.GetComponent<SceneManager>().convoCounter > 7)
+            {
+                optionManager.GetComponent<OptionManager>().sentenceIndex = 78;
+            }
             optionManager.GetComponent<OptionManager>().sentenceIndex = 52;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             playerObject.GetComponent<Animator>().SetBool("iswalking", false);
@@ -225,15 +283,16 @@ public class InteractionManager : MonoBehaviour
             promptText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
             promptText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(127, 5, 40, 255);
             promptPanel.transform.localPosition = new Vector3(-170, 150, 0);
-            optionOne.transform.localPosition = new Vector3(221, 50, 0);
-            optionTwo.transform.localPosition = new Vector3(221, -75, 0);
-            optionThree.transform.localPosition = new Vector3(221, -200, 0);
-            solidarityPanel.transform.localPosition = new Vector3(-250,-250, 0);
-            optionManager.GetComponent<OptionManager>().currentSelect = 1;
+            optionOne.transform.localPosition = new Vector3(221, -200, 0);
+            optionTwo.transform.localPosition = new Vector3(221, 50, 0);
+            optionThree.transform.localPosition = new Vector3(221, -75, 0);
+            solidarityPanel.transform.localPosition = new Vector3(-250, -235, 0);
+            optionManager.GetComponent<OptionManager>().currentSelect = 2;
             mainCamera.GetComponent<CameraManager>().whosFocus = "manager";
-            pressCircle.transform.localPosition = new Vector3(-7, 70, 0);
+            pressCircle.transform.localPosition = new Vector3(-23, 77, 0);
             buttonInstruction.transform.localPosition = new Vector3(290, -200, 0);
         }
+
     }
 
     //Audio Voices Management

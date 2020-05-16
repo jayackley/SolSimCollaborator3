@@ -69,9 +69,17 @@ public class SceneManager : MonoBehaviour {
         {
             convoCounter = 12;
         }
+        if (Event.current.Equals(Event.KeyboardEvent("e")))
+        {
+            convoCounter = 14;
+        }
         if (Event.current.Equals(Event.KeyboardEvent("return"))&& convoCounter == 9 && blackOutObject.GetComponent<BlackOutManager>().isTyping == false)
         {
             convoCounter = 10;
+        }
+        if (Event.current.Equals(Event.KeyboardEvent("return")) && convoCounter == 16 && blackOutObject.GetComponent<BlackOutManager>().isTyping == false)
+        {
+            convoCounter = 17;
         }
     }
 
@@ -117,8 +125,8 @@ public class SceneManager : MonoBehaviour {
             mainCamera.GetComponent<CameraManager>().whosFocus = "corporate";
             uiCanvas.GetComponent<Canvas>().enabled = true;
             promptPanel.SetActive(false);
-            solidarityPanel.transform.localPosition = new Vector3(250, -245, 0);
-            uiPressCircle.transform.localPosition = new Vector3(-280, -230, 0);
+            solidarityPanel.transform.localPosition = new Vector3(250, -235, 0);
+            uiPressCircle.transform.localPosition = new Vector3(318, -178, 0);
             mainCamera.GetComponent<CinemachineBrain>().m_DefaultBlend.m_Time = 1;
             blackOutObject.SetActive(true);
             blackOutObject.GetComponent<BlackOutManager>().NextSentence();
@@ -135,7 +143,7 @@ public class SceneManager : MonoBehaviour {
             blackOutObject.SetActive(false);
             playerObject.transform.position = playerBoard.transform.position;
             playerObject.GetComponent<InteractionManager>().enabled = false;
-            uiPressCircle.transform.localPosition = new Vector3(225, 90, 0);
+            uiPressCircle.transform.localPosition = new Vector3(203, 104, 0);
             convoCounter = 11;
         }
         if (convoCounter == 12)
@@ -172,31 +180,46 @@ public class SceneManager : MonoBehaviour {
             manager.GetComponent<ManagerOutfit>().wearing = "office";
 
             corporate.transform.position = corporateFactory.transform.position;
-            solidarityPanel.transform.localPosition = new Vector3(250, -245, 0);
+            solidarityPanel.transform.localPosition = new Vector3(250, -235, 0);
             solidarityObject.GetComponent<SolidarityManager>().leverage = true;
             mainCamera.GetComponent<CameraManager>().scene = "negotiate";
         }
         if (convoCounter == 13)
         {
-            uiPressCircle.transform.localPosition = new Vector3(0, 50, 0);
+            uiPressCircle.transform.localPosition = new Vector3(-34, 54, 0);
         }
 
         if (convoCounter == 14)
         {
+            negotiationDialogueManager.SetActive(false);
             mainCamera.GetComponent<CameraManager>().whosFocus = "pc";
             mainCamera.GetComponent<CameraManager>().scene = "walkaround";
             playerObject.transform.position = playerFactory.transform.position;
             wrench.transform.position = wrenchFactory.transform.position;
             playerObject.GetComponent<SpriteRenderer>().flipX = false;
-            playerObject.GetComponent<MovementController>().canPoke = true;
+            playerObject.GetComponent<MovementController>().enabled = false;
             wrench.GetComponent<CapsuleCollider2D>().enabled = true;
             wrench.GetComponent<SpriteRenderer>().flipX = false;
             wrench.GetComponent<SpriteRenderer>().sortingOrder = 0;
             solidarityObject.SetActive(false);
-            promptPanel.SetActive(true);
-            uiCanvas.GetComponent<Canvas>().enabled = false;
+            blackOutObject.SetActive(true);
+            blackOutObject.GetComponent<BlackOutManager>().index += 1;
+            blackOutObject.GetComponent<BlackOutManager>().NextSentence();
             convoCounter = 15;
+            uiPressCircle.SetActive(false);
+            boardOptionManager.SetActive(false);
+
+        }
+        if (convoCounter == 17)
+        {
+            uiCanvas.GetComponent<Canvas>().enabled = false;
+            promptPanel.SetActive(true);
+            solidarityPanel.SetActive(false);
+            optionManager.SetActive(true);
+            playerObject.GetComponent<MovementController>().enabled = true;
+            blackOutObject.SetActive(false);
             //change something for the interaction manager so that prompt panels go to different index numbers
         }
+
     }
 }

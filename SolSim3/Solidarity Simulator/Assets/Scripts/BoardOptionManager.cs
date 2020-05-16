@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class BoardOptionManager : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class BoardOptionManager : MonoBehaviour
     public GameObject sceneManager;
     public GameObject mainCamera;
     public bool primed;
+    public GameObject optionOneText;
+    public GameObject optionTwoText;
     
 
     void Start()
@@ -48,8 +51,10 @@ public class BoardOptionManager : MonoBehaviour
         {
             optionOne.SetActive(true);
             optionTwo.SetActive(true);
-            optionOne.GetComponent<Image>().color = UnityEngine.Color.blue;
-            optionTwo.GetComponent<Image>().color = UnityEngine.Color.black;
+            optionOne.GetComponent<Image>().color = UnityEngine.Color.white;
+            optionOneText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(0, 255, 128, 255);
+            optionTwo.GetComponent<Image>().color = UnityEngine.Color.blue;
+            optionTwoText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(0, 255, 128, 60);
             primed = false;
         }
 
@@ -57,8 +62,10 @@ public class BoardOptionManager : MonoBehaviour
         {
             optionOne.SetActive(true);
             optionTwo.SetActive(true);
-            optionOne.GetComponent<Image>().color = UnityEngine.Color.black;
-            optionTwo.GetComponent<Image>().color = UnityEngine.Color.blue;
+            optionOne.GetComponent<Image>().color = UnityEngine.Color.blue;
+            optionOneText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(0, 255, 128, 60);
+            optionTwo.GetComponent<Image>().color = UnityEngine.Color.white;
+            optionTwoText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(0, 255, 128, 255);
             primed = false;
         }
 

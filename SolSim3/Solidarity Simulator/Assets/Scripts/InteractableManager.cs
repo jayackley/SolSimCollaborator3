@@ -13,6 +13,8 @@ public class InteractableManager : MonoBehaviour {
     public float waitTime;
     public AudioSource soundholder;
     public AudioClip sound;
+    public int pushMax;
+    public int pushCount;
 
 
     public void Start()
@@ -33,10 +35,6 @@ public class InteractableManager : MonoBehaviour {
         primed = false;
     }
 
-
-
-
-
     public void Update()
     {
         if (primed)
@@ -55,14 +53,29 @@ public class InteractableManager : MonoBehaviour {
             buttonInstruction.SetActive(false);
             uiPressCircle.SetActive(false);
         }
-        if (primed == true)
+        if (primed == true & pushCount <= pushMax)
         {
             GetComponent<Animator>().SetTrigger("pour");
             GetComponent<BoxCollider2D>().enabled = false;
             soundholder.PlayOneShot(sound);
             StartCoroutine("Wait");
-            signTextManager.GetComponent<SignTextManger>().buttonIndex += 1;
-            signTextManager.GetComponent<SignTextManger>().ButtonNextSentence();
+            pushCount += 1;
+            //signTextManager.GetComponent<SignTextManger>().buttonIndex += 1;
+            //signTextManager.GetComponent<SignTextManger>().ButtonNextSentence();
+        }
+        if (primed = true & pushCount ==(pushMax+1))
+        {
+            GetComponent<Animator>().SetTrigger("break");
+            primed = false;
+            GetComponent<BoxCollider2D>().enabled = false;
+            pressCircle.SetActive(false);
+            soundholder.pitch -= 0.5f;
+            soundholder.PlayOneShot(sound);
+            pushCount += 1;
+            gameObject.GetComponent<InteractableManager>().enabled = false;
+            //signTextManager.GetComponent<SignTextManger>().buttonIndex += 1;
+            //signTextManager.GetComponent<SignTextManger>().ButtonNextSentence();
+
         }
 
     }
@@ -81,8 +94,10 @@ public class InteractableManager : MonoBehaviour {
     public IEnumerator Wait()
     {
         yield return new WaitForSeconds(waitTime);
+        if (pushCount <= pushMax)
+        { 
         GetComponent<BoxCollider2D>().enabled = true;
-
+    }
     }
 
 

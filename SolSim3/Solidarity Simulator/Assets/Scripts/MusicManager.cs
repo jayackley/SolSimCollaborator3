@@ -283,6 +283,26 @@ public class MusicManager : MonoBehaviour {
             bargainingTune.GetComponent<AudioSource>().Play();
             sceneManager.GetComponent<SceneManager>().convoCounter = 13;
         }
+        if (sceneManager.GetComponent<SceneManager>().convoCounter == 15)
+        {
+            fluteLead.GetComponent<AudioSource>().Play();
+            thumps.GetComponent<AudioSource>().Play();
+            bass.GetComponent<AudioSource>().Play();
+            bleepMajor.GetComponent<AudioSource>().Play();
+            bleepMinor.GetComponent<AudioSource>().Stop();
+            majorArp.GetComponent<AudioSource>().Play();
+            minorArp.GetComponent<AudioSource>().Stop();
+            chaos.GetComponent<AudioSource>().Play();
+            undertone.GetComponent<AudioSource>().Play();
+            spaceSound.GetComponent<AudioSource>().Play();
+            boardMusic1.GetComponent<AudioSource>().Stop();
+            boardMusic2.GetComponent<AudioSource>().Stop();
+            boardMusic3.GetComponent<AudioSource>().Stop();
+            boardMusic4.GetComponent<AudioSource>().Stop();
+            strikePongTune.GetComponent<AudioSource>().Stop();
+            bargainingTune.GetComponent<AudioSource>().Stop();
+            sceneManager.GetComponent<SceneManager>().convoCounter = 16;
+        }
     }
 
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class OptionManager : MonoBehaviour
 {
@@ -9,8 +10,11 @@ public class OptionManager : MonoBehaviour
     public int sentenceIndex;
     public int currentSelect;
     public GameObject optionOne;
+    public GameObject optionOneText;
     public GameObject optionTwo;
+    public GameObject optionTwoText;
     public GameObject optionThree;
+    public GameObject optionThreeText;
     public GameObject promptPanel;
     public GameObject solidarityObject;
     public GameObject playerObject;
@@ -25,7 +29,7 @@ public class OptionManager : MonoBehaviour
 
     void Start()
     {
-        currentSelect = 1;
+        currentSelect = 2;
         optionOne.SetActive(false);
         optionTwo.SetActive(false);
         optionThree.SetActive(false);
@@ -42,7 +46,7 @@ public class OptionManager : MonoBehaviour
         {
             numberOfOptions = 2;
         }
-        else if ((sentenceIndex >= 4 && sentenceIndex <= 10) || (sentenceIndex >= 14 && sentenceIndex <= 20) || (sentenceIndex >= 24 && sentenceIndex <= 28) || (sentenceIndex >= 32 && sentenceIndex <= 35) || (sentenceIndex >= 38 && sentenceIndex <= 41) || (sentenceIndex >= 46 && sentenceIndex <= 51) || (sentenceIndex >= 55 && sentenceIndex <= 59))
+        else if ((sentenceIndex >= 4 && sentenceIndex <= 10) || (sentenceIndex >= 14 && sentenceIndex <= 20) || (sentenceIndex >= 24 && sentenceIndex <= 28) || (sentenceIndex >= 32 && sentenceIndex <= 35) || (sentenceIndex >= 38 && sentenceIndex <= 41) || (sentenceIndex >= 46 && sentenceIndex <= 51) || (sentenceIndex >= 55 && sentenceIndex <= 59)||sentenceIndex >= 60)
         {
             numberOfOptions = 0;
         }
@@ -53,15 +57,21 @@ public class OptionManager : MonoBehaviour
         {
             optionOne.SetActive(true);
             optionTwo.SetActive(true);
-            optionOne.GetComponent<Image>().color = UnityEngine.Color.blue;
-            optionTwo.GetComponent<Image>().color = UnityEngine.Color.black;
+            optionTwo.GetComponent<Transform>().localPosition = new Vector3(optionTwo.GetComponent<Transform>().localPosition.x, -75, 0);
+            optionOne.GetComponent<Image>().color = UnityEngine.Color.white;
+            optionOneText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(0, 255, 128, 255);
+            optionTwo.GetComponent<Image>().color = UnityEngine.Color.blue;
+            optionTwoText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(0, 255, 128, 60);
         }
         else if (numberOfOptions == 2 && currentSelect == 2 && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             optionOne.SetActive(true);
             optionTwo.SetActive(true);
-            optionOne.GetComponent<Image>().color = UnityEngine.Color.black;
-            optionTwo.GetComponent<Image>().color = UnityEngine.Color.blue;
+            optionTwo.GetComponent<Transform>().localPosition = new Vector3(optionTwo.GetComponent<Transform>().localPosition.x, -75, 0);
+            optionOne.GetComponent<Image>().color = UnityEngine.Color.blue;
+            optionOneText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(0, 255, 128, 60);
+            optionTwo.GetComponent<Image>().color = UnityEngine.Color.white;
+            optionTwoText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(0, 255, 128, 255);
         }
         //if three options
 
@@ -70,18 +80,26 @@ public class OptionManager : MonoBehaviour
             optionOne.SetActive(true);
             optionTwo.SetActive(true);
             optionThree.SetActive(true);
-            optionOne.GetComponent<Image>().color = UnityEngine.Color.blue;
-            optionTwo.GetComponent<Image>().color = UnityEngine.Color.black;
-            optionThree.GetComponent<Image>().color = UnityEngine.Color.black;
+            optionTwo.GetComponent<Transform>().localPosition = new Vector3(optionTwo.GetComponent<Transform>().localPosition.x, 50, 0);
+            optionOne.GetComponent<Image>().color = UnityEngine.Color.white;
+            optionOneText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(0, 255, 128, 255);
+            optionTwo.GetComponent<Image>().color = UnityEngine.Color.blue;
+            optionTwoText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(0, 255, 128, 60);
+            optionThree.GetComponent<Image>().color = UnityEngine.Color.blue;
+            optionThreeText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(0, 255, 128, 60);
         }
         else if (numberOfOptions == 3 && currentSelect == 2 && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             optionOne.SetActive(true);
             optionTwo.SetActive(true);
             optionThree.SetActive(true);
-            optionOne.GetComponent<Image>().color = UnityEngine.Color.black;
-            optionTwo.GetComponent<Image>().color = UnityEngine.Color.blue;
-            optionThree.GetComponent<Image>().color = UnityEngine.Color.black;
+            optionTwo.GetComponent<Transform>().localPosition = new Vector3(optionTwo.GetComponent<Transform>().localPosition.x, 50, 0);
+            optionOne.GetComponent<Image>().color = UnityEngine.Color.blue;
+            optionOneText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(0, 255, 128, 60);
+            optionTwo.GetComponent<Image>().color = UnityEngine.Color.white;
+            optionTwoText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(0, 255, 128, 255);
+            optionThree.GetComponent<Image>().color = UnityEngine.Color.blue;
+            optionThreeText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(0, 255, 128, 60);
 
         }
         else if (numberOfOptions == 3 && currentSelect == 3 && promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -89,9 +107,13 @@ public class OptionManager : MonoBehaviour
             optionOne.SetActive(true);
             optionTwo.SetActive(true);
             optionThree.SetActive(true);
-            optionOne.GetComponent<Image>().color = UnityEngine.Color.black;
-            optionTwo.GetComponent<Image>().color = UnityEngine.Color.black;
-            optionThree.GetComponent<Image>().color = UnityEngine.Color.blue;
+            optionTwo.GetComponent<Transform>().localPosition = new Vector3(optionTwo.GetComponent<Transform>().localPosition.x, 50, 0);
+            optionOne.GetComponent<Image>().color = UnityEngine.Color.blue;
+            optionOneText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(0, 255, 128, 60);
+            optionTwo.GetComponent<Image>().color = UnityEngine.Color.blue;
+            optionTwoText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(0, 255, 128, 60);
+            optionThree.GetComponent<Image>().color = UnityEngine.Color.white;
+            optionThreeText.GetComponent<TextMeshProUGUI>().faceColor = new Color32(0, 255, 128, 255);
         }
         else
         {
@@ -162,7 +184,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 20;
             sentenceIndex = 1;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         else if ((sentenceIndex == 0 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return")))&& promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -170,7 +192,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 5;
             sentenceIndex = 2;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         else if ((sentenceIndex == 0 && currentSelect == 3 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -178,7 +200,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 30;
             sentenceIndex = 3;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
         //sentence index 1
         else if ((sentenceIndex == 1 && currentSelect == 1 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -186,7 +208,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 20;
             sentenceIndex = 4;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         else if ((sentenceIndex == 1 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -194,7 +216,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 5;
             sentenceIndex = 5;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         else if ((sentenceIndex == 1 && currentSelect == 3 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -202,7 +224,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 30;
             sentenceIndex = 6;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
         //sentence index 2
 
@@ -211,7 +233,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 20;
             sentenceIndex = 7;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         else if ((sentenceIndex == 2 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -219,7 +241,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 5;
             sentenceIndex = 8;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         //sentence index 3
@@ -229,7 +251,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 20;
             sentenceIndex = 9;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         else if ((sentenceIndex == 3 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -237,7 +259,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 5;
             sentenceIndex = 10;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         //sentence index 11
@@ -246,7 +268,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 10;
             sentenceIndex = 12;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         else if ((sentenceIndex == 11 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -254,7 +276,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 5;
             sentenceIndex = 13;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         else if ((sentenceIndex == 11 && currentSelect == 3 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -262,7 +284,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 30;
             sentenceIndex = 20;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         //sentence index 12
@@ -271,7 +293,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 20;
             sentenceIndex = 14;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         else if ((sentenceIndex == 12 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -279,7 +301,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 5;
             sentenceIndex = 15;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         else if ((sentenceIndex == 12 && currentSelect == 3 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -287,7 +309,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 20;
             sentenceIndex = 16;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         //sentence index 13
@@ -296,7 +318,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 10;
             sentenceIndex = 17;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         else if ((sentenceIndex == 13 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -304,7 +326,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 5;
             sentenceIndex = 18;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         else if ((sentenceIndex == 13 && currentSelect == 3 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -312,7 +334,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 15;
             sentenceIndex = 19;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         //sentence index 21
@@ -321,7 +343,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 10;
             sentenceIndex = 22;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         else if ((sentenceIndex == 21 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -329,7 +351,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 20;
             sentenceIndex = 23;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         //sentence index 22
@@ -338,7 +360,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 15;
             sentenceIndex = 24;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         else if ((sentenceIndex == 22 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -346,7 +368,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 5;
             sentenceIndex = 25;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         else if ((sentenceIndex == 22 && currentSelect == 3 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -354,7 +376,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 20;
             sentenceIndex = 26;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         //sentence index 23
@@ -363,7 +385,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 5;
             sentenceIndex = 27;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         else if ((sentenceIndex == 23 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -371,7 +393,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 15;
             sentenceIndex = 28;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         //sentence index 29
@@ -380,7 +402,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 10;
             sentenceIndex = 30;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         else if ((sentenceIndex == 29 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -388,7 +410,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 10;
             sentenceIndex = 31;
             promptPanel.GetComponent<PromptManager>().NextSentence(); 
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         //sentence index 30
@@ -397,7 +419,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 10;
             sentenceIndex = 32;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         else if ((sentenceIndex == 30 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -405,7 +427,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 15;
             sentenceIndex = 33;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         //sentence index 31
@@ -414,7 +436,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 10;
             sentenceIndex = 34;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         else if ((sentenceIndex == 31 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -422,7 +444,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 5;
             sentenceIndex = 35;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         //sentence index 36
@@ -431,7 +453,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 10;
             sentenceIndex = 37;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         else if ((sentenceIndex == 36 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -439,7 +461,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 5;
             sentenceIndex = 40;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         else if ((sentenceIndex == 36 && currentSelect == 3 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -447,7 +469,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 30;
             sentenceIndex = 41;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         //sentence index 37
@@ -456,7 +478,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 20;
             sentenceIndex = 38;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         else if ((sentenceIndex == 37 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -464,7 +486,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 5;
             sentenceIndex = 39;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
         //sentence index 42
         else if ((sentenceIndex == 42 && currentSelect == 1 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -472,7 +494,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 20;
             sentenceIndex = 43;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         else if ((sentenceIndex == 42 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -480,7 +502,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 10;
             sentenceIndex = 44;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         else if ((sentenceIndex == 42 && currentSelect == 3 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -488,7 +510,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 5;
             sentenceIndex = 45;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         //sentence index 43
@@ -497,7 +519,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 10;
             sentenceIndex = 46;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         else if ((sentenceIndex == 43 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -505,7 +527,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 10;
             sentenceIndex = 47;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         //sentence index 44
@@ -514,7 +536,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 20;
             sentenceIndex = 48;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         else if ((sentenceIndex == 44 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -522,7 +544,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 30;
             sentenceIndex = 49;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         //sentence index 45
@@ -531,7 +553,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 5;
             sentenceIndex = 50;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         else if ((sentenceIndex == 45 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -539,7 +561,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 5;
             sentenceIndex = 51;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         //sentence index 52
@@ -548,7 +570,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 5;
             sentenceIndex = 53;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         else if ((sentenceIndex == 52 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -556,7 +578,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 5;
             sentenceIndex = 54;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         else if ((sentenceIndex == 52 && currentSelect == 3 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -564,7 +586,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 10;
             sentenceIndex = 59;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         //sentence index 53
@@ -573,7 +595,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 5;
             sentenceIndex = 55;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         else if ((sentenceIndex == 53 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -581,7 +603,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 15;
             sentenceIndex = 56;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         //sentence index 54
@@ -591,7 +613,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 5;
             sentenceIndex = 57;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
         else if ((sentenceIndex == 54 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
@@ -599,7 +621,7 @@ public class OptionManager : MonoBehaviour
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 10;
             sentenceIndex = 58;
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            currentSelect = 1;
+            currentSelect = 2;
         }
 
 
@@ -617,10 +639,11 @@ public class OptionManager : MonoBehaviour
             sentenceIndex = 0;
             numberOfOptions = 3;
             playerObject.GetComponent<InteractionManager>().whosTalking = "";
+            gameObject.GetComponent<OptionManager>().enabled = false;
             uiPressCircle.SetActive(false);
             buttonInstruction.SetActive(false);
         }
-        else if (Event.current.Equals(Event.KeyboardEvent("return")) && numberOfOptions == 0 && promptPanel.GetComponent<PromptManager>().isTyping == false && sceneManager.GetComponent<SceneManager>().convoCounter < 7)
+        else if (Event.current.Equals(Event.KeyboardEvent("return")) && numberOfOptions == 0 && promptPanel.GetComponent<PromptManager>().isTyping == false && (sceneManager.GetComponent<SceneManager>().convoCounter < 7 || sceneManager.GetComponent<SceneManager>().convoCounter > 7))
         {
             playerObject.GetComponent<MovementController>().enabled = true;
             playerObject.GetComponent<InteractionManager>().dialogueVisible = false;
@@ -632,6 +655,7 @@ public class OptionManager : MonoBehaviour
             sentenceIndex = 0;
             numberOfOptions = 3;
             playerObject.GetComponent<InteractionManager>().whosTalking = "";
+            gameObject.GetComponent<OptionManager>().enabled = false;
             uiPressCircle.SetActive(false);
             buttonInstruction.SetActive(false);
 
