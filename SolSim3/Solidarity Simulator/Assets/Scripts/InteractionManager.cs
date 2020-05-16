@@ -111,7 +111,7 @@ public class InteractionManager : MonoBehaviour
         }
 
 
-        else if (collision.gameObject.name == "Welder")
+        else if (collision.gameObject.name == "WelderArea")
         {
             optionManager.GetComponent<OptionManager>().enabled = true;
             playerObject.GetComponent<MovementController>().canPoke = false;
@@ -130,7 +130,7 @@ public class InteractionManager : MonoBehaviour
                 optionManager.GetComponent<OptionManager>().sentenceIndex = 66;
             }
             promptPanel.GetComponent<PromptManager>().NextSentence();
-            playerObject.GetComponent<Animator>().SetBool("iswalking", false);
+            playerObject.GetComponent<Animator>().SetBool("iswalking", true);
             playerObject.GetComponent<Animator>().SetBool("isjumping", false);
             playerObject.GetComponent<Animator>().SetBool("isfalling", false);
             whosTalking = "welder";

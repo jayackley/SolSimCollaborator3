@@ -202,7 +202,6 @@ public class SceneManager : MonoBehaviour {
             wrench.GetComponent<SpriteRenderer>().flipX = false;
             wrench.GetComponent<SpriteRenderer>().sortingOrder = 0;
             solidarityObject.SetActive(false);
-            promptPanel.SetActive(true);
             blackOutObject.SetActive(true);
             blackOutObject.GetComponent<BlackOutManager>().index += 1;
             blackOutObject.GetComponent<BlackOutManager>().NextSentence();
@@ -214,6 +213,8 @@ public class SceneManager : MonoBehaviour {
         if (convoCounter == 17)
         {
             uiCanvas.GetComponent<Canvas>().enabled = false;
+            promptPanel.SetActive(true);
+            solidarityPanel.SetActive(false);
             optionManager.SetActive(true);
             playerObject.GetComponent<MovementController>().enabled = true;
             blackOutObject.SetActive(false);

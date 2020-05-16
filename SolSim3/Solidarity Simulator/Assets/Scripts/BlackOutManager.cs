@@ -15,6 +15,10 @@ public class BlackOutManager : MonoBehaviour
     public bool primed;
     public float pauseTime;
 
+    private void Awake()
+    {
+        textDisplay.faceColor = new Color32(245, 254, 1,255);
+    }
 
     IEnumerator Type()
     {

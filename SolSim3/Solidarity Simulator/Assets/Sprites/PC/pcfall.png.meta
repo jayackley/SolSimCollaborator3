@@ -101,12 +101,12 @@ TextureImporter:
       name: pcfall_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
         width: 67
         height: 118
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.48758534, y: 0.49999997}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -121,12 +121,12 @@ TextureImporter:
       name: pcfall_1
       rect:
         serializedVersion: 2
-        x: 67
+        x: 68
         y: 0
         width: 67
         height: 118
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.48758528, y: 0.49999997}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -141,12 +141,12 @@ TextureImporter:
       name: pcfall_2
       rect:
         serializedVersion: 2
-        x: 134
+        x: 135
         y: 0
-        width: 67
+        width: 66
         height: 118
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
