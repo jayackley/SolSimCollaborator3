@@ -5,6 +5,7 @@ using TMPro;
 
 public class InteractionManager : MonoBehaviour
 {
+    public GameObject negotiationManager;
     public bool dialogueVisible;
     public GameObject uiCanvas;
     public GameObject playerObject;
@@ -50,9 +51,13 @@ public class InteractionManager : MonoBehaviour
             {
                 optionManager.GetComponent<OptionManager>().sentenceIndex = 0;
             }
-            else if (sceneManager.GetComponent<SceneManager>().convoCounter > 7)
+            else if (sceneManager.GetComponent<SceneManager>().convoCounter > 7 && negotiationManager.GetComponent<NegotiationDialogueManager>().layoffProtections == true)
             {
-                optionManager.GetComponent<OptionManager>().sentenceIndex = 60;
+                optionManager.GetComponent<OptionManager>().sentenceIndex = 61;
+            }
+            else if (sceneManager.GetComponent<SceneManager>().convoCounter > 7 && negotiationManager.GetComponent<NegotiationDialogueManager>().layoffProtections == false)
+            {
+                optionManager.GetComponent<OptionManager>().sentenceIndex = 62;
             }
             promptPanel.GetComponent<PromptManager>().NextSentence();
             playerObject.GetComponent<Animator>().SetBool("iswalking", false);
@@ -88,9 +93,13 @@ public class InteractionManager : MonoBehaviour
             {
                 optionManager.GetComponent<OptionManager>().sentenceIndex = 11;
             }
-            else if (sceneManager.GetComponent<SceneManager>().convoCounter > 7)
+            else if (sceneManager.GetComponent<SceneManager>().convoCounter > 7 && negotiationManager.GetComponent<NegotiationDialogueManager>().dental == true)
             {
-                optionManager.GetComponent<OptionManager>().sentenceIndex = 63;
+                optionManager.GetComponent<OptionManager>().sentenceIndex = 64;
+            }
+            else if (sceneManager.GetComponent<SceneManager>().convoCounter > 7 && negotiationManager.GetComponent<NegotiationDialogueManager>().dental == false)
+            {
+                optionManager.GetComponent<OptionManager>().sentenceIndex = 65;
             }
             promptPanel.GetComponent<PromptManager>().NextSentence();
             playerObject.GetComponent<Animator>().SetBool("iswalking", false);
@@ -125,9 +134,13 @@ public class InteractionManager : MonoBehaviour
             {
                 optionManager.GetComponent<OptionManager>().sentenceIndex = 21;
             }
-            else if (sceneManager.GetComponent<SceneManager>().convoCounter > 7)
+            else if (sceneManager.GetComponent<SceneManager>().convoCounter > 7 && negotiationManager.GetComponent<NegotiationDialogueManager>().healthcare == true)
             {
-                optionManager.GetComponent<OptionManager>().sentenceIndex = 66;
+                optionManager.GetComponent<OptionManager>().sentenceIndex = 67;
+            }
+            else if (sceneManager.GetComponent<SceneManager>().convoCounter > 7 && negotiationManager.GetComponent<NegotiationDialogueManager>().healthcare == false)
+            {
+                optionManager.GetComponent<OptionManager>().sentenceIndex = 68;
             }
             promptPanel.GetComponent<PromptManager>().NextSentence();
             playerObject.GetComponent<Animator>().SetBool("iswalking", true);
@@ -162,9 +175,13 @@ public class InteractionManager : MonoBehaviour
             {
                 optionManager.GetComponent<OptionManager>().sentenceIndex = 29;
             }
-            else if (sceneManager.GetComponent<SceneManager>().convoCounter > 7)
+            else if (sceneManager.GetComponent<SceneManager>().convoCounter > 7 && negotiationManager.GetComponent<NegotiationDialogueManager>().childcare == true)
             {
-                optionManager.GetComponent<OptionManager>().sentenceIndex = 69;
+                optionManager.GetComponent<OptionManager>().sentenceIndex = 70;
+            }
+            else if (sceneManager.GetComponent<SceneManager>().convoCounter > 7 && negotiationManager.GetComponent<NegotiationDialogueManager>().childcare == false)
+            {
+                optionManager.GetComponent<OptionManager>().sentenceIndex = 71;
             }
             promptPanel.GetComponent<PromptManager>().NextSentence();
             playerObject.GetComponent<Animator>().SetBool("iswalking", false);
@@ -198,9 +215,13 @@ public class InteractionManager : MonoBehaviour
             {
                 optionManager.GetComponent<OptionManager>().sentenceIndex = 36;
             }
-            else if (sceneManager.GetComponent<SceneManager>().convoCounter > 7)
+            else if (sceneManager.GetComponent<SceneManager>().convoCounter > 7 && negotiationManager.GetComponent<NegotiationDialogueManager>().raises == true)
             {
-                optionManager.GetComponent<OptionManager>().sentenceIndex = 72;
+                optionManager.GetComponent<OptionManager>().sentenceIndex = 73;
+            }
+            else if (sceneManager.GetComponent<SceneManager>().convoCounter > 7 && negotiationManager.GetComponent<NegotiationDialogueManager>().raises == false)
+            {
+                optionManager.GetComponent<OptionManager>().sentenceIndex = 74;
             }
             promptPanel.GetComponent<PromptManager>().NextSentence();
             playerObject.GetComponent<Animator>().SetBool("iswalking", false);
@@ -234,11 +255,15 @@ public class InteractionManager : MonoBehaviour
             {
                 optionManager.GetComponent<OptionManager>().sentenceIndex = 42;
             }
-            else if (sceneManager.GetComponent<SceneManager>().convoCounter > 7)
+            else if (sceneManager.GetComponent<SceneManager>().convoCounter > 7 && negotiationManager.GetComponent<NegotiationDialogueManager>().boardRep == true)
             {
-                optionManager.GetComponent<OptionManager>().sentenceIndex = 75;
+                optionManager.GetComponent<OptionManager>().sentenceIndex = 76;
             }
-            optionManager.GetComponent<OptionManager>().sentenceIndex = 42;
+            else if (sceneManager.GetComponent<SceneManager>().convoCounter > 7 && negotiationManager.GetComponent<NegotiationDialogueManager>().boardRep == false)
+            {
+                optionManager.GetComponent<OptionManager>().sentenceIndex = 77;
+            }
+
             promptPanel.GetComponent<PromptManager>().NextSentence();
             playerObject.GetComponent<Animator>().SetBool("iswalking", false);
             playerObject.GetComponent<Animator>().SetBool("isjumping", false);
@@ -270,11 +295,15 @@ public class InteractionManager : MonoBehaviour
             {
                 optionManager.GetComponent<OptionManager>().sentenceIndex = 52;
             }
-            else if (sceneManager.GetComponent<SceneManager>().convoCounter > 7)
+            else if (sceneManager.GetComponent<SceneManager>().convoCounter > 7 && negotiationManager.GetComponent<NegotiationDialogueManager>().retirement == true)
             {
-                optionManager.GetComponent<OptionManager>().sentenceIndex = 78;
+                optionManager.GetComponent<OptionManager>().sentenceIndex = 79;
             }
-            optionManager.GetComponent<OptionManager>().sentenceIndex = 52;
+            else if (sceneManager.GetComponent<SceneManager>().convoCounter > 7 && negotiationManager.GetComponent<NegotiationDialogueManager>().retirement == false)
+            {
+                optionManager.GetComponent<OptionManager>().sentenceIndex = 80;
+            }
+
             promptPanel.GetComponent<PromptManager>().NextSentence();
             playerObject.GetComponent<Animator>().SetBool("iswalking", false);
             playerObject.GetComponent<Animator>().SetBool("isjumping", false);
@@ -347,6 +376,7 @@ public class InteractionManager : MonoBehaviour
             {
                 manager.GetComponent<AudioSource>().volume += voxFadeSpeed * Time.deltaTime;
             }
+            manager.GetComponent<Animator>().SetBool("IsTalking", true);
         }
         else if (blackOutManager.GetComponent<BlackOutManager>().isTyping == true)
         {
@@ -391,6 +421,7 @@ public class InteractionManager : MonoBehaviour
             }
 
             wrench.GetComponent<Animator>().SetBool("IsTalking", false);
+            manager.GetComponent<Animator>().SetBool("IsTalking", false);
         }
 
         bool flipBigGuy = (bigGuy.GetComponent<SpriteRenderer>().flipX ? (playerObject.transform.position.x > bigGuy.transform.position.x) : (playerObject.transform.position.x < bigGuy.transform.position.x));

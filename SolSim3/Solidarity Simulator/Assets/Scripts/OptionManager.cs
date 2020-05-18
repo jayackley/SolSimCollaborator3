@@ -179,7 +179,7 @@ public class OptionManager : MonoBehaviour
         //wrench
 
         //sentence index 0
-        if ((sentenceIndex == 0 && currentSelect == 1 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        if ((sentenceIndex == 0 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 20;
             sentenceIndex = 1;
@@ -187,7 +187,7 @@ public class OptionManager : MonoBehaviour
             currentSelect = 2;
         }
 
-        else if ((sentenceIndex == 0 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return")))&& promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 0 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))))&& promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 5;
             sentenceIndex = 2;
@@ -195,7 +195,7 @@ public class OptionManager : MonoBehaviour
             currentSelect = 2;
         }
 
-        else if ((sentenceIndex == 0 && currentSelect == 3 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 0 && currentSelect == 3 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 30;
             sentenceIndex = 3;
@@ -203,7 +203,7 @@ public class OptionManager : MonoBehaviour
             currentSelect = 2;
         }
         //sentence index 1
-        else if ((sentenceIndex == 1 && currentSelect == 1 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 1 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 20;
             sentenceIndex = 4;
@@ -211,7 +211,7 @@ public class OptionManager : MonoBehaviour
             currentSelect = 2;
         }
 
-        else if ((sentenceIndex == 1 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 1 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 5;
             sentenceIndex = 5;
@@ -219,7 +219,7 @@ public class OptionManager : MonoBehaviour
             currentSelect = 2;
         }
 
-        else if ((sentenceIndex == 1 && currentSelect == 3 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 1 && currentSelect == 3 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 30;
             sentenceIndex = 6;
@@ -228,7 +228,7 @@ public class OptionManager : MonoBehaviour
         }
         //sentence index 2
 
-        else if ((sentenceIndex == 2 && currentSelect == 1 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 2 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 20;
             sentenceIndex = 7;
@@ -236,7 +236,7 @@ public class OptionManager : MonoBehaviour
             currentSelect = 2;
         }
 
-        else if ((sentenceIndex == 2 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 2 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 5;
             sentenceIndex = 8;
@@ -246,7 +246,7 @@ public class OptionManager : MonoBehaviour
 
         //sentence index 3
 
-        else if ((sentenceIndex == 3 && currentSelect == 1 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 3 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 20;
             sentenceIndex = 9;
@@ -254,7 +254,7 @@ public class OptionManager : MonoBehaviour
             currentSelect = 2;
         }
 
-        else if ((sentenceIndex == 3 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 3 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 5;
             sentenceIndex = 10;
@@ -263,7 +263,7 @@ public class OptionManager : MonoBehaviour
         }
 
         //sentence index 11
-        else if ((sentenceIndex == 11 && currentSelect == 1 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 11 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 10;
             sentenceIndex = 12;
@@ -271,7 +271,7 @@ public class OptionManager : MonoBehaviour
             currentSelect = 2;
         }
 
-        else if ((sentenceIndex == 11 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 11 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 5;
             sentenceIndex = 13;
@@ -279,7 +279,7 @@ public class OptionManager : MonoBehaviour
             currentSelect = 2;
         }
 
-        else if ((sentenceIndex == 11 && currentSelect == 3 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 11 && currentSelect == 3 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 30;
             sentenceIndex = 20;
@@ -288,7 +288,7 @@ public class OptionManager : MonoBehaviour
         }
 
         //sentence index 12
-        else if ((sentenceIndex == 12 && currentSelect == 1 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 12 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 20;
             sentenceIndex = 14;
@@ -296,7 +296,7 @@ public class OptionManager : MonoBehaviour
             currentSelect = 2;
         }
 
-        else if ((sentenceIndex == 12 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 12 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 5;
             sentenceIndex = 15;
@@ -304,7 +304,7 @@ public class OptionManager : MonoBehaviour
             currentSelect = 2;
         }
 
-        else if ((sentenceIndex == 12 && currentSelect == 3 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 12 && currentSelect == 3 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 20;
             sentenceIndex = 16;
@@ -313,7 +313,7 @@ public class OptionManager : MonoBehaviour
         }
 
         //sentence index 13
-        else if ((sentenceIndex == 13 && currentSelect == 1 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 13 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 10;
             sentenceIndex = 17;
@@ -321,7 +321,7 @@ public class OptionManager : MonoBehaviour
             currentSelect = 2;
         }
 
-        else if ((sentenceIndex == 13 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 13 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 5;
             sentenceIndex = 18;
@@ -329,7 +329,7 @@ public class OptionManager : MonoBehaviour
             currentSelect = 2;
         }
 
-        else if ((sentenceIndex == 13 && currentSelect == 3 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 13 && currentSelect == 3 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 15;
             sentenceIndex = 19;
@@ -338,7 +338,7 @@ public class OptionManager : MonoBehaviour
         }
 
         //sentence index 21
-        else if ((sentenceIndex == 21 && currentSelect == 1 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 21 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 10;
             sentenceIndex = 22;
@@ -346,7 +346,7 @@ public class OptionManager : MonoBehaviour
             currentSelect = 2;
         }
 
-        else if ((sentenceIndex == 21 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 21 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 20;
             sentenceIndex = 23;
@@ -355,7 +355,7 @@ public class OptionManager : MonoBehaviour
         }
 
         //sentence index 22
-        else if ((sentenceIndex == 22 && currentSelect == 1 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 22 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 15;
             sentenceIndex = 24;
@@ -363,7 +363,7 @@ public class OptionManager : MonoBehaviour
             currentSelect = 2;
         }
 
-        else if ((sentenceIndex == 22 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 22 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 5;
             sentenceIndex = 25;
@@ -371,7 +371,7 @@ public class OptionManager : MonoBehaviour
             currentSelect = 2;
         }
 
-        else if ((sentenceIndex == 22 && currentSelect == 3 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 22 && currentSelect == 3 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 20;
             sentenceIndex = 26;
@@ -380,7 +380,7 @@ public class OptionManager : MonoBehaviour
         }
 
         //sentence index 23
-        else if ((sentenceIndex == 23 && currentSelect == 1 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 23 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 5;
             sentenceIndex = 27;
@@ -388,7 +388,7 @@ public class OptionManager : MonoBehaviour
             currentSelect = 2;
         }
 
-        else if ((sentenceIndex == 23 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 23 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 15;
             sentenceIndex = 28;
@@ -397,7 +397,7 @@ public class OptionManager : MonoBehaviour
         }
 
         //sentence index 29
-        else if ((sentenceIndex == 29 && currentSelect == 1 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 29 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 10;
             sentenceIndex = 30;
@@ -405,7 +405,7 @@ public class OptionManager : MonoBehaviour
             currentSelect = 2;
         }
 
-        else if ((sentenceIndex == 29 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 29 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 10;
             sentenceIndex = 31;
@@ -414,7 +414,7 @@ public class OptionManager : MonoBehaviour
         }
 
         //sentence index 30
-        else if ((sentenceIndex == 30 && currentSelect == 1 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 30 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 10;
             sentenceIndex = 32;
@@ -422,7 +422,7 @@ public class OptionManager : MonoBehaviour
             currentSelect = 2;
         }
 
-        else if ((sentenceIndex == 30 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 30 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 15;
             sentenceIndex = 33;
@@ -431,7 +431,7 @@ public class OptionManager : MonoBehaviour
         }
 
         //sentence index 31
-        else if ((sentenceIndex == 31 && currentSelect == 1 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 31 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 10;
             sentenceIndex = 34;
@@ -439,7 +439,7 @@ public class OptionManager : MonoBehaviour
             currentSelect = 2;
         }
 
-        else if ((sentenceIndex == 31 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 31 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 5;
             sentenceIndex = 35;
@@ -448,7 +448,7 @@ public class OptionManager : MonoBehaviour
         }
 
         //sentence index 36
-        else if ((sentenceIndex == 36 && currentSelect == 1 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 36 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 10;
             sentenceIndex = 37;
@@ -456,7 +456,7 @@ public class OptionManager : MonoBehaviour
             currentSelect = 2;
         }
 
-        else if ((sentenceIndex == 36 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 36 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 5;
             sentenceIndex = 40;
@@ -464,7 +464,7 @@ public class OptionManager : MonoBehaviour
             currentSelect = 2;
         }
 
-        else if ((sentenceIndex == 36 && currentSelect == 3 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 36 && currentSelect == 3 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 30;
             sentenceIndex = 41;
@@ -473,7 +473,7 @@ public class OptionManager : MonoBehaviour
         }
 
         //sentence index 37
-        else if ((sentenceIndex == 37 && currentSelect == 1 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 37 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 20;
             sentenceIndex = 38;
@@ -481,7 +481,7 @@ public class OptionManager : MonoBehaviour
             currentSelect = 2;
         }
 
-        else if ((sentenceIndex == 37 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 37 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 5;
             sentenceIndex = 39;
@@ -489,7 +489,7 @@ public class OptionManager : MonoBehaviour
             currentSelect = 2;
         }
         //sentence index 42
-        else if ((sentenceIndex == 42 && currentSelect == 1 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 42 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 20;
             sentenceIndex = 43;
@@ -497,7 +497,7 @@ public class OptionManager : MonoBehaviour
             currentSelect = 2;
         }
 
-        else if ((sentenceIndex == 42 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 42 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 10;
             sentenceIndex = 44;
@@ -505,7 +505,7 @@ public class OptionManager : MonoBehaviour
             currentSelect = 2;
         }
 
-        else if ((sentenceIndex == 42 && currentSelect == 3 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 42 && currentSelect == 3 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 5;
             sentenceIndex = 45;
@@ -514,7 +514,7 @@ public class OptionManager : MonoBehaviour
         }
 
         //sentence index 43
-        else if ((sentenceIndex == 43 && currentSelect == 1 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 43 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 10;
             sentenceIndex = 46;
@@ -522,7 +522,7 @@ public class OptionManager : MonoBehaviour
             currentSelect = 2;
         }
 
-        else if ((sentenceIndex == 43 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 43 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 10;
             sentenceIndex = 47;
@@ -531,7 +531,7 @@ public class OptionManager : MonoBehaviour
         }
 
         //sentence index 44
-        else if ((sentenceIndex == 44 && currentSelect == 1 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 44 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 20;
             sentenceIndex = 48;
@@ -539,7 +539,7 @@ public class OptionManager : MonoBehaviour
             currentSelect = 2;
         }
 
-        else if ((sentenceIndex == 44 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 44 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 30;
             sentenceIndex = 49;
@@ -548,7 +548,7 @@ public class OptionManager : MonoBehaviour
         }
 
         //sentence index 45
-        else if ((sentenceIndex == 45 && currentSelect == 1 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 45 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 5;
             sentenceIndex = 50;
@@ -556,7 +556,7 @@ public class OptionManager : MonoBehaviour
             currentSelect = 2;
         }
 
-        else if ((sentenceIndex == 45 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 45 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 5;
             sentenceIndex = 51;
@@ -565,7 +565,7 @@ public class OptionManager : MonoBehaviour
         }
 
         //sentence index 52
-        else if ((sentenceIndex == 52 && currentSelect == 1 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 52 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 5;
             sentenceIndex = 53;
@@ -573,7 +573,7 @@ public class OptionManager : MonoBehaviour
             currentSelect = 2;
         }
 
-        else if ((sentenceIndex == 52 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 52 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 5;
             sentenceIndex = 54;
@@ -581,7 +581,7 @@ public class OptionManager : MonoBehaviour
             currentSelect = 2;
         }
 
-        else if ((sentenceIndex == 52 && currentSelect == 3 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 52 && currentSelect == 3 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 10;
             sentenceIndex = 59;
@@ -590,7 +590,7 @@ public class OptionManager : MonoBehaviour
         }
 
         //sentence index 53
-        else if ((sentenceIndex == 53 && currentSelect == 1 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 53 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 5;
             sentenceIndex = 55;
@@ -598,7 +598,7 @@ public class OptionManager : MonoBehaviour
             currentSelect = 2;
         }
 
-        else if ((sentenceIndex == 53 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 53 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 15;
             sentenceIndex = 56;
@@ -608,7 +608,7 @@ public class OptionManager : MonoBehaviour
 
         //sentence index 54
 
-        else if ((sentenceIndex == 54 && currentSelect == 1 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 54 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 5;
             sentenceIndex = 57;
@@ -616,7 +616,7 @@ public class OptionManager : MonoBehaviour
             currentSelect = 2;
         }
 
-        else if ((sentenceIndex == 54 && currentSelect == 2 && Event.current.Equals(Event.KeyboardEvent("return"))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
+        else if ((sentenceIndex == 54 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 10;
             sentenceIndex = 58;
@@ -627,7 +627,7 @@ public class OptionManager : MonoBehaviour
 
         //end scene
 
-        else if (Event.current.Equals(Event.KeyboardEvent("return")) && numberOfOptions == 0 && promptPanel.GetComponent<PromptManager>().isTyping == false && sceneManager.GetComponent<SceneManager>().convoCounter == 7)
+        else if ((Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && numberOfOptions == 0 && promptPanel.GetComponent<PromptManager>().isTyping == false && sceneManager.GetComponent<SceneManager>().convoCounter == 7)
         {
             playerObject.GetComponent<MovementController>().canPoke = true;
             playerObject.GetComponent<MovementController>().enabled = true;
@@ -643,7 +643,7 @@ public class OptionManager : MonoBehaviour
             uiPressCircle.SetActive(false);
             buttonInstruction.SetActive(false);
         }
-        else if (Event.current.Equals(Event.KeyboardEvent("return")) && numberOfOptions == 0 && promptPanel.GetComponent<PromptManager>().isTyping == false && (sceneManager.GetComponent<SceneManager>().convoCounter < 7 || sceneManager.GetComponent<SceneManager>().convoCounter > 7))
+        else if ((Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && numberOfOptions == 0 && promptPanel.GetComponent<PromptManager>().isTyping == false && (sceneManager.GetComponent<SceneManager>().convoCounter < 7 || sceneManager.GetComponent<SceneManager>().convoCounter > 7))
         {
             playerObject.GetComponent<MovementController>().enabled = true;
             playerObject.GetComponent<InteractionManager>().dialogueVisible = false;

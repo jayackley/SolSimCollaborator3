@@ -40,7 +40,7 @@ public class BoardManager : MonoBehaviour {
     private void Awake()
     {
         isTyping = false;
-        randomInsult = Random.Range(1, 4);
+        randomInsult = Random.Range(1, 7);
     }
 
     IEnumerator Type()
@@ -242,6 +242,7 @@ public class BoardManager : MonoBehaviour {
             accounting.GetComponent<AudioSource>().volume = 0;
             orb.GetComponent<AudioSource>().volume = 0;
             corporate.GetComponent<AudioSource>().volume = 0;
+            manager.GetComponent<Animator>().SetBool("IsSuitTalking", true);
         }
         else if (isTyping == true & whosTalking == "orb")
         {
@@ -313,6 +314,7 @@ public class BoardManager : MonoBehaviour {
             }
 
             wrench.GetComponent<Animator>().SetBool("IsTalking", false);
+            manager.GetComponent<Animator>().SetBool("IsSuitTalking", false);
 
         }
 
@@ -399,70 +401,70 @@ public class BoardManager : MonoBehaviour {
 
     private void OnGUI()
     {
-        if (index == 22 && solidarityObject.GetComponent<SolidarityManager>().solidarity >= 30 && Event.current.Equals(Event.KeyboardEvent("return")) && isTyping == false)
+        if (index == 22 && solidarityObject.GetComponent<SolidarityManager>().solidarity >= 30 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && isTyping == false)
         {
             index = 23;
             NextSentence();
         }
 
-        else if (index == 22 && solidarityObject.GetComponent<SolidarityManager>().solidarity < 30 && Event.current.Equals(Event.KeyboardEvent("return")) && isTyping == false)
+        else if (index == 22 && solidarityObject.GetComponent<SolidarityManager>().solidarity < 30 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && isTyping == false)
         {
             index = 24;
             NextSentence();
         }
 
-        else if ((index == 23 || index == 24) && solidarityObject.GetComponent<SolidarityManager>().solidarity >= 50 && Event.current.Equals(Event.KeyboardEvent("return")) && isTyping == false)
+        else if ((index == 23 || index == 24) && solidarityObject.GetComponent<SolidarityManager>().solidarity >= 50 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && isTyping == false)
         {
             index = 25;
             NextSentence();
         }
 
-        else if ((index == 23 || index == 24) && solidarityObject.GetComponent<SolidarityManager>().solidarity < 50 && Event.current.Equals(Event.KeyboardEvent("return")) && isTyping == false)
+        else if ((index == 23 || index == 24) && solidarityObject.GetComponent<SolidarityManager>().solidarity < 50 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && isTyping == false)
         {
             index = 26;
             NextSentence();
         }
 
-        else if ((index == 25 || index == 26) && solidarityObject.GetComponent<SolidarityManager>().solidarity >= 70 && Event.current.Equals(Event.KeyboardEvent("return")) && isTyping == false)
+        else if ((index == 25 || index == 26) && solidarityObject.GetComponent<SolidarityManager>().solidarity >= 70 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && isTyping == false)
         {
             index = 27;
             NextSentence();
         }
 
-        else if ((index == 25 || index == 26) && solidarityObject.GetComponent<SolidarityManager>().solidarity < 70 && Event.current.Equals(Event.KeyboardEvent("return")) && isTyping == false)
+        else if ((index == 25 || index == 26) && solidarityObject.GetComponent<SolidarityManager>().solidarity < 70 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && isTyping == false)
         {
             index = 28;
             NextSentence();
         }
-        else if ((index == 27 || index == 28) && solidarityObject.GetComponent<SolidarityManager>().solidarity >= 90 && Event.current.Equals(Event.KeyboardEvent("return")) && isTyping == false)
+        else if ((index == 27 || index == 28) && solidarityObject.GetComponent<SolidarityManager>().solidarity >= 90 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && isTyping == false)
         {
             index = 29;
             NextSentence();
         }
 
-        else if ((index == 27 || index == 28) && solidarityObject.GetComponent<SolidarityManager>().solidarity < 90 && Event.current.Equals(Event.KeyboardEvent("return")) && isTyping == false)
+        else if ((index == 27 || index == 28) && solidarityObject.GetComponent<SolidarityManager>().solidarity < 90 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && isTyping == false)
         {
             index = 30;
             NextSentence();
         }
-        else if ((index == 29 || index == 30) && solidarityObject.GetComponent<SolidarityManager>().solidarity >= 110 && Event.current.Equals(Event.KeyboardEvent("return")) && isTyping == false)
+        else if ((index == 29 || index == 30) && solidarityObject.GetComponent<SolidarityManager>().solidarity >= 110 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && isTyping == false)
         {
             index = 31;
             NextSentence();
         }
 
-        else if ((index == 29 || index == 30) && solidarityObject.GetComponent<SolidarityManager>().solidarity < 110 && Event.current.Equals(Event.KeyboardEvent("return")) && isTyping == false)
+        else if ((index == 29 || index == 30) && solidarityObject.GetComponent<SolidarityManager>().solidarity < 110 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && isTyping == false)
         {
             index = 32;
             NextSentence();
         }
-        else if ((index == 31 || index == 32) && Event.current.Equals(Event.KeyboardEvent("return")) && isTyping == false)
+        else if ((index == 31 || index == 32) && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && isTyping == false)
         {
             index = 33;
             NextSentence();
         }
 
-        else if (index == 33 && Event.current.Equals(Event.KeyboardEvent("return")) && isTyping == false)
+        else if (index == 33 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && isTyping == false)
         {
             index = 110;
             mainCamera.GetComponent<CameraManager>().whosFocus = "strikepong";
@@ -488,38 +490,53 @@ public class BoardManager : MonoBehaviour {
 
 //random insult generator
 
-        else if (index == 16 && Event.current.Equals(Event.KeyboardEvent("return")) && isTyping == false && randomInsult ==1)
+        else if (index == 16 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && isTyping == false && randomInsult ==1)
         {
             index = 17;
             NextSentence();
         }
 
-        else if (index == 16 && Event.current.Equals(Event.KeyboardEvent("return")) && isTyping == false && randomInsult == 2)
+        else if (index == 16 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && isTyping == false && randomInsult == 2)
         {
             index = 34;
             NextSentence();
         }
 
-        else if (index == 16 && Event.current.Equals(Event.KeyboardEvent("return")) && isTyping == false && randomInsult == 3)
+        else if (index == 16 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && isTyping == false && randomInsult == 3)
         {
             index = 35;
             NextSentence();
         }
+        else if (index == 16 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && isTyping == false && randomInsult == 4)
+        {
+            index = 36;
+            NextSentence();
+        }
+        else if (index == 16 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && isTyping == false && randomInsult == 5)
+        {
+            index = 37;
+            NextSentence();
+        }
+        else if (index == 16 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && isTyping == false && randomInsult == 6)
+        {
+            index = 38;
+            NextSentence();
+        }
 
-        else if ((index == 34|| index == 35) && Event.current.Equals(Event.KeyboardEvent("return")) && isTyping == false)
+        else if ((index == 34|| index == 35 || index == 36 || index == 37 || index == 38) && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && isTyping == false)
         {
             index = 18;
             NextSentence();
         }
 
 
-        else if (Event.current.Equals(Event.KeyboardEvent("return")) && isTyping == false)
+        else if ((Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && isTyping == false)
         {
             index += 1;
             NextSentence();
         }
 
-        else if (buttonInstruction.activeSelf == true && Event.current.Equals(Event.KeyboardEvent("return")))
+        else if (buttonInstruction.activeSelf == true && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))))
         {
             buttonInstruction.SetActive(false);
         }

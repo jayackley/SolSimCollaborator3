@@ -94,11 +94,11 @@ public class BlackOutManager : MonoBehaviour
     }
     private void OnGUI()
     {
-        if (buttonInstruction.activeSelf == true && Event.current.Equals(Event.KeyboardEvent("return")))
+        if (buttonInstruction.activeSelf == true && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))))
         {
             buttonInstruction.SetActive(false);
         }
-        if (Event.current.Equals(Event.KeyboardEvent("return")) && isTyping == false)
+            if ((Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && isTyping == false)
         {
             textDisplay.text = "";
             primed = false;

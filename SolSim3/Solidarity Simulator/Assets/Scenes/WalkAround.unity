@@ -325,20 +325,9 @@ MonoBehaviour:
   - That escalated!@
   - Woah, chill, robo-nerd.@
   - Woah, chill, dork-bot.@
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Woah, chill, Abacus Finch.@
+  - Woah, chill, Mecha-dorkzilla.@
+  - Woah, chill, dweeb-o-matic.@
   typingSpeed: 0.001
   pauseTime: 1
   solidarityPanel: {fileID: 1645505036}
@@ -1159,77 +1148,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad2680938a9de4241b6f85624ec2e848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numberOfWins: 0
+  healthcare: 0
+  dental: 0
+  childcare: 0
+  raises: 0
+  boardRep: 0
+  layoffProtections: 0
+  retirement: 0
   textDisplay: {fileID: 1988340558}
   index: 0
   whosTalking: 
   sentences:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
   - 'This strike has cut into productivity enough. Let''s make this quick.@ '
   - It'll take however long it takes. Ain't that right, pal?@
-  - '[sigh] Let''s get started, shall we?@'
-  - First up --@
-  - -- let's start with healthcare. We need it to live. You need us alive to work.
-    Really, this is an obvious win-win.@
-  - It's a *little* more nuanced than that, I think!@
-  - Deborah, let's agree to disagree on that. For us to come back to work, you need
-    to cover our premiums, and these deductibles gotta come WAY down.@
-  - That's entirely unreasonable!@
-  - Whaddya think? We'll have to use up some of our leverage, but we can win this
-    fight.@
+  - "{[sigh]} Let's get started, shall we?@\t"
+  - Let's start with healthcare. We need it to live. You need us alive to work. Premiums
+    and deductibles gotta go. Obvious win-win.@
+  - That's entirely unreasonable! Deductibles ensure employees aren't incentivized
+    to become sick!@
+  - "Whaddya think? We'll have to use up some of our leverage, but we can win this
+    fight.@\t"
   - You heard the person. No health, no peace. @
   - Hmph! Fine. Have your healthcare.@
   - If that's how you feel... Let's focus our fight elsewhere.@
   - At least you union people can be reasonable about SOME things.@
-  - All right. But don't forget about dental.@
+  - "All right. But don't forget about dental.@\t"
   - Do you *REALLY* need dental? How often do you even go to the dentist?@
   - That's right, that's right! @
   - Sure, and the dental, too. But don't think you can keep pushing management around
@@ -1240,24 +1184,22 @@ MonoBehaviour:
   - 'Now, let''s talk parental benefits.@ '
   - In accordance with Minimum Civilization Standard Section 3, subsection C, paragraph
     2, Project Epsilon already offers paid parental leave.@
-  - Yes, I'm aware you're not wholly soulless barbarians. But what we need is for
-    YOU to pay for workers' childcare during the day.@
+  - What we need is for YOU to pay for workers' childcare during the day.@
   - Preposterous! What's next, personally feeding and clothing each employee?@
-  - You're making parents pay out of pocket for the privilege to go to work!@
+  - You're making parents pay out of pocket for the privilege of going to work!@
   - What do you think?@
   - You fools know eventually you'll run out of other people's money, right?@
   - Yeah, yeah, "other people's money." Who does all the work around here that earns
     that money we're talkin' about, again?@
   - Sensible! Let me head off any requests for a rainbow made of puppies, while we're
     at it.@
-  - '"If we want to discuss the puppy rainbow question, we''ll bring it up.@ "'
-  - "As you know, these folks have been working harder and making you more money every
+  - 'If we want to discuss the puppy rainbow question, we''ll bring it up.@ '
+  - Speaking of, these folks have been working harder and making you more money every
     year. But they're not makin' more money. We want a raise now, and we want 'em
-    to keep coming, yearly.@\t"
-  - "Can we tie it to performance?@\t"
+    to keep coming, yearly.@
+  - Can we tie it to performance?@
   - You can do anything you want on top of the minimum raise.@
   - Minimum raise?!@
-  - Perhaps my friend here can enunciate a little better for your audio sensors.@
   - 'Now that''s solidarity.@ '
   - As a fully corporate, semicorporeal orb, your sense of solidarity means nothing
     to me.@
@@ -1268,14 +1210,10 @@ MonoBehaviour:
   - I'm sorry you feel that way, 'cause what we want here is union representation
     on Project Epsilon's board of directors.@
   - WHAT?!@
-  - You're not makin' me feel very well-liked.@
-  - How terrible for you.@
   - Exactly! And speaking of us all being in this together...@
   - Hmph. Fine. Next up...@
   - 'Let''s talk layoff protection. If cuts come, we have it in writing: you lay off
     just as many managers, proportionally, as you do us regular folks.@'
-  - We can't possibly guarantee -- @
-  - Try to imagine a world where you could.@
   - Is this just about done?@
   - Yeah, just about.@
   - Great! I'll be seeing  y--@
@@ -1285,12 +1223,8 @@ MonoBehaviour:
   - Hmph!@
   - Come on! Agh!@
   - 'Oh, well. Nice try.@ '
-  - Well, that is *QUITE* enough of that. We have given you our best offer. Take it
+  - You know what? I'll stop you there. We have given you our best offer. Take it
     to your membership.@
-  - 
-  - 
-  - 
-  - 
   typingSpeed: 0.001
   pauseTime: 1
   solidarityPanel: {fileID: 1645505036}
@@ -1960,7 +1894,7 @@ Transform:
   m_Children:
   - {fileID: 525423938}
   m_Father: {fileID: 657947446}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &195151217
 BoxCollider2D:
@@ -2361,60 +2295,7 @@ MonoBehaviour:
   textDisplay: {fileID: 1916157056}
   sentences:
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
   - This can be quick -- if you cooperate.
-  - 
-  - 
-  - 
   - 
   - 
   - 
@@ -2442,19 +2323,14 @@ MonoBehaviour:
   - 
   - 
   - 
-  - 
-  - I dunno... what if people who get paid more aren't actually working harder?
-  - 
+  - 'I dunno... what if people who get paid more aren''t actually working harder? '
   - 
   - 
   - 
   - 
   - 
   - 
-  - 
-  - I hate to say it, but they'll never go for that.
-  - 
-  - 
+  - 'I hate to say it, but they''ll never go for that. '
   - 
   - 
   - That'd be a pretty great world. But I don't think it's this one, friend. I think
@@ -2463,10 +2339,7 @@ MonoBehaviour:
   - 
   - 
   - 
-  - '...that does seem a little high...'
-  - 
-  - 
-  - 
+  - '...that does seem a little high... '
   - 
   - 
   - 
@@ -2512,6 +2385,76 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4055901733028700, guid: 3ecf457da1a7c4c329156942bc5c7104,
     type: 2}
   m_PrefabInternal: {fileID: 1087337530}
+--- !u!1 &240774687
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 240774688}
+  - component: {fileID: 240774690}
+  - component: {fileID: 240774689}
+  m_Layer: 5
+  m_Name: Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &240774688
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 240774687}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1168675077}
+  m_Father: {fileID: 1404126525}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &240774689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 240774687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.68235296}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &240774690
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 240774687}
+  m_CullTransparentMesh: 0
 --- !u!1 &240925957
 GameObject:
   m_ObjectHideFlags: 0
@@ -3307,7 +3250,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &315784699
 GameObject:
@@ -3583,7 +3526,7 @@ Transform:
   - {fileID: 1393935256}
   - {fileID: 2061298623}
   m_Father: {fileID: 657947446}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &351147734
 GameObject:
@@ -3738,7 +3681,7 @@ Transform:
   - {fileID: 1572769492}
   - {fileID: 768510788}
   m_Father: {fileID: 657947446}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &397237271
 GameObject:
@@ -4505,7 +4448,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &489620739
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4559,11 +4502,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 489620738}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.12863111, y: -3.7, z: 1.5}
+  m_LocalPosition: {x: -0, y: -1.3, z: 1.5}
   m_LocalScale: {x: 1, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 657947446}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &504356798
 GameObject:
@@ -4843,7 +4786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a53da802b9fc4435b53e3db009a2af4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whosFocus: manager
+  whosFocus: pc
   scene: walkaround
   pcCam: {fileID: 1229460813}
   wrenchCam: {fileID: 743879707}
@@ -5647,6 +5590,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 304869355}
+  - {fileID: 873852240}
   m_Father: {fileID: 1076476375}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6636,7 +6580,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1724706213}
   - {fileID: 1901684171}
   - {fileID: 1931543992}
   - {fileID: 1483363890}
@@ -8562,7 +8505,7 @@ Transform:
   m_LocalScale: {x: 1, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 657947446}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &795453834
 MonoBehaviour:
@@ -8846,7 +8789,7 @@ GameObject:
   - component: {fileID: 804102575}
   - component: {fileID: 804102576}
   - component: {fileID: 804102577}
-  - component: {fileID: 804102578}
+  - component: {fileID: 804102579}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Coworker
@@ -9024,20 +8967,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &804102578
-MonoBehaviour:
+--- !u!95 &804102579
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 804102573}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66d6210270a8945629c99aa70ab050ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  officeClothes: {fileID: 21300000, guid: 1997ad99748b24b1089cfb1e9ec97e27, type: 3}
-  meetingClothes: {fileID: 21300000, guid: 51e926bd3eef34c51b98a887a2736ed2, type: 3}
-  wearing: 
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f216d98d50e9d47b48fceeb35cbc7326, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &806483472
 GameObject:
   m_ObjectHideFlags: 0
@@ -9929,6 +9876,100 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ecf457da1a7c4c329156942bc5c7104, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &873852239
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 873852240}
+  - component: {fileID: 873852242}
+  - component: {fileID: 873852241}
+  m_Layer: 0
+  m_Name: BigGuyBody
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &873852240
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 873852239}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.09, y: -1.39, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 606972711}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &873852241
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 873852239}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 58258c18983b74ca2a49b3ff110ca8dd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!212 &873852242
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 873852239}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -2008181035
+  m_SortingLayer: 2
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 21300000, guid: 4bed4ccebbfd645b3881cdddbe6a02c9, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 15.92, y: 16.66}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &882816259
 GameObject:
   m_ObjectHideFlags: 0
@@ -10163,6 +10204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9da9120e820b438cbe19c0a5f595aa0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  negotiationManager: {fileID: 111844518}
   dialogueVisible: 0
   uiCanvas: {fileID: 1392976780}
   playerObject: {fileID: 886578480}
@@ -11645,7 +11687,7 @@ Transform:
   - {fileID: 1920109998}
   - {fileID: 1428708798}
   m_Father: {fileID: 657947446}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1033417266
 SpriteRenderer:
@@ -13469,6 +13511,177 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1168675076
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1168675077}
+  - component: {fileID: 1168675080}
+  - component: {fileID: 1168675079}
+  - component: {fileID: 1168675078}
+  m_Layer: 5
+  m_Name: Random Characters
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1168675077
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1168675076}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 240774688}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1168675078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1168675076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_text: 781234567821345678123456782134567821345678123456781234567812345678123456782134567812345678123456782134567812345678123456782134567812345678123456781234567812345687123456781234568712346587162354817236451827364512837645182376452182736452817634518237645238172364528137645238172364512837126345218374625218376425182376425218372645182376451283764512187362452182763453
+    12345678123456782134567812345678123456781234567812345678123456781234567812354681234567812345678123456781234567821345678123456782134567821345678123456781234567812345678123456782134567812345678123456782134567812345678123456782134567812345678123456781234567812345687123456781234568712346587162354817236451827364512837645182376452182736452817634518237645238172364528137645238172364512837126345218374625218376425182376425218372645182376451283764512187362452182763453
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_outlineColor:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontSize: 4
+  m_fontSizeBase: 4
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_textAlignment: 257
+  m_isAlignmentEnumConverted: 1
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_firstOverflowCharacterIndex: -1
+  m_linkedTextComponent: {fileID: 0}
+  m_isLinkedTextComponent: 0
+  m_isTextTruncated: 0
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_ignoreRectMaskCulling: 0
+  m_ignoreCulling: 1
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_firstVisibleCharacter: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 52.65553, y: -21.552847, z: 52.65552, w: -22.336582}
+  m_textInfo:
+    textComponent: {fileID: 1168675078}
+    characterCount: 822
+    spriteCount: 0
+    spaceCount: 1
+    wordCount: 2
+    linkCount: 0
+    lineCount: 20
+    pageCount: 1
+    materialCount: 1
+  m_havePropertiesChanged: 0
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_spriteAnimator: {fileID: 0}
+  m_isInputParsingRequired: 0
+  m_inputSource: 0
+  m_hasFontAssetChanged: 0
+  m_subTextObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1168675079
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1168675076}
+  m_CullTransparentMesh: 0
+--- !u!114 &1168675080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1168675076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7b7c56e2970e4ea997e8abe12b3013d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numbers: {fileID: 1168675078}
+  typingSpeed: 0.05
+  c: 0
 --- !u!1 &1173576562
 GameObject:
   m_ObjectHideFlags: 0
@@ -13498,7 +13711,7 @@ Transform:
   m_LocalScale: {x: 1, y: 4.65, z: 1}
   m_Children: []
   m_Father: {fileID: 657947446}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1173576564
 MonoBehaviour:
@@ -14456,7 +14669,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 657947446}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14558,7 +14771,7 @@ Transform:
   m_LocalScale: {x: 1, y: 14.62, z: 1}
   m_Children: []
   m_Father: {fileID: 657947446}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1254847097
 MonoBehaviour:
@@ -15236,7 +15449,7 @@ Transform:
   m_LocalScale: {x: 1, y: 8, z: 1}
   m_Children: []
   m_Father: {fileID: 657947446}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1346331335
 MonoBehaviour:
@@ -15671,7 +15884,7 @@ MonoBehaviour:
   managerText: {fileID: 1603923267}
   wrench: {fileID: 1868808135}
   temp: {fileID: 1337342603}
-  welder: {fileID: 96718878}
+  welder: {fileID: 2063749960}
   bigGuy: {fileID: 606972710}
   data: {fileID: 1661844967}
   accounting: {fileID: 800008470}
@@ -15704,7 +15917,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 657947446}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -16148,26 +16361,41 @@ MonoBehaviour:
     of ingrates here.@
   - Glad to hear it! Have a good day, now. I'll be seeing you.@
   - That sure was a huge thing!@
-  - 
-  - 
-  - I feel closer to my coworkers@
-  - 
-  - 
+  - We did it! Thanks for getting down in the negotiating trenches with me, especially
+    on the layoff protection stuff. Gotta make sure they've got skin in the game when
+    it comes to cuttin' time.@
+  - Well, we made it. Bloodied but unbeaten. Thanks for standing strong on the picket
+    line, and helping out with the negotiations. You should consider becoming a rep!
+    @
+  - I feel closer to my coworkers.@
+  - We have dental insurance now! I can finally get teeth!!!@
+  - Great job out there organizing! Really inspirational stuff. Hey, here's your coffee
+    -- ONE sugar and a splash of cream. I gotta get going.@
   - I'll never forget that!@
-  - 
-  - 
+  - Duuude. Can't even tell you how stoked I am on this better healthcare stuff. My
+    whole day is floating around with a gas tank and an open flame, so ... haha, yeah.@
+  - Wrench may be my union rep, but you're my dude-ion rep. Thanks for bringing me
+    onboard! @
   - Hey friend, good to see you.@
-  - 
-  - 
+  - Hey, I heard you went to bat for working parents at the bargaining table. I know
+    I wasn't gung-ho about the union to start, but I really appreciate that.@
+  - Well, back to work, I guess. Do anything fun while we were out? @
   - Good job coding Jay.@
-  - 
-  - 
+  - Can't talk! I have fully optimized my workday for maximum yield under the new
+    raise structure. I'm going to finally own my own place in 5 years! @
+  - Hey! I can't really talk. Sorry about that. Maybe see you around the coolant station?@
   - Solidarity forever.@
-  - 
-  - 
+  - It is so good to visually perceive your presence! I was just about to start another
+    chorus of The Internationale in binary. Care to join? I want to perfect it before
+    I walk into the boardroom next week. @
+  - Though they offer us concessions, change will not come from above. The proletariat
+    has shown its power, and capital will not forget, so long as we continue to push
+    forward!@
   - Oh the union makes us strong.@
-  - 
-  - 
+  - Hey, I know we haven't always seen eye to eye, and I -- well, thanks. For including
+    me, and for bringing up retirement matching. I have 46 grandkids, and I can't
+    wait to spoil each of them.@
+  - '[nervous laugh] Hey. Sorry, I can''t really talk right now. @'
   - 
   - 
   - 
@@ -16348,7 +16576,7 @@ Transform:
   - {fileID: 1794169862}
   - {fileID: 864637518}
   m_Father: {fileID: 657947446}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1393935255
 GameObject:
@@ -16470,6 +16698,100 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1404126521
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1404126525}
+  - component: {fileID: 1404126524}
+  - component: {fileID: 1404126523}
+  - component: {fileID: 1404126522}
+  m_Layer: 5
+  m_Name: AccountingCanvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1404126522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1404126521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1404126523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1404126521}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+--- !u!223 &1404126524
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1404126521}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: -2008181035
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &1404126525
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1404126521}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.04984375, y: 0.07125, z: 1}
+  m_Children:
+  - {fileID: 240774688}
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 7.41, y: 2.44}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1405056474
 GameObject:
   m_ObjectHideFlags: 0
@@ -16906,7 +17228,12 @@ MonoBehaviour:
   sentences:
   - '{***ATTENTION***}&^Please Report to Conference Room Epsilon for a Mandatory Staff
     Meeting - We Have Very Important Issues to Discuss^&{***ATTENTION***}@'
-  - '***ATTENTION***&^^Negotiation is Over^^&***ATTENTION***@'
+  - "Your membership isn\u2019t too pleased with your negotiating performance, but
+    unionizing\u2019s an important start. The struggle continues\u2026@"
+  - "After some back and forth, the membership voted to ratify the collective bargaining
+    agreement. Congratulations on the new benefits! The struggle continues\u2026@"
+  - Great negotiating! Your membership ratified the collective bargaining agreement
+    right away! Beings are back at work and ready to start enjoying their new benefits.@
   typingSpeed: 0.001
   isTyping: 0
   buttonInstruction: {fileID: 1477504914}
@@ -17399,7 +17726,7 @@ Transform:
   - {fileID: 829903314}
   - {fileID: 1899715029}
   m_Father: {fileID: 657947446}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1483363891
 MonoBehaviour:
@@ -18065,7 +18392,7 @@ Transform:
   m_LocalScale: {x: -2, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 657947446}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1562006266
 SpriteRenderer:
@@ -19826,7 +20153,7 @@ Transform:
   - {fileID: 1608536224}
   - {fileID: 2078196546}
   m_Father: {fileID: 657947446}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1695026972
 GameObject:
@@ -19994,81 +20321,6 @@ SpriteRenderer:
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.1, y: 0.1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
---- !u!1 &1724706212
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1724706213}
-  - component: {fileID: 1724706214}
-  m_Layer: 0
-  m_Name: BigGuyBody
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1724706213
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1724706212}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 657947446}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1724706214
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1724706212}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -2008181035
-  m_SortingLayer: 2
-  m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 4bed4ccebbfd645b3881cdddbe6a02c9, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 32, y: 30}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -20969,8 +21221,8 @@ SpriteRenderer:
   m_SortingLayerID: 1217074215
   m_SortingLayer: 6
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 5c7aafc6342194c07a8c689137937b69, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.8039216}
+  m_Sprite: {fileID: 21300000, guid: 8cabcd25660254de2a0946838070d143, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.65882355}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -22105,7 +22357,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 657947446}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1870723909
 SpriteRenderer:
@@ -22899,7 +23151,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 657947446}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1901684172
 SpriteRenderer:
@@ -23218,6 +23470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92d59f9df72dd442eb050832cc547fff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npcs: {fileID: 1076476374}
   uiCanvas: {fileID: 1392976780}
   convoCounter: 0
   playerObject: {fileID: 886578480}
@@ -23334,11 +23587,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1931543991}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 7, y: 2.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 657947446}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1931543993
 SpriteRenderer:
@@ -23374,8 +23627,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2008181035
   m_SortingLayer: 2
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: c213ae83f01bd4ed586ae19921614265, type: 3}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: 2d38b8df9076b4a2386e006a5ba16860, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -23491,60 +23744,7 @@ MonoBehaviour:
   textDisplay: {fileID: 771219556}
   sentences:
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
   - That's right!
-  - 
-  - 
-  - 
   - 
   - 
   - 
@@ -23564,8 +23764,7 @@ MonoBehaviour:
   - 
   - 
   - 
-  - Yeah, let's fight for this!
-  - 
+  - 'Yeah, let''s fight for this! '
   - 
   - 
   - 
@@ -23580,11 +23779,7 @@ MonoBehaviour:
   - 
   - 
   - 
-  - 
-  - 
   - This whole thing is about getting a seat at the table. We can't bend on this.
-  - 
-  - 
   - 
   - 
   - Corporate loves to say "we're a family" and "we're in this together." We're just
@@ -23594,9 +23789,6 @@ MonoBehaviour:
   - 
   - 
   - Ten. Percent.
-  - 
-  - 
-  - 
   - 
   - 
   - 
@@ -23903,6 +24095,68 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1988340556}
   m_CullTransparentMesh: 0
+--- !u!1 &1999903301
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1999903304}
+  - component: {fileID: 1999903303}
+  - component: {fileID: 1999903302}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1999903302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1999903301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1999903303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1999903301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &1999903304
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1999903301}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2000766353
 GameObject:
   m_ObjectHideFlags: 0

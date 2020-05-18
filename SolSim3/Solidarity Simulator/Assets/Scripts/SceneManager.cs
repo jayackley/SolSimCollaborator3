@@ -5,6 +5,7 @@ using Cinemachine;
 
 public class SceneManager : MonoBehaviour {
 
+    public GameObject npcs;
     public GameObject uiCanvas;
     public int convoCounter;
     public GameObject playerObject;
@@ -56,6 +57,7 @@ public class SceneManager : MonoBehaviour {
         {
             floor.GetComponent<SpriteRenderer>().enabled = false;
         }
+
     }
 
     private void OnGUI()
@@ -73,6 +75,16 @@ public class SceneManager : MonoBehaviour {
         {
             convoCounter = 14;
         }
+        if (Event.current.Equals(Event.KeyboardEvent("x")) && npcs.activeInHierarchy == true)
+        {
+            npcs.SetActive(false);
+        }
+        else if (Event.current.Equals(Event.KeyboardEvent("x")) && npcs.activeInHierarchy == false)
+        {
+            npcs.SetActive(true);
+        }
+
+
         if (Event.current.Equals(Event.KeyboardEvent("return"))&& convoCounter == 9 && blackOutObject.GetComponent<BlackOutManager>().isTyping == false)
         {
             convoCounter = 10;
@@ -111,7 +123,7 @@ public class SceneManager : MonoBehaviour {
 
             data.transform.position = dataBoard.transform.position;
             data.GetComponent<CapsuleCollider2D>().enabled = false;
-            data.GetComponent<Animator>().enabled = false;
+            data.GetComponent<Animator>().SetBool("AtMeeting", true);
 
             accounting.transform.position = accountingBoard.transform.position;
             accounting.GetComponent<CapsuleCollider2D>().enabled = false;
@@ -119,7 +131,7 @@ public class SceneManager : MonoBehaviour {
 
             manager.transform.position = managerBoard.transform.position;
             manager.GetComponent<CapsuleCollider2D>().enabled = false;
-            manager.GetComponent<ManagerOutfit>().wearing = "meeting";
+            manager.GetComponent<Animator>().SetBool("InSuit", true);
 
 
             mainCamera.GetComponent<CameraManager>().whosFocus = "corporate";
@@ -153,7 +165,7 @@ public class SceneManager : MonoBehaviour {
             optionManager.SetActive(false);
             negotiationDialogueManager.SetActive(true);
             boardOptionManager.SetActive(true);
-            negotiationDialogueManager.GetComponent<NegotiationDialogueManager>().index = 50;
+            negotiationDialogueManager.GetComponent<NegotiationDialogueManager>().index = 0;
             negotiationDialogueManager.GetComponent<NegotiationDialogueManager>().NextSentence();
 
             temp.transform.position = tempFactory.transform.position;
@@ -166,10 +178,11 @@ public class SceneManager : MonoBehaviour {
             welder.GetComponent<Animator>().SetTrigger("atfactory");
 
             bigGuy.transform.position = bigGuyFactory.transform.position;
-            bigGuy.GetComponent<CapsuleCollider2D>().enabled = false;
+            bigGuy.GetComponent<CapsuleCollider2D>().enabled = true;
 
             data.GetComponent<CapsuleCollider2D>().enabled = true;
-            data.GetComponent<Animator>().enabled = true;
+            data.GetComponent<Animator>().SetBool("AtMeeting", false);
+
 
             accounting.transform.position = accountingFactory.transform.position;
             accounting.GetComponent<CapsuleCollider2D>().enabled = true;
@@ -177,7 +190,7 @@ public class SceneManager : MonoBehaviour {
 
             manager.transform.position = managerFactory.transform.position;
             manager.GetComponent<CapsuleCollider2D>().enabled = true;
-            manager.GetComponent<ManagerOutfit>().wearing = "office";
+            manager.GetComponent<Animator>().SetBool("InSuit", true);
 
             corporate.transform.position = corporateFactory.transform.position;
             solidarityPanel.transform.localPosition = new Vector3(250, -235, 0);
@@ -203,8 +216,23 @@ public class SceneManager : MonoBehaviour {
             wrench.GetComponent<SpriteRenderer>().sortingOrder = 0;
             solidarityObject.SetActive(false);
             blackOutObject.SetActive(true);
-            blackOutObject.GetComponent<BlackOutManager>().index += 1;
+
+            if (negotiationDialogueManager.GetComponent<NegotiationDialogueManager>().numberOfWins == 0)
+            {
+                blackOutObject.GetComponent<BlackOutManager>().index = 1;
+            }
+            if (negotiationDialogueManager.GetComponent<NegotiationDialogueManager>().numberOfWins > 0)
+            {
+                blackOutObject.GetComponent<BlackOutManager>().index = 2;
+            }
+            if (negotiationDialogueManager.GetComponent<NegotiationDialogueManager>().numberOfWins > 3)
+            {
+                blackOutObject.GetComponent<BlackOutManager>().index = 3;
+            }
+
+
             blackOutObject.GetComponent<BlackOutManager>().NextSentence();
+
             convoCounter = 15;
             uiPressCircle.SetActive(false);
             boardOptionManager.SetActive(false);
@@ -218,7 +246,6 @@ public class SceneManager : MonoBehaviour {
             optionManager.SetActive(true);
             playerObject.GetComponent<MovementController>().enabled = true;
             blackOutObject.SetActive(false);
-            //change something for the interaction manager so that prompt panels go to different index numbers
         }
 
     }

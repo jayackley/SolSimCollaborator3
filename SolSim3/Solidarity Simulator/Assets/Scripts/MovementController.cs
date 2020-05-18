@@ -104,7 +104,7 @@ public class MovementController : MonoBehaviour
 
     private void OnGUI()
     {
-        if (canPoke == true && Event.current.Equals(Event.KeyboardEvent("return")) && GetComponent<Rigidbody2D>().velocity.y <= 0.0001 && GetComponent<Rigidbody2D>().velocity.y >= -0.0001 && GetComponent<Rigidbody2D>().velocity.x <= 0.0001 && GetComponent<Rigidbody2D>().velocity.x >= -0.0001)
+        if (canPoke == true && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && GetComponent<Rigidbody2D>().velocity.y <= 0.0001 && GetComponent<Rigidbody2D>().velocity.y >= -0.0001 && GetComponent<Rigidbody2D>().velocity.x <= 0.0001 && GetComponent<Rigidbody2D>().velocity.x >= -0.0001)
         {
             GetComponent<Animator>().SetBool("ispoking", true);
         }

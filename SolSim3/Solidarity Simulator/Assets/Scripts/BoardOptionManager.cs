@@ -33,7 +33,7 @@ public class BoardOptionManager : MonoBehaviour
     private void Update()
     {
 
-        if (boardPanel.GetComponent<NegotiationDialogueManager>().index == 51 || boardPanel.GetComponent<NegotiationDialogueManager>().index == 58 || boardPanel.GetComponent<NegotiationDialogueManager>().index == 64 || boardPanel.GetComponent<NegotiationDialogueManager>().index == 74 || boardPanel.GetComponent<NegotiationDialogueManager>().index == 83 || boardPanel.GetComponent<NegotiationDialogueManager>().index == 92 || boardPanel.GetComponent<NegotiationDialogueManager>().index == 97 || boardPanel.GetComponent<NegotiationDialogueManager>().index == 102)
+        if (boardPanel.GetComponent<NegotiationDialogueManager>().index == 1 || boardPanel.GetComponent<NegotiationDialogueManager>().index == 5 || boardPanel.GetComponent<NegotiationDialogueManager>().index == 11 || boardPanel.GetComponent<NegotiationDialogueManager>().index == 21 || boardPanel.GetComponent<NegotiationDialogueManager>().index == 29 || boardPanel.GetComponent<NegotiationDialogueManager>().index == 36 || boardPanel.GetComponent<NegotiationDialogueManager>().index == 39 || boardPanel.GetComponent<NegotiationDialogueManager>().index == 44)
         {
             numberOfOptions = 2;
             primed = false;
