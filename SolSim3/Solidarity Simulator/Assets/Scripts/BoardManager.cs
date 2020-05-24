@@ -159,6 +159,7 @@ public class BoardManager : MonoBehaviour {
             {
                 temp.GetComponent<AudioSource>().volume += voxFadeSpeed * Time.deltaTime;
             }
+            temp.GetComponent<Animator>().SetBool("IsTalking", true);
             wrench.GetComponent<AudioSource>().volume = 0;
             welder.GetComponent<AudioSource>().volume = 0;
             bigGuy.GetComponent<AudioSource>().volume = 0;
@@ -315,6 +316,7 @@ public class BoardManager : MonoBehaviour {
 
             wrench.GetComponent<Animator>().SetBool("IsTalking", false);
             manager.GetComponent<Animator>().SetBool("IsSuitTalking", false);
+            temp.GetComponent<Animator>().SetBool("IsTalking", false);
 
         }
 

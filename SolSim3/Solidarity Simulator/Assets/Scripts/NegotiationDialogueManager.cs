@@ -22,6 +22,7 @@ public class NegotiationDialogueManager : MonoBehaviour {
     public float pauseTime;
     public GameObject solidarityPanel;
     public GameObject solidarityObject;
+    public GameObject solidarityDelta;
     public bool isTyping;
     public GameObject wrench;
     public GameObject orb;
@@ -203,6 +204,8 @@ public class NegotiationDialogueManager : MonoBehaviour {
         {
             index = 49;
             NextSentence();
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "Insuffcient Leverage";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
         }
 
         else if (index == 5 && boardOptionManager.GetComponent<BoardOptionManager>().currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && isTyping == false)
@@ -211,6 +214,8 @@ public class NegotiationDialogueManager : MonoBehaviour {
             healthcare = true;
             numberOfWins += 1;
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 40;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "-40";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             NextSentence();
         }
 
@@ -230,6 +235,8 @@ public class NegotiationDialogueManager : MonoBehaviour {
         {
             index = 49;
             NextSentence();
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "Insuffcient Leverage";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
         }
         else if (index == 11 && boardOptionManager.GetComponent<BoardOptionManager>().currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && isTyping == false)
         {
@@ -237,6 +244,8 @@ public class NegotiationDialogueManager : MonoBehaviour {
             dental = true;
             numberOfWins += 1;
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 10;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "-10";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             NextSentence();
         }
 
@@ -255,13 +264,17 @@ public class NegotiationDialogueManager : MonoBehaviour {
         {
             index = 49;
             NextSentence();
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "Insuffcient Leverage";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
         }
         else if (index == 21 && boardOptionManager.GetComponent<BoardOptionManager>().currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && isTyping == false)
         {
             index = 22;
             childcare = true;
             numberOfWins += 1;
-            solidarityObject.GetComponent<SolidarityManager>().solidarity -= 30;
+            solidarityObject.GetComponent<SolidarityManager>().solidarity -= 35;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "-35";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             NextSentence();
         }
 
@@ -280,6 +293,8 @@ public class NegotiationDialogueManager : MonoBehaviour {
         {
             index = 49;
             NextSentence();
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "Insuffcient Leverage";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
         }
         else if (index == 29 && boardOptionManager.GetComponent<BoardOptionManager>().currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && isTyping == false)
         {
@@ -287,6 +302,8 @@ public class NegotiationDialogueManager : MonoBehaviour {
             raises = true;
             numberOfWins += 1;
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 20;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "-20";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             NextSentence();
         }
 
@@ -305,6 +322,8 @@ public class NegotiationDialogueManager : MonoBehaviour {
         {
             index = 49;
             NextSentence();
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "Insuffcient Leverage";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
         }
         else if (index == 36 && boardOptionManager.GetComponent<BoardOptionManager>().currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && isTyping == false)
         {
@@ -312,6 +331,8 @@ public class NegotiationDialogueManager : MonoBehaviour {
             boardRep = true;
             numberOfWins += 1;
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 60;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "-60";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             NextSentence();
         }
 
@@ -330,6 +351,8 @@ public class NegotiationDialogueManager : MonoBehaviour {
         {
             index = 49;
             NextSentence();
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "Insuffcient Leverage";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
         }
 
         else if (index == 39 && boardOptionManager.GetComponent<BoardOptionManager>().currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && isTyping == false)
@@ -338,6 +361,8 @@ public class NegotiationDialogueManager : MonoBehaviour {
             layoffProtections = true;
             numberOfWins += 1;
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 40;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "-40";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             NextSentence();
         }
 
@@ -351,13 +376,17 @@ public class NegotiationDialogueManager : MonoBehaviour {
         {
             index = 49;
             NextSentence();
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "Insuffcient Leverage";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
         }
         else if (index == 41 && boardOptionManager.GetComponent<BoardOptionManager>().currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && isTyping == false)
         {
             index = 43;
             retirement = true;
             numberOfWins += 1;
-            solidarityObject.GetComponent<SolidarityManager>().solidarity -= 20;
+            solidarityObject.GetComponent<SolidarityManager>().solidarity -= 30;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "-30";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             NextSentence();
         }
 

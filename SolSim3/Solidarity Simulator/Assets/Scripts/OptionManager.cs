@@ -17,6 +17,7 @@ public class OptionManager : MonoBehaviour
     public GameObject optionThreeText;
     public GameObject promptPanel;
     public GameObject solidarityObject;
+    public GameObject solidarityDelta;
     public GameObject playerObject;
     public GameObject uiCanvas;
     public int numberOfOptions;
@@ -182,6 +183,8 @@ public class OptionManager : MonoBehaviour
         if ((sentenceIndex == 0 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 20;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "+20";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 1;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -190,6 +193,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 0 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))))&& promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 5;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "-5";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 2;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -198,6 +203,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 0 && currentSelect == 3 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 30;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "-30";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 3;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -205,7 +212,9 @@ public class OptionManager : MonoBehaviour
         //sentence index 1
         else if ((sentenceIndex == 1 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
-            solidarityObject.GetComponent<SolidarityManager>().solidarity += 20;
+            solidarityObject.GetComponent<SolidarityManager>().solidarity += 10;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "+10";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 4;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -213,7 +222,9 @@ public class OptionManager : MonoBehaviour
 
         else if ((sentenceIndex == 1 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
-            solidarityObject.GetComponent<SolidarityManager>().solidarity -= 5;
+            solidarityObject.GetComponent<SolidarityManager>().solidarity += 5;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "+5";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 5;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -222,6 +233,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 1 && currentSelect == 3 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 30;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "-20";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 6;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -230,7 +243,9 @@ public class OptionManager : MonoBehaviour
 
         else if ((sentenceIndex == 2 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
-            solidarityObject.GetComponent<SolidarityManager>().solidarity += 20;
+            solidarityObject.GetComponent<SolidarityManager>().solidarity += 10;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "+10";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 7;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -238,7 +253,9 @@ public class OptionManager : MonoBehaviour
 
         else if ((sentenceIndex == 2 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
-            solidarityObject.GetComponent<SolidarityManager>().solidarity -= 5;
+            solidarityObject.GetComponent<SolidarityManager>().solidarity -= 20;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "-20";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 8;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -248,7 +265,9 @@ public class OptionManager : MonoBehaviour
 
         else if ((sentenceIndex == 3 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
-            solidarityObject.GetComponent<SolidarityManager>().solidarity += 20;
+            solidarityObject.GetComponent<SolidarityManager>().solidarity -= 10;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "-10";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 9;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -256,7 +275,9 @@ public class OptionManager : MonoBehaviour
 
         else if ((sentenceIndex == 3 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
-            solidarityObject.GetComponent<SolidarityManager>().solidarity -= 5;
+            solidarityObject.GetComponent<SolidarityManager>().solidarity -= 10;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "-10";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 10;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -265,7 +286,9 @@ public class OptionManager : MonoBehaviour
         //sentence index 11
         else if ((sentenceIndex == 11 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
-            solidarityObject.GetComponent<SolidarityManager>().solidarity += 10;
+            solidarityObject.GetComponent<SolidarityManager>().solidarity += 20;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "+20";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 12;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -274,6 +297,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 11 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 5;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "+5";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 13;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -282,6 +307,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 11 && currentSelect == 3 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 30;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "-30";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 20;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -291,6 +318,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 12 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 20;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "+20";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 14;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -299,6 +328,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 12 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 5;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "+5";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 15;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -307,6 +338,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 12 && currentSelect == 3 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 20;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "-20";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 16;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -316,6 +349,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 13 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 10;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "+10";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 17;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -324,6 +359,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 13 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 5;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "+5";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 18;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -332,6 +369,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 13 && currentSelect == 3 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 15;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "-15";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 19;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -340,7 +379,9 @@ public class OptionManager : MonoBehaviour
         //sentence index 21
         else if ((sentenceIndex == 21 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
-            solidarityObject.GetComponent<SolidarityManager>().solidarity += 10;
+            solidarityObject.GetComponent<SolidarityManager>().solidarity += 15;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "+15";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 22;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -349,6 +390,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 21 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 20;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "-20";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 23;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -358,6 +401,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 22 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 15;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "+15";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 24;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -366,6 +411,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 22 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 5;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "-5";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 25;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -374,6 +421,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 22 && currentSelect == 3 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 20;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "-20";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 26;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -383,6 +432,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 23 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 5;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "-5";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 27;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -391,6 +442,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 23 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 15;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "-15";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 28;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -399,7 +452,9 @@ public class OptionManager : MonoBehaviour
         //sentence index 29
         else if ((sentenceIndex == 29 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
-            solidarityObject.GetComponent<SolidarityManager>().solidarity += 10;
+            solidarityObject.GetComponent<SolidarityManager>().solidarity += 15;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "+15";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 30;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -408,6 +463,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 29 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 10;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "-10";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 31;
             promptPanel.GetComponent<PromptManager>().NextSentence(); 
             currentSelect = 2;
@@ -416,7 +473,9 @@ public class OptionManager : MonoBehaviour
         //sentence index 30
         else if ((sentenceIndex == 30 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
-            solidarityObject.GetComponent<SolidarityManager>().solidarity += 10;
+            solidarityObject.GetComponent<SolidarityManager>().solidarity += 15;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "+15";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 32;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -425,6 +484,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 30 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 15;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "-15";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 33;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -434,6 +495,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 31 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 10;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "+10";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 34;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -442,6 +505,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 31 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 5;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "-5";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 35;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -450,7 +515,9 @@ public class OptionManager : MonoBehaviour
         //sentence index 36
         else if ((sentenceIndex == 36 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
-            solidarityObject.GetComponent<SolidarityManager>().solidarity += 10;
+            solidarityObject.GetComponent<SolidarityManager>().solidarity += 20;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "+20";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 37;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -459,6 +526,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 36 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 5;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "+5";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 40;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -467,6 +536,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 36 && currentSelect == 3 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 30;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "-30";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 41;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -475,7 +546,9 @@ public class OptionManager : MonoBehaviour
         //sentence index 37
         else if ((sentenceIndex == 37 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
-            solidarityObject.GetComponent<SolidarityManager>().solidarity += 20;
+            solidarityObject.GetComponent<SolidarityManager>().solidarity += 25;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "+25";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 38;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -484,6 +557,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 37 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 5;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "-5";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 39;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -492,6 +567,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 42 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 20;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "+20";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 43;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -500,6 +577,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 42 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 10;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "+10";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 44;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -508,6 +587,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 42 && currentSelect == 3 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 5;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "-5";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 45;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -516,7 +597,9 @@ public class OptionManager : MonoBehaviour
         //sentence index 43
         else if ((sentenceIndex == 43 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
-            solidarityObject.GetComponent<SolidarityManager>().solidarity += 10;
+            solidarityObject.GetComponent<SolidarityManager>().solidarity += 15;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "+15";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 46;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -525,6 +608,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 43 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 10;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "-10";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 47;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -534,6 +619,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 44 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 20;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "+20";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 48;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -542,6 +629,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 44 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 30;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "-30";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 49;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -551,6 +640,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 45 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 5;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "+5";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 50;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -559,6 +650,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 45 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 5;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "-5";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 51;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -567,7 +660,9 @@ public class OptionManager : MonoBehaviour
         //sentence index 52
         else if ((sentenceIndex == 52 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
-            solidarityObject.GetComponent<SolidarityManager>().solidarity += 5;
+            solidarityObject.GetComponent<SolidarityManager>().solidarity += 10;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "+10";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 53;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -576,6 +671,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 52 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 5;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "-5";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 54;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -584,6 +681,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 52 && currentSelect == 3 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 10;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "-10";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 59;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -593,6 +692,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 53 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 5;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "+5";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 55;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -601,6 +702,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 53 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 15;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "+15";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 56;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -611,6 +714,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 54 && currentSelect == 1 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity += 5;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "+5";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 57;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
@@ -619,6 +724,8 @@ public class OptionManager : MonoBehaviour
         else if ((sentenceIndex == 54 && currentSelect == 2 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space")))) && promptPanel.GetComponent<PromptManager>().isTyping == false)
         {
             solidarityObject.GetComponent<SolidarityManager>().solidarity -= 10;
+            solidarityDelta.GetComponent<TextMeshProUGUI>().text = "-10";
+            solidarityDelta.GetComponent<Animator>().SetTrigger("FadeOut");
             sentenceIndex = 58;
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;

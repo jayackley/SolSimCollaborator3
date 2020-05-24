@@ -108,7 +108,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: wrenchidle
-  m_Speed: 1
+  m_Speed: 0.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101706248983616116}
@@ -121,7 +121,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 10bb8c59b3f14468d929bb09815025f2, type: 2}
+  m_Motion: {fileID: 7400000, guid: 06987862a161b496bb9a358ec1f201df, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

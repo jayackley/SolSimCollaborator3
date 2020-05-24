@@ -50,7 +50,7 @@ public class MusicManager : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (sceneManager.GetComponent<SceneManager>().convoCounter >= 0)
+        if (sceneManager.GetComponent<SceneManager>().convoCounter == 0)
         {
             if (thumps.GetComponent<AudioSource>().volume < maxVolume)
             {
@@ -58,7 +58,7 @@ public class MusicManager : MonoBehaviour {
             }
         }
 
-        if (sceneManager.GetComponent<SceneManager>().convoCounter >= 1)
+        if (sceneManager.GetComponent<SceneManager>().convoCounter == 1)
         {
             if (spaceSound.GetComponent<AudioSource>().volume < maxVolume)
             {
@@ -66,7 +66,7 @@ public class MusicManager : MonoBehaviour {
             }
         }
 
-        if (sceneManager.GetComponent<SceneManager>().convoCounter >= 2 && solidarityManager.GetComponent<SolidarityManager>().solidarity >= 0)
+        if (sceneManager.GetComponent<SceneManager>().convoCounter == 2 && solidarityManager.GetComponent<SolidarityManager>().solidarity >= 0)
         {
             if (bleepMajor.GetComponent<AudioSource>().volume < maxVolume)
             {
@@ -83,7 +83,7 @@ public class MusicManager : MonoBehaviour {
             }
         }
 
-        if (sceneManager.GetComponent<SceneManager>().convoCounter >= 2 && solidarityManager.GetComponent<SolidarityManager>().solidarity < 0)
+        if (sceneManager.GetComponent<SceneManager>().convoCounter == 2 && solidarityManager.GetComponent<SolidarityManager>().solidarity < 0)
         {
             if (bleepMinor.GetComponent<AudioSource>().volume < maxVolume)
             {
@@ -100,7 +100,7 @@ public class MusicManager : MonoBehaviour {
         }
 
 
-        if (sceneManager.GetComponent<SceneManager>().convoCounter >= 3)
+        if (sceneManager.GetComponent<SceneManager>().convoCounter == 3)
         {
             if (undertone.GetComponent<AudioSource>().volume < maxVolume)
             {
@@ -108,7 +108,7 @@ public class MusicManager : MonoBehaviour {
             }
         }
 
-        if (sceneManager.GetComponent<SceneManager>().convoCounter >= 4 && solidarityManager.GetComponent<SolidarityManager>().solidarity >= 0)
+        if (sceneManager.GetComponent<SceneManager>().convoCounter == 4 && solidarityManager.GetComponent<SolidarityManager>().solidarity >= 0)
         {
             if (majorArp.GetComponent<AudioSource>().volume < maxVolume)
             {
@@ -124,7 +124,7 @@ public class MusicManager : MonoBehaviour {
             }
         }
 
-        if (sceneManager.GetComponent<SceneManager>().convoCounter >= 4 && solidarityManager.GetComponent<SolidarityManager>().solidarity < 0)
+        if (sceneManager.GetComponent<SceneManager>().convoCounter == 4 && solidarityManager.GetComponent<SolidarityManager>().solidarity < 0)
         {
             if (minorArp.GetComponent<AudioSource>().volume < maxVolume)
             {
@@ -140,14 +140,14 @@ public class MusicManager : MonoBehaviour {
             }
         }
 
-        if (sceneManager.GetComponent<SceneManager>().convoCounter >= 5)
+        if (sceneManager.GetComponent<SceneManager>().convoCounter == 5)
         {
             if (bass.GetComponent<AudioSource>().volume < maxVolume)
             {
                 bass.GetComponent<AudioSource>().volume += fadeInSpeed * Time.deltaTime;
             }
         }
-        if (sceneManager.GetComponent<SceneManager>().convoCounter >= 6)
+        if (sceneManager.GetComponent<SceneManager>().convoCounter == 6)
         {
             if (chaos.GetComponent<AudioSource>().volume < maxVolume)
             {
@@ -155,7 +155,7 @@ public class MusicManager : MonoBehaviour {
             }
         }
 
-        if (sceneManager.GetComponent<SceneManager>().convoCounter >= 7)
+        if (sceneManager.GetComponent<SceneManager>().convoCounter == 7)
         {
             if (fluteLead.GetComponent<AudioSource>().volume < maxVolume)
             {
@@ -302,6 +302,74 @@ public class MusicManager : MonoBehaviour {
             strikePongTune.GetComponent<AudioSource>().Stop();
             bargainingTune.GetComponent<AudioSource>().Stop();
             sceneManager.GetComponent<SceneManager>().convoCounter = 16;
+        }
+
+        if (sceneManager.GetComponent<SceneManager>().convoCounter == 25)
+        {
+            if (thumps.GetComponent<AudioSource>().volume > 0)
+            {
+                thumps.GetComponent<AudioSource>().volume -= fadeInSpeed * Time.deltaTime;
+            }
+        }
+
+        if (sceneManager.GetComponent<SceneManager>().convoCounter == 24)
+        {
+            if (spaceSound.GetComponent<AudioSource>().volume > 0)
+            {
+                spaceSound.GetComponent<AudioSource>().volume -= fadeInSpeed * Time.deltaTime;
+            }
+        }
+
+
+        if (sceneManager.GetComponent<SceneManager>().convoCounter == 23 )
+        {
+            if (bleepMinor.GetComponent<AudioSource>().volume > 0 || bleepMajor.GetComponent<AudioSource>().volume > 0)
+            {
+                bleepMinor.GetComponent<AudioSource>().volume -= fadeInSpeed * Time.deltaTime;
+                bleepMajor.GetComponent<AudioSource>().volume -= fadeInSpeed * Time.deltaTime;
+            }
+        }
+
+
+        if (sceneManager.GetComponent<SceneManager>().convoCounter == 22)
+        {
+            if (undertone.GetComponent<AudioSource>().volume > 0 )
+            {
+                undertone.GetComponent<AudioSource>().volume -= fadeInSpeed * Time.deltaTime;
+            }
+        }
+
+
+        if (sceneManager.GetComponent<SceneManager>().convoCounter == 21)
+        {
+            if (minorArp.GetComponent<AudioSource>().volume > 0 || majorArp.GetComponent<AudioSource>().volume > 0)
+            {
+                minorArp.GetComponent<AudioSource>().volume -= fadeInSpeed * Time.deltaTime;
+                majorArp.GetComponent<AudioSource>().volume -= fadeInSpeed * Time.deltaTime;
+            }
+        }
+
+        if (sceneManager.GetComponent<SceneManager>().convoCounter == 20)
+        {
+            if (bass.GetComponent<AudioSource>().volume > 0)
+            {
+                bass.GetComponent<AudioSource>().volume -= fadeInSpeed * Time.deltaTime;
+            }
+        }
+        if (sceneManager.GetComponent<SceneManager>().convoCounter == 19)
+        {
+            if (chaos.GetComponent<AudioSource>().volume > 0)
+            {
+                chaos.GetComponent<AudioSource>().volume -= fadeInSpeed * Time.deltaTime;
+            }
+        }
+
+        if (sceneManager.GetComponent<SceneManager>().convoCounter == 18)
+        {
+            if (fluteLead.GetComponent<AudioSource>().volume > 0)
+            {
+                fluteLead.GetComponent<AudioSource>().volume -= fadeInSpeed * Time.deltaTime;
+            }
         }
     }
 

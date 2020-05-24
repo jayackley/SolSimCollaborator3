@@ -18,7 +18,7 @@ public class AccountingNumbersManager : MonoBehaviour {
 
     IEnumerator SafetyType()
     {
-        c = "01*10+^$#|"[Random.Range(0, 10)];
+        c = "01*10+^$#      "[Random.Range(0, 15)];
         numbers.text += c;
         yield return new WaitForSeconds(typingSpeed);
         numbers.text = numbers.text.Substring(1);

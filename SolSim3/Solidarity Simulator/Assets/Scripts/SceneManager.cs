@@ -18,6 +18,7 @@ public class SceneManager : MonoBehaviour {
     public GameObject tempBoard;
     public GameObject tempFactory;
     public GameObject welder;
+    public GameObject welderArea;
     public GameObject welderBoard;
     public GameObject bigGuy;
     public GameObject bigGuyBoard;
@@ -173,7 +174,7 @@ public class SceneManager : MonoBehaviour {
             temp.GetComponent<SpriteRenderer>().flipX = false;
             temp.GetComponent<SpriteRenderer>().sortingOrder = 0;
 
-            welder.GetComponent<CapsuleCollider2D>().enabled = true;
+            welderArea.GetComponent<CapsuleCollider2D>().enabled = true;
             welder.GetComponent<SpriteRenderer>().flipX = false;
             welder.GetComponent<Animator>().SetTrigger("atfactory");
 
@@ -234,9 +235,15 @@ public class SceneManager : MonoBehaviour {
             blackOutObject.GetComponent<BlackOutManager>().NextSentence();
 
             convoCounter = 15;
-            uiPressCircle.SetActive(false);
+            solidarityPanel.SetActive(false);
             boardOptionManager.SetActive(false);
 
+        }
+        if (convoCounter == 16)
+        {
+            uiPressCircle.transform.localPosition = new Vector3(318, -178, 0);
+            boardPanel.GetComponent<BoardManager>().primed = false;
+            boardOptionManager.GetComponent<BoardOptionManager>().primed = false;
         }
         if (convoCounter == 17)
         {
@@ -247,6 +254,14 @@ public class SceneManager : MonoBehaviour {
             playerObject.GetComponent<MovementController>().enabled = true;
             blackOutObject.SetActive(false);
         }
-
+        if (convoCounter == 24 && promptPanel.GetComponent<PromptManager>().isTyping == false && Event.current.Equals(Event.KeyboardEvent("return")) == true)
+        {
+            blackOutObject.SetActive(true);
+            promptPanel.SetActive(false);
+            optionManager.SetActive(false);
+            //playerObject.GetComponent<MovementController>().enabled = false;
+            blackOutObject.GetComponent<BlackOutManager>().index = 4;
+            blackOutObject.GetComponent<BlackOutManager>().NextSentence();
+        }
     }
 }

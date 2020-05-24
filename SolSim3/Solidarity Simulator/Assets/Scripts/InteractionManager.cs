@@ -341,6 +341,7 @@ public class InteractionManager : MonoBehaviour
             {
                 temp.GetComponent<AudioSource>().volume += voxFadeSpeed * Time.deltaTime;
             }
+            temp.GetComponent<Animator>().SetBool("IsTalking", true);
         }
         else if (promptPanel.GetComponent<PromptManager>().isTyping == true & whosTalking == "welder")
         {
@@ -422,6 +423,7 @@ public class InteractionManager : MonoBehaviour
 
             wrench.GetComponent<Animator>().SetBool("IsTalking", false);
             manager.GetComponent<Animator>().SetBool("IsTalking", false);
+            temp.GetComponent<Animator>().SetBool("IsTalking", false);
         }
 
         bool flipBigGuy = (bigGuy.GetComponent<SpriteRenderer>().flipX ? (playerObject.transform.position.x > bigGuy.transform.position.x) : (playerObject.transform.position.x < bigGuy.transform.position.x));
