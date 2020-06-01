@@ -21,6 +21,7 @@ public class StrikeInstructionManager : MonoBehaviour
     {
         isTyping = false;
         NextSentence();
+        textDisplay.faceColor = new Color32(245, 254, 1, 255);
     }
 
     IEnumerator Type()

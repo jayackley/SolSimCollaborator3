@@ -32,11 +32,16 @@ public class InteractionManager : MonoBehaviour
     public float voxFadeSpeed;
     public float zeroVolume;
     public float maxVolume;
+    public GameObject achievementManager;
 
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.name == "ClimbAchievement")
+        {
+            achievementManager.GetComponent<AchievementManager>().topclimbtrigger = true;
+        }
         if (collision.gameObject.name == "Wrench")
         {
             optionManager.GetComponent<OptionManager>().enabled = true;
@@ -281,7 +286,7 @@ public class InteractionManager : MonoBehaviour
             pressCircle.transform.localPosition = new Vector3(317, 77, 0);
             buttonInstruction.transform.localPosition = new Vector3(-290, -200, 0);
         }
-        else if (collision.gameObject.name == "Manager")
+        else if (collision.gameObject.name == "Manager" && collision is CapsuleCollider2D)
         {
             optionManager.GetComponent<OptionManager>().enabled = true;
             playerObject.GetComponent<MovementController>().canPoke = false;

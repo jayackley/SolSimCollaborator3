@@ -14,10 +14,13 @@ public class BlackOutManager : MonoBehaviour
     public GameObject buttonInstruction;
     public bool primed;
     public float pauseTime;
+    public GameObject endGameManager;
 
     private void Awake()
     {
         textDisplay.faceColor = new Color32(245, 254, 1,255);
+        textDisplay.GetComponent<TextMeshProUGUI>().alignment = TextAlignmentOptions.Center;
+        textDisplay.GetComponent<TextMeshProUGUI>().fontSize = 30;
     }
 
     IEnumerator Type()
@@ -91,6 +94,16 @@ public class BlackOutManager : MonoBehaviour
         {
             primed = false;
         }
+        if (index == 4 )
+        {
+            textDisplay.GetComponent<TextMeshProUGUI>().alignment = TextAlignmentOptions.Top;
+            textDisplay.GetComponent<TextMeshProUGUI>().fontSize = 20;
+            endGameManager.SetActive(true);
+
+        }
+
+
+
     }
     private void OnGUI()
     {
@@ -98,7 +111,7 @@ public class BlackOutManager : MonoBehaviour
         {
             buttonInstruction.SetActive(false);
         }
-            if ((Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && isTyping == false)
+        if ((Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && isTyping == false && index != 4)
         {
             textDisplay.text = "";
             primed = false;

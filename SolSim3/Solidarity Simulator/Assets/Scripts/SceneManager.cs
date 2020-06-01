@@ -45,6 +45,7 @@ public class SceneManager : MonoBehaviour {
     public GameObject blackOutObject;
     public GameObject uiPressCircle;
     public GameObject optionManager;
+    public GameObject musicManager;
 
 
     void Start()
@@ -75,6 +76,11 @@ public class SceneManager : MonoBehaviour {
         if (Event.current.Equals(Event.KeyboardEvent("e")))
         {
             convoCounter = 14;
+            uiCanvas.GetComponent<Canvas>().enabled = true;
+        }
+        if (Event.current.Equals(Event.KeyboardEvent("r")))
+        {
+            convoCounter = 23;
         }
         if (Event.current.Equals(Event.KeyboardEvent("x")) && npcs.activeInHierarchy == true)
         {
@@ -85,6 +91,24 @@ public class SceneManager : MonoBehaviour {
             npcs.SetActive(true);
         }
 
+        if (Event.current.Equals(Event.KeyboardEvent("m")) && musicManager.activeInHierarchy == true)
+        {
+            musicManager.SetActive(false);
+        }
+        else if (Event.current.Equals(Event.KeyboardEvent("m")) && musicManager.activeInHierarchy == false)
+        {
+            musicManager.SetActive(true);
+        }
+
+        if (Event.current.Equals(Event.KeyboardEvent("v")) && AudioListener.volume >= .9)
+        {
+            AudioListener.volume = 0;
+        }
+        else if (Event.current.Equals(Event.KeyboardEvent("v")) && AudioListener.volume <= .1)
+
+        {
+            AudioListener.volume = 1;
+        }
 
         if (Event.current.Equals(Event.KeyboardEvent("return"))&& convoCounter == 9 && blackOutObject.GetComponent<BlackOutManager>().isTyping == false)
         {
@@ -152,7 +176,14 @@ public class SceneManager : MonoBehaviour {
         if (convoCounter == 10)
         {
             boardPanel.SetActive(true);
+
+            if (solidarityObject.GetComponent<SolidarityManager>().solidarity <= 0)
+            {
+                boardPanel.GetComponent<BoardManager>().index = 40;
+            }
+                
             boardPanel.GetComponent<BoardManager>().NextSentence();
+
             blackOutObject.SetActive(false);
             playerObject.transform.position = playerBoard.transform.position;
             playerObject.GetComponent<InteractionManager>().enabled = false;
@@ -254,14 +285,16 @@ public class SceneManager : MonoBehaviour {
             playerObject.GetComponent<MovementController>().enabled = true;
             blackOutObject.SetActive(false);
         }
-        if (convoCounter == 24 && promptPanel.GetComponent<PromptManager>().isTyping == false && Event.current.Equals(Event.KeyboardEvent("return")) == true)
+        if (convoCounter == 24 && promptPanel.GetComponent<PromptManager>().isTyping == false && (Input.GetKeyDown("return") || Input.GetKeyDown("space")))
         {
+            uiCanvas.GetComponent<Canvas>().enabled = true;
             blackOutObject.SetActive(true);
             promptPanel.SetActive(false);
             optionManager.SetActive(false);
             //playerObject.GetComponent<MovementController>().enabled = false;
             blackOutObject.GetComponent<BlackOutManager>().index = 4;
             blackOutObject.GetComponent<BlackOutManager>().NextSentence();
+            convoCounter = 25;
         }
     }
 }

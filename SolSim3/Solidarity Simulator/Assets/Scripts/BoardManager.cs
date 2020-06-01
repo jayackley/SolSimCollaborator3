@@ -22,9 +22,11 @@ public class BoardManager : MonoBehaviour {
     public GameObject manager;
     public GameObject orb;
     public GameObject corporate;
+    public GameObject corporateEyeball;
     public GameObject mainCamera;
     public GameObject buttonInstruction;
     public GameObject boardOptionManager;
+    
     public bool primed;
     public int randomInsult;
     public float voxFadeSpeed;
@@ -127,6 +129,86 @@ public class BoardManager : MonoBehaviour {
     private void Update()
     {
 
+        if (index == 1 || index == 12 || index == 21 || index == 48)
+        {
+            whosTalking = "orb";
+            mainCamera.GetComponent<CameraManager>().whosFocus = "orb";
+            textDisplay.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
+            textDisplay.GetComponent<TextMeshProUGUI>().faceColor = new Color32(255, 0, 42, 255);
+        }
+        else if (index == 2 || index == 16 || index == 18 || index == 23 || index == 24 || index == 46)
+        {
+            whosTalking = "accounting";
+            mainCamera.GetComponent<CameraManager>().whosFocus = "accounting";
+            textDisplay.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
+            textDisplay.GetComponent<TextMeshProUGUI>().faceColor = new Color32(255, 148, 0, 255);
+
+
+        }
+        else if (index == 0 || index == 3 || index == 6 || index == 14 || index == 19 || index == 40)
+        {
+            whosTalking = "corporate";
+            mainCamera.GetComponent<CameraManager>().whosFocus = "corporate";
+            textDisplay.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
+            textDisplay.GetComponent<TextMeshProUGUI>().faceColor = new Color32(255, 55, 0, 255);
+
+        }
+        else if (index == 4 || index == 31 || index == 32 || index == 44)
+        {
+            whosTalking = "bigguy";
+            mainCamera.GetComponent<CameraManager>().whosFocus = "bigguy";
+            textDisplay.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
+            textDisplay.GetComponent<TextMeshProUGUI>().faceColor = new Color32(16, 83, 73, 255);
+
+        }
+        else if (index == 5 || index == 17 || index == 27 || index == 28 || (index >= 34 && index < 40) || index == 43)
+        {
+            whosTalking = "welder";
+            mainCamera.GetComponent<CameraManager>().whosFocus = "welder";
+            textDisplay.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
+            textDisplay.GetComponent<TextMeshProUGUI>().faceColor = new Color32(255, 195, 0, 255);
+
+        }
+        else if (index == 7 || index == 47)
+        {
+            whosTalking = "manager";
+            mainCamera.GetComponent<CameraManager>().whosFocus = "manager";
+            textDisplay.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
+            textDisplay.GetComponent<TextMeshProUGUI>().faceColor = new Color32(127, 5, 40, 255);
+
+        }
+        else if (index == 8 || index == 10 || index == 13 || index == 15 || index == 20 || index == 22 || index == 41)
+        {
+            whosTalking = "wrench";
+            mainCamera.GetComponent<CameraManager>().whosFocus = "wrench";
+            textDisplay.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
+            textDisplay.GetComponent<TextMeshProUGUI>().faceColor = new Color32(101, 100, 219, 255);
+
+        }
+        else if (index == 9 || index == 25 || index == 26 || index == 45)
+        {
+            whosTalking = "data";
+            mainCamera.GetComponent<CameraManager>().whosFocus = "data";
+            textDisplay.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
+            textDisplay.GetComponent<TextMeshProUGUI>().faceColor = new Color32(255, 255, 255, 255);
+
+        }
+
+        else if (index == 11 || index == 29 || index == 30 || index == 42)
+        {
+            whosTalking = "temp";
+            mainCamera.GetComponent<CameraManager>().whosFocus = "temp";
+            textDisplay.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
+            textDisplay.GetComponent<TextMeshProUGUI>().faceColor = new Color32(137, 210, 220, 255);
+        }
+        else if (index == 33 || index == 49)
+        {
+            mainCamera.GetComponent<CameraManager>().whosFocus = "pc";
+            whosTalking = "temp";
+            textDisplay.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
+            textDisplay.GetComponent<TextMeshProUGUI>().faceColor = new Color32(137, 210, 220, 255);
+        }
+
         if (isTyping == false)
         {
             primed = true;
@@ -136,146 +218,7 @@ public class BoardManager : MonoBehaviour {
             primed = false;
         }
 
-        if (isTyping == true & whosTalking == "wrench")
-        {
-            if (wrench.GetComponent<AudioSource>().volume < volumeMax)
-            {
-                wrench.GetComponent<AudioSource>().volume += voxFadeSpeed * Time.deltaTime;
-            }
-            wrench.GetComponent<Animator>().SetBool("IsTalking", true);
-
-            temp.GetComponent<AudioSource>().volume = 0;
-            welder.GetComponent<AudioSource>().volume = 0;
-            bigGuy.GetComponent<AudioSource>().volume = 0;
-            data.GetComponent<AudioSource>().volume = 0;
-            accounting.GetComponent<AudioSource>().volume = 0;
-            manager.GetComponent<AudioSource>().volume = 0;
-            orb.GetComponent<AudioSource>().volume = 0;
-            corporate.GetComponent<AudioSource>().volume = 0;
-        }
-        else if (isTyping == true & whosTalking == "temp")
-        {
-            if (temp.GetComponent<AudioSource>().volume < volumeMax)
-            {
-                temp.GetComponent<AudioSource>().volume += voxFadeSpeed * Time.deltaTime;
-            }
-            temp.GetComponent<Animator>().SetBool("IsTalking", true);
-            wrench.GetComponent<AudioSource>().volume = 0;
-            welder.GetComponent<AudioSource>().volume = 0;
-            bigGuy.GetComponent<AudioSource>().volume = 0;
-            data.GetComponent<AudioSource>().volume = 0;
-            accounting.GetComponent<AudioSource>().volume = 0;
-            manager.GetComponent<AudioSource>().volume = 0;
-            orb.GetComponent<AudioSource>().volume = 0;
-            corporate.GetComponent<AudioSource>().volume = 0;
-        }
-        else if (isTyping == true & whosTalking == "welder")
-        {
-            if (welder.GetComponent<AudioSource>().volume < volumeMax)
-            {
-                welder.GetComponent<AudioSource>().volume += voxFadeSpeed * Time.deltaTime;
-            }
-            wrench.GetComponent<AudioSource>().volume = 0;
-            temp.GetComponent<AudioSource>().volume = 0;
-            bigGuy.GetComponent<AudioSource>().volume = 0;
-            data.GetComponent<AudioSource>().volume = 0;
-            accounting.GetComponent<AudioSource>().volume = 0;
-            manager.GetComponent<AudioSource>().volume = 0;
-            orb.GetComponent<AudioSource>().volume = 0;
-            corporate.GetComponent<AudioSource>().volume = 0;
-        }
-        else if (isTyping == true & whosTalking == "bigguy")
-        {
-            if (bigGuy.GetComponent<AudioSource>().volume < volumeMax)
-            {
-                bigGuy.GetComponent<AudioSource>().volume += voxFadeSpeed * Time.deltaTime;
-            }
-            wrench.GetComponent<AudioSource>().volume = 0;
-            temp.GetComponent<AudioSource>().volume = 0;
-            welder.GetComponent<AudioSource>().volume = 0;
-            data.GetComponent<AudioSource>().volume = 0;
-            accounting.GetComponent<AudioSource>().volume = 0;
-            manager.GetComponent<AudioSource>().volume = 0;
-            orb.GetComponent<AudioSource>().volume = 0;
-            corporate.GetComponent<AudioSource>().volume = 0;
-        }
-        else if (isTyping == true & whosTalking == "data")
-        {
-            if (data.GetComponent<AudioSource>().volume < volumeMax)
-            {
-                data.GetComponent<AudioSource>().volume += voxFadeSpeed * Time.deltaTime;
-            }
-            wrench.GetComponent<AudioSource>().volume = 0;
-            temp.GetComponent<AudioSource>().volume = 0;
-            welder.GetComponent<AudioSource>().volume = 0;
-            bigGuy.GetComponent<AudioSource>().volume = 0;
-            accounting.GetComponent<AudioSource>().volume = 0;
-            manager.GetComponent<AudioSource>().volume = 0;
-            orb.GetComponent<AudioSource>().volume = 0;
-            corporate.GetComponent<AudioSource>().volume = 0;
-        }
-        else if (isTyping == true & whosTalking == "accounting")
-        {
-            if (accounting.GetComponent<AudioSource>().volume < volumeMax)
-            {
-                accounting.GetComponent<AudioSource>().volume += voxFadeSpeed * Time.deltaTime;
-            }
-            wrench.GetComponent<AudioSource>().volume = 0;
-            temp.GetComponent<AudioSource>().volume = 0;
-            welder.GetComponent<AudioSource>().volume = 0;
-            bigGuy.GetComponent<AudioSource>().volume = 0;
-            data.GetComponent<AudioSource>().volume = 0;
-            manager.GetComponent<AudioSource>().volume = 0;
-            orb.GetComponent<AudioSource>().volume = 0;
-            corporate.GetComponent<AudioSource>().volume = 0;
-        }
-        else if (isTyping == true & whosTalking == "manager")
-        {
-            if (manager.GetComponent<AudioSource>().volume < volumeMax)
-            {
-                manager.GetComponent<AudioSource>().volume += voxFadeSpeed * Time.deltaTime;
-            }
-            wrench.GetComponent<AudioSource>().volume = 0;
-            temp.GetComponent<AudioSource>().volume = 0;
-            welder.GetComponent<AudioSource>().volume = 0;
-            bigGuy.GetComponent<AudioSource>().volume = 0;
-            data.GetComponent<AudioSource>().volume = 0;
-            accounting.GetComponent<AudioSource>().volume = 0;
-            orb.GetComponent<AudioSource>().volume = 0;
-            corporate.GetComponent<AudioSource>().volume = 0;
-            manager.GetComponent<Animator>().SetBool("IsSuitTalking", true);
-        }
-        else if (isTyping == true & whosTalking == "orb")
-        {
-            if (orb.GetComponent<AudioSource>().volume < volumeMax)
-            {
-                orb.GetComponent<AudioSource>().volume += voxFadeSpeed * Time.deltaTime;
-            }
-            wrench.GetComponent<AudioSource>().volume = 0;
-            temp.GetComponent<AudioSource>().volume = 0;
-            welder.GetComponent<AudioSource>().volume = 0;
-            bigGuy.GetComponent<AudioSource>().volume = 0;
-            data.GetComponent<AudioSource>().volume = 0;
-            accounting.GetComponent<AudioSource>().volume = 0;
-            manager.GetComponent<AudioSource>().volume = 0;
-            corporate.GetComponent<AudioSource>().volume = 0;
-        }
-        else if (isTyping == true & whosTalking == "corporate")
-        {
-            if (corporate.GetComponent<AudioSource>().volume < volumeMax)
-            {
-                corporate.GetComponent<AudioSource>().volume += voxFadeSpeed * Time.deltaTime;
-            }
-            wrench.GetComponent<AudioSource>().volume = 0;
-            temp.GetComponent<AudioSource>().volume = 0;
-            welder.GetComponent<AudioSource>().volume = 0;
-            bigGuy.GetComponent<AudioSource>().volume = 0;
-            data.GetComponent<AudioSource>().volume = 0;
-            accounting.GetComponent<AudioSource>().volume = 0;
-            manager.GetComponent<AudioSource>().volume = 0;
-            orb.GetComponent<AudioSource>().volume = 0;
-        }
-        else if (isTyping == false)
+        if (isTyping == false)
         {
             if (wrench.GetComponent<AudioSource>().volume > volumeZero)
             {
@@ -317,88 +260,186 @@ public class BoardManager : MonoBehaviour {
             wrench.GetComponent<Animator>().SetBool("IsTalking", false);
             manager.GetComponent<Animator>().SetBool("IsSuitTalking", false);
             temp.GetComponent<Animator>().SetBool("IsTalking", false);
-
+            corporate.GetComponent<Animator>().SetBool("IsTalking", false);
+            orb.GetComponent<Animator>().SetBool("IsTalking", false);
         }
 
-        if (index == 1 || index == 12 || index == 21 )
+        else if (isTyping == true & whosTalking == "wrench")
         {
-            whosTalking = "orb";
-            mainCamera.GetComponent<CameraManager>().whosFocus = "orb";
-            textDisplay.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
-            textDisplay.GetComponent<TextMeshProUGUI>().faceColor = new Color32(255, 0, 42, 255);
+            if (wrench.GetComponent<AudioSource>().volume < volumeMax)
+            {
+                wrench.GetComponent<AudioSource>().volume += voxFadeSpeed * Time.deltaTime;
+            }
+            wrench.GetComponent<Animator>().SetBool("IsTalking", true);
+
+            temp.GetComponent<AudioSource>().volume = 0;
+            welder.GetComponent<AudioSource>().volume = 0;
+            bigGuy.GetComponent<AudioSource>().volume = 0;
+            data.GetComponent<AudioSource>().volume = 0;
+            accounting.GetComponent<AudioSource>().volume = 0;
+            manager.GetComponent<AudioSource>().volume = 0;
+            orb.GetComponent<AudioSource>().volume = 0;
+            corporateEyeball.GetComponent<Animator>().SetBool("Left", true);
+            corporateEyeball.GetComponent<Animator>().SetBool("Right", false);
+            corporateEyeball.GetComponent<Animator>().SetBool("Center", false);
+
         }
-        else if (index == 2 || index == 16 || index == 18 || index == 23 || index == 24)
+        else if (isTyping == true & whosTalking == "temp")
         {
-            whosTalking = "accounting";
-            mainCamera.GetComponent<CameraManager>().whosFocus = "accounting";
-            textDisplay.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
-            textDisplay.GetComponent<TextMeshProUGUI>().faceColor = new Color32(255, 148, 0, 255);
+            if (temp.GetComponent<AudioSource>().volume < volumeMax)
+            {
+                temp.GetComponent<AudioSource>().volume += voxFadeSpeed * Time.deltaTime;
+            }
+            temp.GetComponent<Animator>().SetBool("IsTalking", true);
+            wrench.GetComponent<AudioSource>().volume = 0;
+            welder.GetComponent<AudioSource>().volume = 0;
+            bigGuy.GetComponent<AudioSource>().volume = 0;
+            data.GetComponent<AudioSource>().volume = 0;
+            accounting.GetComponent<AudioSource>().volume = 0;
+            manager.GetComponent<AudioSource>().volume = 0;
+            orb.GetComponent<AudioSource>().volume = 0;
+            corporateEyeball.GetComponent<Animator>().SetBool("Left", false);
+            corporateEyeball.GetComponent<Animator>().SetBool("Right", true);
+            corporateEyeball.GetComponent<Animator>().SetBool("Center", false);
+
+        }
+        else if (isTyping == true & whosTalking == "welder")
+        {
+            if (welder.GetComponent<AudioSource>().volume < volumeMax)
+            {
+                welder.GetComponent<AudioSource>().volume += voxFadeSpeed * Time.deltaTime;
+            }
+            wrench.GetComponent<AudioSource>().volume = 0;
+            temp.GetComponent<AudioSource>().volume = 0;
+            bigGuy.GetComponent<AudioSource>().volume = 0;
+            data.GetComponent<AudioSource>().volume = 0;
+            accounting.GetComponent<AudioSource>().volume = 0;
+            manager.GetComponent<AudioSource>().volume = 0;
+            orb.GetComponent<AudioSource>().volume = 0;
+            corporateEyeball.GetComponent<Animator>().SetBool("Left", false);
+            corporateEyeball.GetComponent<Animator>().SetBool("Right", true);
+            corporateEyeball.GetComponent<Animator>().SetBool("Center", false);
+        }
+        else if (isTyping == true & whosTalking == "bigguy")
+        {
+            if (bigGuy.GetComponent<AudioSource>().volume < volumeMax)
+            {
+                bigGuy.GetComponent<AudioSource>().volume += voxFadeSpeed * Time.deltaTime;
+            }
+
+            wrench.GetComponent<AudioSource>().volume = 0;
+            temp.GetComponent<AudioSource>().volume = 0;
+            welder.GetComponent<AudioSource>().volume = 0;
+            data.GetComponent<AudioSource>().volume = 0;
+            accounting.GetComponent<AudioSource>().volume = 0;
+            manager.GetComponent<AudioSource>().volume = 0;
+            orb.GetComponent<AudioSource>().volume = 0;
+            corporate.GetComponent<AudioSource>().volume = 0;
+            corporateEyeball.GetComponent<Animator>().SetBool("Left", false);
+            corporateEyeball.GetComponent<Animator>().SetBool("Right", true);
+            corporateEyeball.GetComponent<Animator>().SetBool("Center", false);
+
+        }
+        else if (isTyping == true & whosTalking == "data")
+        {
+            if (data.GetComponent<AudioSource>().volume < volumeMax)
+            {
+                data.GetComponent<AudioSource>().volume += voxFadeSpeed * Time.deltaTime;
+            }
+            wrench.GetComponent<AudioSource>().volume = 0;
+            temp.GetComponent<AudioSource>().volume = 0;
+            welder.GetComponent<AudioSource>().volume = 0;
+            bigGuy.GetComponent<AudioSource>().volume = 0;
+            accounting.GetComponent<AudioSource>().volume = 0;
+            manager.GetComponent<AudioSource>().volume = 0;
+            orb.GetComponent<AudioSource>().volume = 0;
+            corporate.GetComponent<AudioSource>().volume = 0;
+            corporateEyeball.GetComponent<Animator>().SetBool("Left", true);
+            corporateEyeball.GetComponent<Animator>().SetBool("Right", false);
+            corporateEyeball.GetComponent<Animator>().SetBool("Center", false);
+
+        }
+        else if (isTyping == true & whosTalking == "accounting")
+        {
+            if (accounting.GetComponent<AudioSource>().volume < volumeMax)
+            {
+                accounting.GetComponent<AudioSource>().volume += voxFadeSpeed * Time.deltaTime;
+            }
+            wrench.GetComponent<AudioSource>().volume = 0;
+            temp.GetComponent<AudioSource>().volume = 0;
+            welder.GetComponent<AudioSource>().volume = 0;
+            bigGuy.GetComponent<AudioSource>().volume = 0;
+            data.GetComponent<AudioSource>().volume = 0;
+            manager.GetComponent<AudioSource>().volume = 0;
+            orb.GetComponent<AudioSource>().volume = 0;
+            corporate.GetComponent<AudioSource>().volume = 0;
+            corporateEyeball.GetComponent<Animator>().SetBool("Left", true);
+            corporateEyeball.GetComponent<Animator>().SetBool("Right", false);
+            corporateEyeball.GetComponent<Animator>().SetBool("Center", false);
+        }
+        else if (isTyping == true & whosTalking == "manager")
+        {
+            if (manager.GetComponent<AudioSource>().volume < volumeMax)
+            {
+                manager.GetComponent<AudioSource>().volume += voxFadeSpeed * Time.deltaTime;
+            }
+            wrench.GetComponent<AudioSource>().volume = 0;
+            temp.GetComponent<AudioSource>().volume = 0;
+            welder.GetComponent<AudioSource>().volume = 0;
+            bigGuy.GetComponent<AudioSource>().volume = 0;
+            data.GetComponent<AudioSource>().volume = 0;
+            accounting.GetComponent<AudioSource>().volume = 0;
+            orb.GetComponent<AudioSource>().volume = 0;
+            corporate.GetComponent<AudioSource>().volume = 0;
+            manager.GetComponent<Animator>().SetBool("IsSuitTalking", true);
+            corporateEyeball.GetComponent<Animator>().SetBool("Left", false);
+            corporateEyeball.GetComponent<Animator>().SetBool("Right", true);
+            corporateEyeball.GetComponent<Animator>().SetBool("Center", false);
 
 
         }
-        else if (index == 0 || index == 3 || index == 6 || index == 14 || index == 19)
+        else if (isTyping == true & whosTalking == "orb")
         {
-            whosTalking = "corporate";
-            mainCamera.GetComponent<CameraManager>().whosFocus = "corporate";
-            textDisplay.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
-            textDisplay.GetComponent<TextMeshProUGUI>().faceColor = new Color32(255, 55, 0, 255);
+            if (orb.GetComponent<AudioSource>().volume < volumeMax)
+            {
+                orb.GetComponent<AudioSource>().volume += voxFadeSpeed * Time.deltaTime;
+            }
+            orb.GetComponent<Animator>().SetBool("IsTalking", true);
+            wrench.GetComponent<AudioSource>().volume = 0;
+            temp.GetComponent<AudioSource>().volume = 0;
+            welder.GetComponent<AudioSource>().volume = 0;
+            bigGuy.GetComponent<AudioSource>().volume = 0;
+            data.GetComponent<AudioSource>().volume = 0;
+            accounting.GetComponent<AudioSource>().volume = 0;
+            manager.GetComponent<AudioSource>().volume = 0;
+            corporate.GetComponent<AudioSource>().volume = 0;
+            corporateEyeball.GetComponent<Animator>().SetBool("Left", true);
+            corporateEyeball.GetComponent<Animator>().SetBool("Right", false);
+            corporateEyeball.GetComponent<Animator>().SetBool("Center", false);
 
         }
-        else if (index == 4 || index == 31 || index == 32)
+        else if (isTyping == true & whosTalking == "corporate")
         {
-            whosTalking = "bigguy";
-            mainCamera.GetComponent<CameraManager>().whosFocus = "bigguy";
-            textDisplay.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
-            textDisplay.GetComponent<TextMeshProUGUI>().faceColor = new Color32(16, 83, 73, 255);
-
-        }
-        else if (index == 5 || index == 17 || index == 27 || index == 28 || (index >= 34 && index <50))
-        {
-            whosTalking = "welder";
-            mainCamera.GetComponent<CameraManager>().whosFocus = "welder";
-            textDisplay.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
-            textDisplay.GetComponent<TextMeshProUGUI>().faceColor = new Color32(255, 195, 0, 255);
-
-        }
-        else if (index == 7)
-        {
-            whosTalking = "manager";
-            mainCamera.GetComponent<CameraManager>().whosFocus = "manager";
-            textDisplay.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
-            textDisplay.GetComponent<TextMeshProUGUI>().faceColor = new Color32(127, 5, 40, 255);
-
-        }
-        else if (index == 8 || index == 10 || index == 13|| index == 15 || index == 20 || index == 22 )
-        {
-            whosTalking = "wrench";
-            mainCamera.GetComponent<CameraManager>().whosFocus = "wrench";
-            textDisplay.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
-            textDisplay.GetComponent<TextMeshProUGUI>().faceColor = new Color32(101, 100, 219, 255);
-
-        }
-        else if (index == 9 || index == 25 || index == 26)
-        {
-            whosTalking = "data";
-            mainCamera.GetComponent<CameraManager>().whosFocus = "data";
-            textDisplay.GetComponent<TextMeshProUGUI>().color = new Color32(255,255,255, 255);
-            textDisplay.GetComponent<TextMeshProUGUI>().faceColor = new Color32(255, 255, 255, 255);
-
+            if (corporate.GetComponent<AudioSource>().volume < volumeMax)
+            {
+                corporate.GetComponent<AudioSource>().volume += voxFadeSpeed * Time.deltaTime;
+            }
+            corporate.GetComponent<Animator>().SetBool("IsTalking", true);
+            wrench.GetComponent<AudioSource>().volume = 0;
+            temp.GetComponent<AudioSource>().volume = 0;
+            welder.GetComponent<AudioSource>().volume = 0;
+            bigGuy.GetComponent<AudioSource>().volume = 0;
+            data.GetComponent<AudioSource>().volume = 0;
+            accounting.GetComponent<AudioSource>().volume = 0;
+            manager.GetComponent<AudioSource>().volume = 0;
+            orb.GetComponent<AudioSource>().volume = 0;
+            corporateEyeball.GetComponent<Animator>().SetBool("Left", false);
+            corporateEyeball.GetComponent<Animator>().SetBool("Right", false);
+            corporateEyeball.GetComponent<Animator>().SetBool("Center", true);
         }
 
-        else if (index == 11 || index == 29 || index == 30)
-        {
-            whosTalking = "temp";
-            mainCamera.GetComponent<CameraManager>().whosFocus = "temp";
-            textDisplay.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
-            textDisplay.GetComponent<TextMeshProUGUI>().faceColor = new Color32(137, 210, 220, 255);
-        }
-        else if (index == 33)
-        {
-            mainCamera.GetComponent<CameraManager>().whosFocus = "pc";
-            whosTalking = "temp";
-            textDisplay.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
-            textDisplay.GetComponent<TextMeshProUGUI>().faceColor = new Color32(137, 210, 220, 255);
-        }
+
+
     }
 
     private void OnGUI()
@@ -474,7 +515,7 @@ public class BoardManager : MonoBehaviour {
             strikeInstructionPanel.SetActive(true);
             primed = false;
             gameObject.SetActive(false);
-            solidarityPanel.transform.localPosition = new Vector3(250, 245, 0);
+            solidarityPanel.transform.localPosition = new Vector3(250, 235, 0);
             uiPressCircle.transform.localPosition = new Vector3(200, -80, 0);
         }
 
@@ -486,7 +527,7 @@ public class BoardManager : MonoBehaviour {
             strikeInstructionPanel.SetActive(true);
             primed = false;
             gameObject.SetActive(false);
-            solidarityPanel.transform.localPosition = new Vector3(250, 245, 0);
+            solidarityPanel.transform.localPosition = new Vector3(250, 235, 0);
             uiPressCircle.transform.localPosition = new Vector3(200, -80, 0);
         }
 

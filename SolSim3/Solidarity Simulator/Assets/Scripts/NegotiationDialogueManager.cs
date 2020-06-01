@@ -129,8 +129,40 @@ public class NegotiationDialogueManager : MonoBehaviour {
     }
     private void Update()
     {
+        if (index == 0 || index == 2 || index == 4 || index == 7 || index == 9 || index == 11 || index == 13 || index == 15 || index == 17 || index == 19 || index == 22 || index == 24 || index == 27 || index == 29 || index == 31 || index == 33 || index == 34 || index == 36 || index == 40 || index == 42 || index == 44 || index == 46 || index == 48 || index == 49)
+        {
+            whosTalking = "orb";
+            mainCamera.GetComponent<CameraManager>().whosFocus = "orb";
+            textDisplay.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
+            textDisplay.GetComponent<TextMeshProUGUI>().faceColor = new Color32(255, 0, 42, 255);
+            negotiationSceneContainer.GetComponent<NegotationSceneManager>().facingCamera = false;
+        }
+        else
+        {
+            whosTalking = "wrench";
+            mainCamera.GetComponent<CameraManager>().whosFocus = "wrench";
+            textDisplay.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
+            textDisplay.GetComponent<TextMeshProUGUI>().faceColor = new Color32(101, 100, 219, 255);
+            negotiationSceneContainer.GetComponent<NegotationSceneManager>().facingCamera = true;
+        }
 
-        if (isTyping == true & whosTalking == "wrench")
+        if (isTyping == false)
+        {
+            if (wrench.GetComponent<AudioSource>().volume > volumeZero)
+            {
+                wrench.GetComponent<AudioSource>().volume -= voxFadeSpeed * Time.deltaTime;
+            }
+
+            if (orb.GetComponent<AudioSource>().volume > volumeZero)
+            {
+                orb.GetComponent<AudioSource>().volume -= voxFadeSpeed * Time.deltaTime;
+            }
+
+            wrench.GetComponent<Animator>().SetBool("IsTalking", false);
+            orb.GetComponent<Animator>().SetBool("IsTalking", false);
+
+        }
+        else if (isTyping == true & whosTalking == "wrench")
         {
             if (wrench.GetComponent<AudioSource>().volume < volumeMax)
             {
@@ -138,6 +170,7 @@ public class NegotiationDialogueManager : MonoBehaviour {
             }
             wrench.GetComponent<Animator>().SetBool("IsTalking", true);
             orb.GetComponent<AudioSource>().volume = 0;
+            orb.GetComponent<Animator>().SetBool("IsTalking", false);
         }
  
         else if (isTyping == true & whosTalking == "orb")
@@ -148,40 +181,12 @@ public class NegotiationDialogueManager : MonoBehaviour {
             }
             wrench.GetComponent<AudioSource>().volume = 0;
             wrench.GetComponent<Animator>().SetBool("IsTalking", false);
+            orb.GetComponent<Animator>().SetBool("IsTalking", true);
         }
        
-        else if (isTyping == false)
-        {
-            if (wrench.GetComponent<AudioSource>().volume > volumeZero)
-            {
-                wrench.GetComponent<AudioSource>().volume -= voxFadeSpeed * Time.deltaTime;
-            }
-        
-            if (orb.GetComponent<AudioSource>().volume > volumeZero)
-            {
-                orb.GetComponent<AudioSource>().volume -= voxFadeSpeed * Time.deltaTime;
-            }
 
-            wrench.GetComponent<Animator>().SetBool("IsTalking", false);
 
-        }
 
-        if (index == 0 ||index == 2 || index == 4 || index == 7 || index == 9 || index == 11 || index == 13 || index == 15 || index == 17 || index == 19 || index == 22 || index == 24 || index == 27 || index == 29 || index == 31 || index == 33 || index == 34 || index == 36 || index == 40 || index == 42 || index == 44 || index == 46 || index == 48 || index == 49)
-        {
-            whosTalking = "orb";
-            mainCamera.GetComponent<CameraManager>().whosFocus = "orb";
-            textDisplay.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
-            textDisplay.GetComponent<TextMeshProUGUI>().faceColor = new Color32(255, 0, 42, 255);
-            negotiationSceneContainer.GetComponent<NegotationSceneManager>().facingCamera = false;
-        }
-        else 
-        {
-            whosTalking = "wrench";
-            mainCamera.GetComponent<CameraManager>().whosFocus = "wrench";
-            textDisplay.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
-            textDisplay.GetComponent<TextMeshProUGUI>().faceColor = new Color32(101, 100, 219, 255);
-            negotiationSceneContainer.GetComponent<NegotationSceneManager>().facingCamera = true;
-        }
     }
 
     private void OnGUI()
