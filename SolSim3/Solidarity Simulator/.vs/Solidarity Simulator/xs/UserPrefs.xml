@@ -1,9 +1,13 @@
 ﻿<Properties StartupConfiguration="{3CEEF635-3A15-1682-C997-198328937ED8}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/NegotiationDialogueManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MovementController.cs">
     <Files>
       <File FileName="Assets/Scripts/BoardManager.cs" Line="260" Column="73" />
       <File FileName="Assets/Scripts/NegotiationDialogueManager.cs" Line="147" Column="10" />
+      <File FileName="Assets/Scripts/MovementController.cs" Line="31" Column="131" />
+      <File FileName="Assets/Scripts/InteractionManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PromptManager.cs" Line="7" Column="5" />
+      <File FileName="Assets/Scripts/BenefitTextManager.cs" Line="18" Column="57" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
