@@ -26,6 +26,10 @@ public class OptionManager : MonoBehaviour
     public GameObject uiPressCircle;
     public GameObject buttonInstruction;
     public bool primed;
+    AudioSource sound;
+    public float Volume;
+    public AudioClip swap;
+    public AudioClip select;
     
 
     void Start()
@@ -35,6 +39,7 @@ public class OptionManager : MonoBehaviour
         optionTwo.SetActive(false);
         optionThree.SetActive(false);
         numberOfOptions = 3;
+        sound = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -132,21 +137,25 @@ public class OptionManager : MonoBehaviour
         if (numberOfOptions == 2 && (Event.current.Equals(Event.KeyboardEvent("down")) || (Event.current.Equals(Event.KeyboardEvent("s")))) && currentSelect == 1)
         {
             currentSelect = 2;
+            sound.PlayOneShot(swap, Volume);
         }
 
         else if (numberOfOptions == 2 && (Event.current.Equals(Event.KeyboardEvent("down")) || (Event.current.Equals(Event.KeyboardEvent("s")))) && currentSelect == 2)
         {
             currentSelect = 1;
+            sound.PlayOneShot(swap, Volume);
         }
 
         else if (numberOfOptions == 2 && (Event.current.Equals(Event.KeyboardEvent("up")) || (Event.current.Equals(Event.KeyboardEvent("w")))) && currentSelect == 1)
         {
             currentSelect = 2;
+            sound.PlayOneShot(swap, Volume);
         }
 
         else if (numberOfOptions == 2 && (Event.current.Equals(Event.KeyboardEvent("up")) || (Event.current.Equals(Event.KeyboardEvent("w")))) && currentSelect == 2)
         {
             currentSelect = 1;
+            sound.PlayOneShot(swap, Volume);
         }
 
         //If 3 options
@@ -154,29 +163,40 @@ public class OptionManager : MonoBehaviour
         else if ((Event.current.Equals(Event.KeyboardEvent("down")) || (Event.current.Equals(Event.KeyboardEvent("s")))) && currentSelect == 1)
         {
             currentSelect = 2;
+            sound.PlayOneShot(swap, Volume);
         }
         else if ((Event.current.Equals(Event.KeyboardEvent("down")) || (Event.current.Equals(Event.KeyboardEvent("s")))) && currentSelect == 2)
         {
             currentSelect = 3;
+            sound.PlayOneShot(swap, Volume);
         }
         else if ((Event.current.Equals(Event.KeyboardEvent("down")) || (Event.current.Equals(Event.KeyboardEvent("s")))) && currentSelect == 3)
         {
             currentSelect = 1;
+            sound.PlayOneShot(swap, Volume);
         }
         else if ((Event.current.Equals(Event.KeyboardEvent("up")) || (Event.current.Equals(Event.KeyboardEvent("w")))) && currentSelect == 1)
         {
             currentSelect = 3;
+            sound.PlayOneShot(swap, Volume);
         }
         else if ((Event.current.Equals(Event.KeyboardEvent("up")) || (Event.current.Equals(Event.KeyboardEvent("w")))) && currentSelect == 3)
         {
             currentSelect = 2;
+            sound.PlayOneShot(swap, Volume);
         }
         else if ((Event.current.Equals(Event.KeyboardEvent("up")) || (Event.current.Equals(Event.KeyboardEvent("w")))) && currentSelect == 2)
         {
             currentSelect = 1;
+            sound.PlayOneShot(swap, Volume);
         }
 
         //Choosing Options
+
+        if ((Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && promptPanel.GetComponent<PromptManager>().isTyping == false && numberOfOptions > 0)
+            {
+            sound.PlayOneShot(select, Volume);
+        }
         //wrench
 
         //sentence index 0
@@ -730,8 +750,13 @@ public class OptionManager : MonoBehaviour
             promptPanel.GetComponent<PromptManager>().NextSentence();
             currentSelect = 2;
         }
-
-
+        /*
+        //Complete sentence
+        if (promptPanel.GetComponent<PromptManager>().isTyping == true && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && sentenceIndex < promptPanel.GetComponent<PromptManager>().sentences.Length)
+        {
+            promptPanel.GetComponent<PromptManager>().CompleteSentence();
+        }
+        */
         //end scene
 
         else if ((Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && numberOfOptions == 0 && promptPanel.GetComponent<PromptManager>().isTyping == false && sceneManager.GetComponent<SceneManager>().convoCounter == 7)

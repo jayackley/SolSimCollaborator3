@@ -46,6 +46,7 @@ public class SceneManager : MonoBehaviour {
     public GameObject uiPressCircle;
     public GameObject optionManager;
     public GameObject musicManager;
+    public GameObject scabSpawn;
 
 
     void Start()
@@ -59,7 +60,14 @@ public class SceneManager : MonoBehaviour {
         {
             floor.GetComponent<SpriteRenderer>().enabled = false;
         }
-
+        uiCanvas.GetComponent<Canvas>().enabled = true;
+        blackOutObject.SetActive(true);
+        playerObject.GetComponent<MovementController>().enabled = false;
+        blackOutObject.GetComponent<BlackOutManager>().index = 7;
+        promptPanel.SetActive(false);
+        optionManager.SetActive(false);
+        blackOutObject.GetComponent<BlackOutManager>().NextSentence();
+        uiPressCircle.transform.localPosition = new Vector3(318, -178, 0);
     }
 
     private void OnGUI()
@@ -110,11 +118,11 @@ public class SceneManager : MonoBehaviour {
             AudioListener.volume = 1;
         }
 
-        if (Event.current.Equals(Event.KeyboardEvent("return"))&& convoCounter == 9 && blackOutObject.GetComponent<BlackOutManager>().isTyping == false)
+        if ((Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && convoCounter == 9 && blackOutObject.GetComponent<BlackOutManager>().isTyping == false)
         {
             convoCounter = 10;
         }
-        if (Event.current.Equals(Event.KeyboardEvent("return")) && convoCounter == 16 && blackOutObject.GetComponent<BlackOutManager>().isTyping == false)
+        if ((Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && convoCounter == 16 && blackOutObject.GetComponent<BlackOutManager>().isTyping == false)
         {
             convoCounter = 17;
         }
@@ -122,6 +130,7 @@ public class SceneManager : MonoBehaviour {
 
     void Update()
     {
+
         if (convoCounter == 8)
         {
 
@@ -296,5 +305,45 @@ public class SceneManager : MonoBehaviour {
             blackOutObject.GetComponent<BlackOutManager>().NextSentence();
             convoCounter = 25;
         }
+
+        if (solidarityObject.GetComponent<SolidarityManager>().solidarity <= 0 && mainCamera.GetComponent<CameraManager>().whosFocus == "strikepong" && blackOutObject.GetComponent<BlackOutManager>().index < 5)
+        {
+            uiCanvas.GetComponent<Canvas>().enabled = true;
+            blackOutObject.SetActive(true);
+            promptPanel.SetActive(false);
+            optionManager.SetActive(false);
+            playerObject.GetComponent<MovementController>().enabled = false;
+            blackOutObject.GetComponent<BlackOutManager>().index = 5;
+            blackOutObject.GetComponent<BlackOutManager>().NextSentence();
+            uiPressCircle.SetActive(false);
+            scabSpawn.SetActive(false);
+
+        }
+
+        if(boardPanel.GetComponent<BoardManager>().index == 49 && (Input.GetKeyDown("return") || Input.GetKeyDown("space")))
+        {
+            boardPanel.SetActive(false);
+            uiCanvas.GetComponent<Canvas>().enabled = true;
+            blackOutObject.SetActive(true);
+            promptPanel.SetActive(false);
+            optionManager.SetActive(false);
+            playerObject.GetComponent<MovementController>().enabled = false;
+            blackOutObject.GetComponent<BlackOutManager>().index = 6;
+            blackOutObject.GetComponent<BlackOutManager>().NextSentence();
+            uiPressCircle.SetActive(false);
+            scabSpawn.SetActive(false);
+        }
+
+        if (blackOutObject.GetComponent<BlackOutManager>().index == 7 && promptPanel.GetComponent<PromptManager>().isTyping == false && (Input.GetKeyDown("return") || Input.GetKeyDown("space")))
+        {
+            blackOutObject.GetComponent<BlackOutManager>().index = 0;
+            playerObject.GetComponent<MovementController>().enabled = true;
+            uiCanvas.GetComponent<Canvas>().enabled = false;
+            promptPanel.SetActive(true);
+            optionManager.SetActive(true);
+            blackOutObject.SetActive(false);
+            
+        }
+
     }
 }

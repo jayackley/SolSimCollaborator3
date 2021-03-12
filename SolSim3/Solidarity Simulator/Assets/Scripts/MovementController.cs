@@ -48,6 +48,7 @@ public class MovementController : MonoBehaviour
             footSteps = true;
         }
 
+
         else if (GetComponent<Rigidbody2D>().velocity.y <= -0.0001)
         {
             rigidbody2d.velocity = new Vector2(0, rigidbody2d.velocity.y);
@@ -114,6 +115,7 @@ public class MovementController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Diagonal")
         {
+            playerObject.GetComponent<BoxCollider2D>().enabled = false;
             diagonal = true;
             playerObject.GetComponent<Transform>().rotation = Quaternion.Euler(0, 0, 30);
             footSteps = false;
@@ -123,6 +125,7 @@ public class MovementController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Diagonal")
         {
+            playerObject.GetComponent<BoxCollider2D>().enabled = true;
             diagonal = true;
             playerObject.GetComponent<Transform>().rotation = Quaternion.Euler(0, 0, 0);
         }

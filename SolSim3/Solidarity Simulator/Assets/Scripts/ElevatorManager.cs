@@ -35,36 +35,12 @@ public class ElevatorManager : MonoBehaviour {
             walls.SetActive(true);
         }
 
-        //make it so it doesn't bounce in elevators
-        /*
-        if (collision is CapsuleCollider2D && collision.transform.tag == "Player")
-        {
-            collision.transform.parent = transform;
-            playerObject.GetComponent<BoxCollider2D>().enabled = false;
-        }
-    }
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.transform.tag == "Player")
-        {
-            collision.transform.parent = null;
-            playerObject.GetComponent<BoxCollider2D>().enabled = true;
-        }
-    }
-*/
     }
     // Update is called once per frame
     void Update () 
     {
-        if (goingUp == true)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, elevatorTop, speed * Time.deltaTime);
-        }
-        if (goingDown == true)
-        {
-            transform.position = Vector3.MoveTowards(transform.position, elevatorBottom, speed * Time.deltaTime);
-        }
+
         if (transform.position.y > (elevatorTop.y-0.1))
         {
             goingUp = false;
@@ -77,18 +53,34 @@ public class ElevatorManager : MonoBehaviour {
         }
     }
 
+    private void FixedUpdate()
+    {
+        if (goingUp == true)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, elevatorTop, speed * Time.deltaTime);
+        }
+        if (goingDown == true)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, elevatorBottom, speed * Time.deltaTime);
+        }
+    }
+
     public IEnumerator Elevate()
     {
-        yield return new WaitForSeconds(Random.Range(.5f, 1.5f));
+        yield return new WaitForSeconds(Random.Range(.4f, .6f));
+        playerObject.transform.parent = transform;
         goingUp = true;
         yield return new WaitForSeconds(speed);
         walls.SetActive(false);
+        playerObject.transform.parent = null;
     }
     public IEnumerator Delevate()
     {
-        yield return new WaitForSeconds(Random.Range(.5f, 1.5f));
+        yield return new WaitForSeconds(Random.Range(.4f, .6f));
+        playerObject.transform.parent = transform;
         goingDown = true;
         yield return new WaitForSeconds(speed);
         walls.SetActive(false);
+        playerObject.transform.parent = null;
     }
 }

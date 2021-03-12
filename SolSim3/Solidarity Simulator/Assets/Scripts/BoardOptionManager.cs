@@ -20,7 +20,11 @@ public class BoardOptionManager : MonoBehaviour
     public bool primed;
     public GameObject optionOneText;
     public GameObject optionTwoText;
-    
+    AudioSource sound;
+    public float Volume;
+    public AudioClip swap;
+
+
 
     void Start()
     {
@@ -28,6 +32,7 @@ public class BoardOptionManager : MonoBehaviour
         optionOne.SetActive(false);
         optionTwo.SetActive(false);
         numberOfOptions = 2;
+        sound = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -85,21 +90,25 @@ public class BoardOptionManager : MonoBehaviour
         if (numberOfOptions == 2 && (Event.current.Equals(Event.KeyboardEvent("down")) || (Event.current.Equals(Event.KeyboardEvent("s")))) && currentSelect == 1)
         {
             currentSelect = 2;
+            sound.PlayOneShot(swap, Volume);
         }
 
         else if (numberOfOptions == 2 && (Event.current.Equals(Event.KeyboardEvent("down")) || (Event.current.Equals(Event.KeyboardEvent("s")))) && currentSelect == 2)
         {
             currentSelect = 1;
+            sound.PlayOneShot(swap, Volume);
         }
 
         else if (numberOfOptions == 2 && (Event.current.Equals(Event.KeyboardEvent("up")) || (Event.current.Equals(Event.KeyboardEvent("w")))) && currentSelect == 1)
         {
             currentSelect = 2;
+            sound.PlayOneShot(swap, Volume);
         }
 
         else if (numberOfOptions == 2 && (Event.current.Equals(Event.KeyboardEvent("up")) || (Event.current.Equals(Event.KeyboardEvent("w")))) && currentSelect == 2)
         {
             currentSelect = 1;
+            sound.PlayOneShot(swap, Volume);
         }
 
         else if (numberOfOptions == 0 && boardPanel.GetComponent<NegotiationDialogueManager>().isTyping == false)

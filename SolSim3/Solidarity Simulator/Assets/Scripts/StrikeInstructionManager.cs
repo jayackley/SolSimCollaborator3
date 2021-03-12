@@ -73,7 +73,7 @@ public class StrikeInstructionManager : MonoBehaviour
     }
     private void OnGUI()
     {
-        if (Event.current.Equals(Event.KeyboardEvent("return")) && isTyping == false)
+        if ((Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && isTyping == false)
         {
             index += 1;
             textDisplay.text = "";

@@ -21,6 +21,10 @@ public class PromptManager : MonoBehaviour {
 
         foreach (char letter in sentences[optionManager.GetComponent<OptionManager>().sentenceIndex])
         {
+            if (isTyping == false)
+                {
+                break;
+            }
             if (textDisplay.text.Length > 0)
             {
                 textDisplay.text = textDisplay.text.Substring(0, textDisplay.text.Length - 1);
@@ -55,6 +59,7 @@ public class PromptManager : MonoBehaviour {
 
             else if (letter == '@')
             {
+                optionManager.GetComponent<OptionManager>().primed = true;
                 isTyping = false;
                 break;
             }
@@ -92,9 +97,19 @@ public class PromptManager : MonoBehaviour {
 
         }  
     }
+    /*
+    public void CompleteSentence()
+    {
+        isTyping = false;
+        StopCoroutine(Type());
+        textDisplay.text = "";
+        textDisplay.text = sentences[optionManager.GetComponent<OptionManager>().sentenceIndex];
 
+    }
+    */
     public void NextSentence()
     {
+        optionManager.GetComponent<OptionManager>().primed = false;
         if (optionManager.GetComponent<OptionManager>().sentenceIndex < sentences.Length)
         {
             textDisplay.text = "";

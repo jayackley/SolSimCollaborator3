@@ -70,6 +70,17 @@ public class BlackOutManager : MonoBehaviour
                 yield return new WaitForSeconds(typingSpeed);
             }
 
+            else if (letter == '<')
+            {
+                textDisplay.text += "<size=-10>";
+                yield return new WaitForSeconds(typingSpeed);
+            }
+            else if (letter == '>')
+            {
+                textDisplay.text += "</size>";
+                yield return new WaitForSeconds(typingSpeed);
+            }
+
             else
             {
                 textDisplay.text += letter;

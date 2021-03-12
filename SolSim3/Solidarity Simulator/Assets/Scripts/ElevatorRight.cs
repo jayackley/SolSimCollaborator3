@@ -10,6 +10,7 @@ public class ElevatorRight : MonoBehaviour {
     public GameObject walls;
     public string upOrDown;
     public float speed;
+    public float doorsClosedTime;
     public bool goingUp;
     public bool goingDown;
     public string lastStop;
@@ -17,8 +18,8 @@ public class ElevatorRight : MonoBehaviour {
 
     void Start()
     {
-        upOrDown = "up";
-        transform.position = elevatorTop;
+        upOrDown = "down";
+        transform.position = elevatorBottom;
         goingDown = false;
     }
 
@@ -53,24 +54,6 @@ public class ElevatorRight : MonoBehaviour {
             }
         }
 
-        //make it so it doesn't bounce in elevators
-        /*
-        if (collision is CapsuleCollider2D && collision.transform.tag == "Player")
-        {
-            collision.transform.parent = transform;
-            playerObject.GetComponent<BoxCollider2D>().enabled = false;
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.transform.tag == "Player")
-        {
-            collision.transform.parent = null;
-            playerObject.GetComponent<BoxCollider2D>().enabled = true;
-        }
-    }
-*/
     }
     // Update is called once per frame
     void Update()
@@ -117,18 +100,22 @@ public class ElevatorRight : MonoBehaviour {
 
     public IEnumerator Elevate()
     {
-        yield return new WaitForSeconds(Random.Range(.5f, 1.5f));
+        yield return new WaitForSeconds(Random.Range(.4f, .6f));
+        playerObject.transform.parent = transform;
         goingUp = true;
         Debug.Log("going up");
-        yield return new WaitForSeconds(speed);
+        yield return new WaitForSeconds(doorsClosedTime);
         walls.SetActive(false);
+        playerObject.transform.parent = null;
     }
     public IEnumerator Delevate()
     {
-        yield return new WaitForSeconds(Random.Range(.5f, 1.5f));
+        yield return new WaitForSeconds(Random.Range(.4f, .6f));
+        playerObject.transform.parent = transform;
         goingDown = true;
         Debug.Log("going down");
-        yield return new WaitForSeconds(speed);
+        yield return new WaitForSeconds(doorsClosedTime);
         walls.SetActive(false);
+        playerObject.transform.parent = null;
     }
 }

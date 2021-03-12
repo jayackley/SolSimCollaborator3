@@ -91,6 +91,7 @@
     <Compile Include="Assets\Scripts\PressPanelManager.cs" />
     <Compile Include="Assets\Scripts\PromptManager.cs" />
     <Compile Include="Assets\Scripts\ResponseManager.cs" />
+    <Compile Include="Assets\Scripts\RightElevatorTriggerMid.cs" />
     <Compile Include="Assets\Scripts\ScabController.cs" />
     <Compile Include="Assets\Scripts\ScabSpawnManager.cs" />
     <Compile Include="Assets\Scripts\SceneManager.cs" />

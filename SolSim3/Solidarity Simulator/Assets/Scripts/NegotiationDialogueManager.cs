@@ -134,7 +134,7 @@ public class NegotiationDialogueManager : MonoBehaviour {
             whosTalking = "orb";
             mainCamera.GetComponent<CameraManager>().whosFocus = "orb";
             textDisplay.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
-            textDisplay.GetComponent<TextMeshProUGUI>().faceColor = new Color32(255, 0, 42, 255);
+            textDisplay.GetComponent<TextMeshProUGUI>().faceColor = new Color32(183, 1, 31, 255);
             negotiationSceneContainer.GetComponent<NegotationSceneManager>().facingCamera = false;
         }
         else

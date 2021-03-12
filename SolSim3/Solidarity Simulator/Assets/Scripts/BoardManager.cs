@@ -134,7 +134,7 @@ public class BoardManager : MonoBehaviour {
             whosTalking = "orb";
             mainCamera.GetComponent<CameraManager>().whosFocus = "orb";
             textDisplay.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
-            textDisplay.GetComponent<TextMeshProUGUI>().faceColor = new Color32(255, 0, 42, 255);
+            textDisplay.GetComponent<TextMeshProUGUI>().faceColor = new Color32(183,1,31, 255);
         }
         else if (index == 2 || index == 16 || index == 18 || index == 23 || index == 24 || index == 46)
         {
@@ -145,7 +145,7 @@ public class BoardManager : MonoBehaviour {
 
 
         }
-        else if (index == 0 || index == 3 || index == 6 || index == 14 || index == 19 || index == 40)
+        else if (index == 0 || index == 3 || index == 6 || index == 14 || index == 19 || index == 40 || index == 100)
         {
             whosTalking = "corporate";
             mainCamera.GetComponent<CameraManager>().whosFocus = "corporate";
@@ -531,7 +531,14 @@ public class BoardManager : MonoBehaviour {
             uiPressCircle.transform.localPosition = new Vector3(200, -80, 0);
         }
 
-//random insult generator
+        else if (index == 49 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && isTyping == false)
+        {
+            index = 100;
+            primed = false;
+            gameObject.SetActive(false);
+        }
+
+        //random insult generator
 
         else if (index == 16 && (Event.current.Equals(Event.KeyboardEvent("return")) || Event.current.Equals(Event.KeyboardEvent("space"))) && isTyping == false && randomInsult ==1)
         {
